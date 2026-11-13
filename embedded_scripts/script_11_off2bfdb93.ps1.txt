@@ -1,0 +1,12 @@
+
+$gpuBase = 'HKLM:\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}'
+Get-ChildItem $gpuBase -ErrorAction SilentlyContinue | ForEach-Object {
+    $desc = (Get-ItemProperty -Path $_.PSPath -Name 'DriverDesc' -ErrorAction SilentlyContinue).DriverDesc
+    if ($desc -like '*NVIDIA*' -or $desc -like '*AMD*' -or $desc -like '*Radeon*') {
+        foreach ($v in 'PerfLevelSrc', 'PowerMizerEnable', 'PowerMizerLevel', 'PowerMizerLevelAC',
+                       'RmGspcMaxFBC', 'ThreadedOptimization', 'PP_SclkDeepSleepDisable',
+                       'EnableUlps', 'EnablePreemption') {
+            Remove-ItemProperty -Path $_.PSPath -Name $v -Force -ErrorAction SilentlyContinue
+        }
+        # MSI Mode: STERGEM valoarea, nu o punem pe 0. Absenta inseamna
+        # 

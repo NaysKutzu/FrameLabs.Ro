@@ -1,0 +1,11 @@
+, adica starea de dinainte sa ne atingem noi. Un 0
+        # explicit ar FORTA intreruperi pe linie, deci altceva decat am gasit.
+        $msiPath = Join-Path $_.PSPath 'Interrupt Management\MessageSignaledInterruptProperties'
+        if (Test-Path $msiPath) {
+            Remove-ItemProperty -Path $msiPath -Name 'MSISupported' -Force -ErrorAction SilentlyContinue
+        }
+    }
+}
+Del-Reg 'HKLM:\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Scheduler' 'EnablePreemption'
+
+# 

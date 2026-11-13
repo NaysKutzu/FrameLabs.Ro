@@ -1,0 +1,8 @@
+
+# NU atingem HKCU: scriptul ruleaza elevat, HKCU ar fi hive-ul adminului.
+$cpKey = 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot'
+if (-not (Test-Path $cpKey)) { New-Item -Path $cpKey -Force | Out-Null }
+Set-ItemProperty -Path $cpKey -Name 'TurnOffWindowsCopilot' -Value 1 -Type DWord -Force
+$sters.Add('Copilot (integrat, via politica)')
+
+# 

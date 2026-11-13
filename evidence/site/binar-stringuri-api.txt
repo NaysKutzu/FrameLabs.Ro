@@ -1,0 +1,45 @@
+1: STRING @140175da0: powershell.exe
+2:   REF in FUN_1400d7c60 @1400d7c60
+3:   REF in FUN_1400675a0 @1400675a0
+4:   REF in FUN_14007b760 @14007b760
+5:   REF in FUN_1400a4c90 @1400a4c90
+6:   REF in FUN_140010460 @140010460
+7: STRING @140187a99: \n# folosim doar varianta silentioasa, cu timeout per aplicatie.\n$win32 = @(%2)\n$uninstKeys = @(\n    'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*',\n    'HKLM:\SOFTWARE\WOW6432Node\Micro
+8: STRING @140192440: https://apis.framelabs.ro
+9:   REF in FUN_1400c7830 @1400c7830
+10:   REF in FUN_1400cbac0 @1400cbac0
+11: STRING @140192680: /api/tweaks/definitions
+12:   REF in FUN_1400cb2c0 @1400cb2c0
+13: STRING @1401927f0: /api/optimization/script
+14:   REF in FUN_1400cabd0 @1400cabd0
+15:   REF in FUN_1400cabd0 @1400cabd0
+16: STRING @140192bc0: /api/update/manifest
+17:   REF in FUN_1400cb500 @1400cb500
+18:   REF in FUN_1400cb500 @1400cb500
+19: STRING @140192c38: /api/integrity/check
+20:   REF in FUN_1400cddb0 @1400cddb0
+21: STRING @1401975c8: schtasks.exe
+22:   REF in FUN_1400d54b0 @1400d54b0
+23:   REF in FUN_1400d54b0 @1400d54b0
+24:   REF in FUN_1400d54b0 @1400d54b0
+25:   REF in FUN_1400d6120 @1400d6120
+26:   REF in FUN_1400d63e0 @1400d63e0
+27:   REF in FUN_1400d65c0 @1400d65c0
+28:   REF in FUN_1400d65c0 @1400d65c0
+29: STRING @140197f10: Software\Microsoft\Windows\CurrentVersion\Run
+30:   REF in FUN_1400dfd00 @1400dfd00
+31:   REF in FUN_1401455d0 @1401455d0
+32:   REF in FUN_1401455d0 @1401455d0
+33:   REF in FUN_1401455d0 @1401455d0
+34:   REF in FUN_1400daf60 @1400daf60
+35: STRING @14019b0e8: powershell.exe
+36:   REF in FUN_1400e0980 @1400e0980
+37:   REF in FUN_1400e0980 @1400e0980
+38:   REF in FUN_1400e0170 @1400e0170
+39:   REF in FUN_1400e0170 @1400e0170
+40: STRING @1401a3d40: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
+41:   REF in FUN_140111720 @140111720
+42:   REF in FUN_140111720 @140111720
+43: STRING @1401a3d80: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run
+44:   REF in FUN_140111720 @140111720
+45:   REF in FUN_140111720 @140111720

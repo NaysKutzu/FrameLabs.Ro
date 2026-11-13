@@ -1,0 +1,262 @@
+Termeni și Condiții – FrameLabs 
+
+FRAMELABS 
+
+Aplicația 
+
+Gameplay 
+
+Cum funcționează 
+
+Calculator FPS 
+
+Recenzii 
+
+Pachete 
+
+Contul meu 
+
+🛒
+
+DISCORD
+
+⬇ DOWNLOAD 
+
+Document Oficial
+
+Termeni și Condiții
+
+Ultima actualizare: 26 Mai 2026
+
+Cuprins
+
+Preambul și acceptare 
+
+Despre serviciile FrameLabs 
+
+Achiziție și plată 
+
+Livrare și activare 
+
+Retragere și rambursări 
+
+Drepturi de utilizare 
+
+Restricții și interdicții 
+
+Cont și HWID Lock 
+
+AI Assistant: reguli 
+
+Limitarea răspunderii 
+
+Date personale (GDPR) 
+
+Modificări 
+
+Legea aplicabilă 
+
+Contact 
+
+Identificarea vânzătorului 
+
+1 Preambul și acceptare
+
+Prezentul document reglementează relația contractuală dintre FrameLabs (denumită în continuare „Compania", „noi", „nouă") și utilizatorul final (denumit în continuare „Clientul", „tu", „dumneavoastră") care accesează, achiziționează sau utilizează aplicația și serviciile oferite prin intermediul site-ului framelabs.ro .
+
+Prin accesarea site-ului, crearea unui cont, achiziționarea unui pachet sau utilizarea oricărui serviciu FrameLabs, declarați că ați citit, ați înțeles și acceptați integral acești Termeni și Condiții. Dacă nu sunteți de acord cu oricare dintre prevederi, vă rugăm să nu utilizați serviciile noastre.
+
+2 Despre serviciile FrameLabs
+
+FrameLabs este o aplicație software pentru Windows destinată optimizării performanței sistemului de operare, reducerii input lag-ului și maximizării FPS-ului în jocuri. Serviciile noastre includ:
+
+aplicația desktop FrameLabs , distribuită exclusiv prin site-ul oficial;
+
+pachete de optimizare cu nivele diferite (Silver, Gold, Diamond);
+
+asistent AI integrat pentru consultanță tehnică legată de aplicație și optimizări;
+
+servicii adiționale precum optimizări BIOS manuale (disponibile exclusiv pentru clienții Diamond+);
+
+suport tehnic prin canalele oficiale Discord.
+
+3 Achiziție și plată
+
+Achizițiile se efectuează exclusiv prin intermediul site-ului oficial framelabs.ro , folosind procesatorii de plată integrați (carduri bancare prin Shopify Payments).
+
+prețurile sunt afișate în lei (RON) și sunt prețuri finale, fără taxe adăugate ulterior;
+
+plata se procesează în momentul finalizării comenzii, iar accesul la pachetul achiziționat este activat automat;
+
+oferim mai multe opțiuni de durată, abonamente lunare (minim 30 de zile) sau pachete Lifetime , care se plătesc o singură dată;
+
+abonamentele lunare se reînnoiesc automat , la același preț, până când le oprești tu. Poți opri reînnoirea oricând din contul tău , iar accesul rămâne activ până la finalul perioadei deja plătite;
+
+orice ofertă promoțională sau reducere afișată pe site este valabilă strict pentru perioada specificată.
+
+Atenție: aplicația poate fi achiziționată exclusiv de pe site-ul oficial. Orice altă sursă (revânzări, link-uri primite în DM, terți) nu este recunoscută oficial, nu beneficiază de suport și poate conține software malițios.
+
+4 Livrare și activare
+
+FrameLabs este un serviciu digital. Livrarea se face automat și imediat după confirmarea plății, prin activarea accesului pe contul de Discord asociat. Nu există livrare fizică.
+
+Prin finalizarea achiziției, Clientul solicită expres începerea executării contractului înainte de expirarea termenului de retragere și recunoaște pierderea dreptului de retragere conform articolului 16, litera m din OUG nr. 34/2014 , odată ce începe utilizarea aplicației sau aplicarea optimizărilor.
+
+5 Retragere și rambursări
+
+FrameLabs este un serviciu digital livrat imediat. Prin finalizarea comenzii, Clientul solicită expres începerea furnizării și confirmă pierderea dreptului de retragere din momentul activării accesului, conform OUG 34/2014, Art. 16, lit. m .
+
+Nu se acordă rambursări pentru răzgândire. Odată activat accesul, achiziția este finală.
+
+Rămân neafectate drepturile prevăzute de lege în situația în care serviciul nu a fost livrat, nu funcționează sau nu corespunde descrierii. În aceste cazuri Clientul ne contactează prin canalele oficiale și remediem problema.
+
+6 Drepturi de utilizare
+
+Prin achiziționarea unui pachet FrameLabs, Clientul primește o licență neexclusivă, netransferabilă și revocabilă de a utiliza aplicația conform pachetului achiziționat, exclusiv în scop personal și pe hardware-ul propriu.
+
+licența este valabilă pe durata abonamentului achiziționat (lunar sau Lifetime);
+
+contul este legat tehnic de hardware-ul Clientului prin sistemul HWID Lock ;
+
+dreptul de proprietate intelectuală asupra aplicației, codului sursă, design-ului și conținutului rămâne integral în proprietatea FrameLabs ;
+
+nu se acordă niciun drept de revânzare, sublicențiere sau redistribuire către terți.
+
+7 Restricții și interdicții
+
+Sunt strict interzise următoarele acțiuni, sub sancțiunea suspendării permanente a contului și a inițierii acțiunilor legale corespunzătoare:
+
+partajarea, vânzarea, închirierea sau cedarea contului către terți (account sharing);
+
+decompilarea, dezasamblarea, modificarea, debugging-ul sau reverse engineering-ul aplicației;
+
+distribuirea de versiuni modificate, crack-uite sau redistribuite ale aplicației;
+
+orice tentativă de ocolire (bypass) a sistemului de autentificare, HWID lock, integrity check sau a verificărilor de tier;
+
+folosirea aplicației în scopuri ilegale, frauduloase sau care încalcă drepturile altor persoane;
+
+utilizarea AI Assistant pentru spam, jailbreak, conținut ofensator sau ilegal.
+
+Anti-Tamper: orice tentativă de crack, modificare, redistribuire sau folosire neautorizată a aplicației va duce la ban permanent definitiv și, după caz, la acțiuni legale în instanță conform legislației privind drepturile de autor și proprietatea intelectuală.
+
+8 Cont și HWID Lock
+
+Accesul la aplicație se face prin autentificare cu cont de Discord. Fiecare cont este legat tehnic de hardware-ul PC-ului prin sistemul HWID Lock, pentru a preveni partajarea.
+
+Clientul este responsabil pentru securitatea contului său de Discord și pentru toate acțiunile efectuate prin acel cont;
+
+în cazul schimbării PC-ului sau a componentelor majore (placa de bază, procesor), Clientul poate solicita migrarea HWID prin ticket oficial pe Discord;
+
+migrarea HWID este aprobată la discreția echipei și poate fi limitată pentru a preveni abuzul.
+
+9 AI Assistant: reguli
+
+AI Assistant integrat este un instrument auxiliar oferit ca beneficiu de pachet și este supus următoarelor reguli:
+
+răspunde exclusiv la întrebări legate de FrameLabs, optimizări Windows și gaming;
+
+numărul de mesaje pe zi este limitat în funcție de pachetul deținut;
+
+nu generează conținut ilegal, ofensator, defăimător sau care încalcă drepturile altor persoane;
+
+sfaturile de setări BIOS sunt oferite exclusiv ca serviciu manual personalizat pentru clienții Diamond+ și nu sunt disponibile prin AI Assistant;
+
+abuzul, spam-ul sau tentativele de jailbreak duc la restricționarea accesului.
+
+10 Limitarea răspunderii
+
+FrameLabs depune toate eforturile pentru a oferi o aplicație stabilă și sigură. Cu toate acestea:
+
+aplicația este oferită „ca atare" (as-is), fără garanții implicite de rezultat absolut;
+
+se recomandă crearea unui punct de restaurare Windows înainte de aplicarea oricărui tweak (opțiune disponibilă direct în app);
+
+FrameLabs nu poate fi tras la răspundere pentru daune indirecte, pierderi de date sau probleme cauzate de incompatibilități hardware/software în afara controlului nostru;
+
+răspunderea maximă a FrameLabs, în orice situație, este limitată la valoarea pachetului achiziționat de Client în ultimele 12 luni.
+
+11 Date personale (GDPR)
+
+FrameLabs colectează și procesează un set minim de date necesare funcționării serviciului:
+
+ID Discord (pentru autentificare și gestionarea pachetului);
+
+HWID anonim (hash criptografic al unor componente, NU date personale identificabile);
+
+adresa IP (procesată tranzitoriu pentru autentificare și protecție anti-fraudă);
+
+date de plată (procesate exclusiv de Shopify Payments, nu stocăm date de card pe serverele noastre).
+
+Datele sunt folosite strict pentru funcționarea serviciului, autentificare, anti-fraudă și suport. Nu vindem și nu transferăm date către terți în scopuri de marketing. Clientul are dreptul de acces, rectificare și ștergere conform GDPR (Regulamentul UE 2016/679) , solicitările se trimit prin canalele oficiale.
+
+12 Modificări
+
+Echipa FrameLabs își rezervă dreptul de a aduce modificări acestor Termeni și Condiții, precum și orice modificări tehnice, funcționale, de design sau de preț aplicației, serviciilor și pachetelor oferite, în orice moment și fără notificare prealabilă.
+
+Continuarea utilizării aplicației după publicarea modificărilor constituie acceptarea tacită a noilor termeni.
+
+13 Legea aplicabilă
+
+Prezentul contract este guvernat de legislația română în vigoare, în special:
+
+OUG nr. 34/2014 , privind drepturile consumatorilor în cadrul contractelor încheiate cu profesioniștii;
+
+Legea nr. 365/2002 , privind comerțul electronic;
+
+Legea nr. 8/1996 , privind dreptul de autor și drepturile conexe;
+
+Regulamentul UE 2016/679 (GDPR) , privind protecția datelor personale.
+
+Orice litigiu se va soluționa, în primul rând, pe cale amiabilă. În caz contrar, competența revine instanțelor judecătorești române.
+
+14 Contact
+
+Pentru orice întrebări, solicitări sau sesizări legate de Termeni și Condiții, ne poți contacta prin:
+
+Discord oficial: canalul open-ticket de pe serverul nostru;
+
+Email: contact@framelabs.ro;
+
+Website: framelabs.ro .
+
+15 Identificarea vânzătorului
+
+Serviciile și aplicația FrameLabs sunt oferite de BTE RIDES S.R.L. , societate cu răspundere limitată, persoană juridică română, cu sediul social în Craiova, str. Negoiu nr. 44, județul Dolj.
+
+număr de ordine în Registrul Comerțului: J2024031539003 ;
+
+cod unic de înregistrare: 50706577 ;
+
+capital social: 500 lei ;
+
+email de contact: contact@framelabs.ro .
+
+Pentru sesizări legate de drepturile consumatorului te poți adresa Autorității Naționale pentru Protecția Consumatorilor ( anpc.ro ), inclusiv pe calea soluționării alternative a litigiilor, ale cărei linkuri le găsești în subsolul site-ului.
+
+Acest document a fost actualizat ultima oară pe 26 Mai 2026 .
+
+© 2026 FrameLabs · Privacy Policy · Acasă 
+
+FRAMELABS.ro 
+Transformăm orice sistem într-o mașinărie de gaming optimizată la milisecundă.
+
+NAVIGARE 
+Servicii 
+Teorie 
+Pachete 
+
+SUPORT Abonamentul meu 
+FAQ 
+Recenzii 
+Contact 
+
+LEGAL 
+Termeni 
+Privacy 
+Date de contact 
+Cookie-uri 
+
+© 2026 FrameLabs. Toate drepturile rezervate.
+
+Dezvoltat pentru performanță.

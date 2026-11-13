@@ -1,0 +1,3309 @@
+STRING @140175da0: powershell.exe
+  REF in FUN_1400d7c60 @1400d7c60
+  REF in FUN_1400675a0 @1400675a0
+  REF in FUN_14007b760 @14007b760
+  REF in FUN_1400a4c90 @1400a4c90
+  REF in FUN_140010460 @140010460
+STRING @140187a99: \n# folosim doar varianta silentioasa, cu timeout per aplicatie.\n$win32 = @(%2)\n$uninstKeys = @(\n    'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*',\n    'HKLM:\SOFTWARE\WOW6432Node\Micro
+STRING @140192440: https://apis.framelabs.ro
+  REF in FUN_1400c7830 @1400c7830
+  REF in FUN_1400cbac0 @1400cbac0
+STRING @140192680: /api/tweaks/definitions
+  REF in FUN_1400cb2c0 @1400cb2c0
+STRING @1401927f0: /api/optimization/script
+  REF in FUN_1400cabd0 @1400cabd0
+  REF in FUN_1400cabd0 @1400cabd0
+STRING @140192bc0: /api/update/manifest
+  REF in FUN_1400cb500 @1400cb500
+  REF in FUN_1400cb500 @1400cb500
+STRING @140192c38: /api/integrity/check
+  REF in FUN_1400cddb0 @1400cddb0
+STRING @1401975c8: schtasks.exe
+  REF in FUN_1400d54b0 @1400d54b0
+  REF in FUN_1400d54b0 @1400d54b0
+  REF in FUN_1400d54b0 @1400d54b0
+  REF in FUN_1400d6120 @1400d6120
+  REF in FUN_1400d63e0 @1400d63e0
+  REF in FUN_1400d65c0 @1400d65c0
+  REF in FUN_1400d65c0 @1400d65c0
+STRING @140197f10: Software\Microsoft\Windows\CurrentVersion\Run
+  REF in FUN_1400dfd00 @1400dfd00
+  REF in FUN_1401455d0 @1401455d0
+  REF in FUN_1401455d0 @1401455d0
+  REF in FUN_1401455d0 @1401455d0
+  REF in FUN_1400daf60 @1400daf60
+STRING @14019b0e8: powershell.exe
+  REF in FUN_1400e0980 @1400e0980
+  REF in FUN_1400e0980 @1400e0980
+  REF in FUN_1400e0170 @1400e0170
+  REF in FUN_1400e0170 @1400e0170
+STRING @1401a3d40: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
+  REF in FUN_140111720 @140111720
+  REF in FUN_140111720 @140111720
+STRING @1401a3d80: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run
+  REF in FUN_140111720 @140111720
+  REF in FUN_140111720 @140111720
+STRING @1401a4908: cmd.exe
+  REF in FUN_140114d60 @140114d60
+
+FUNCTIONS TO DECOMPILE: 22
+
+=== FUN_1400d7c60 @1400d7c60
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+
+bool FUN_1400d7c60(undefined8 param_1)
+
+{
+  int iVar1;
+  bool bVar2;
+  QString *pQVar3;
+  QByteArray *this;
+  char *pcVar4;
+  __int64 _Var5;
+  undefined1 auStackY_138 [32];
+  QChar local_108 [8];
+  QProcess local_100 [16];
+  int *local_f0;
+  wchar_t *local_e8;
+  undefined8 local_e0;
+  QArrayData *local_d8;
+  char *local_d0;
+  QArrayData *local_c8;
+  void *local_c0;
+  undefined8 local_b8;
+  QString local_b0 [24];
+  QString local_98 [32];
+  QString local_78 [24];
+  QString local_60 [24];
+  QString local_48 [24];
+  undefined1 local_30 [24];
+  ulonglong local_18 [2];
+  
+  local_18[0] = DAT_142ea1180 ^ (ulonglong)auStackY_138;
+  QProcess::QProcess(local_100,(QObject *)0x0);
+  QString::QString(local_78,"-NoProfile");
+  QString::QString(local_60,"-NonInteractive");
+  QString::QString(local_48,"-Command");
+  local_f0 = (int *)0x0;
+  local_e8 = 
+  L"if ((Get-DnsClientServerAddress -AddressFamily IPv4 -ErrorAction SilentlyContinue | Select-Object -ExpandProperty ServerAddresses) -contains \'%1\') { \'YES\' }"
+  ;
+  local_e0 = 0x9c;
+  pQVar3 = (QString *)QString::QString(local_98,(QArrayDataPointer<char16_t> *)&local_f0);
+  QChar::QChar(local_108,L' ');
+  QString::arg(pQVar3,local_30,param_1,0);
+  local_c0 = QArrayData::allocate(&local_d8,0x18,8,4,1);
+  local_c8 = local_d8;
+  local_b8 = 0;
+  FUN_1400044f0(&local_c8,local_78,local_18);
+  QString::QString(local_b0,"powershell.exe");
+  QProcess::start(local_100,local_b0,&local_c8,3);
+  QString::~QString(local_b0);
+  FUN_140003e80(&local_c8);
+  _eh_vector_destructor_iterator_(local_78,0x18,4,~QString_exref);
+  QString::~QString(local_98);
+  if (local_f0 != (int *)0x0) {
+    LOCK();
+    iVar1 = *local_f0;
+    *local_f0 = *local_f0 + -1;
+    UNLOCK();
+    if (iVar1 == 1) {
+      free(local_f0);
+    }
+  }
+  bVar2 = QProcess::waitForStarted(local_100,0x9c4);
+  if (bVar2) {
+    bVar2 = QProcess::waitForFinished(local_100,5000);
+    if (bVar2) {
+      this = (QByteArray *)QProcess::readAllStandardOutput(local_100);
+      pcVar4 = QByteArray::begin(this);
+      local_d8 = (QArrayData *)QByteArray::size(this);
+      local_d0 = QByteArrayView::castHelper(pcVar4);
+      QString::fromLocal8Bit(&local_f0,&local_d8);
+      QString::QString(local_b0,"YES");
+      _Var5 = QString::indexOf((QString *)&local_f0,local_b0,0,1);
+      bVar2 = _Var5 != -1;
+      QString::~QString(local_b0);
+      QString::~QString((QString *)&local_f0);
+      QByteArray::~QByteArray((QByteArray *)local_98);
+      goto LAB_1400d7ed4;
+    }
+  }
+  bVar2 = false;
+LAB_1400d7ed4:
+  QProcess::~QProcess(local_100);
+  return bVar2;
+}
+
+
+
+=== FUN_1400675a0 @1400675a0
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_1400675a0(void)
+
+{
+  void *pvVar1;
+  QString *pQVar2;
+  int iVar3;
+  bool bVar4;
+  bool bVar5;
+  QString *pQVar6;
+  undefined8 uVar7;
+  QChar *pQVar8;
+  QDir *this;
+  QByteArray *pQVar9;
+  char *pcVar10;
+  undefined2 *puVar11;
+  QCoreApplication *pQVar12;
+  QSlotObjectBase *pQVar13;
+  void *pvVar14;
+  int *piVar15;
+  undefined1 auStackY_3f8 [32];
+  QChar local_3b8 [16];
+  QSlotObjectBase *local_3a8;
+  char *local_3a0;
+  QSlotObjectBase *local_398;
+  QString *pQStack_390;
+  undefined *local_388;
+  undefined8 local_380;
+  undefined4 uStack_378;
+  undefined4 uStack_374;
+  QMetaTypeInterface *local_370;
+  QString local_368 [24];
+  QProcess local_350 [16];
+  int *local_340;
+  undefined8 uStack_338;
+  undefined8 local_330;
+  int *local_328;
+  undefined8 uStack_320;
+  undefined8 local_318;
+  QString local_310 [24];
+  QString local_2f8 [24];
+  QString local_2e0 [24];
+  QString local_2c8 [24];
+  QString local_2b0 [24];
+  QList<QString> local_298 [24];
+  QList<QString> local_280 [24];
+  QString local_268 [24];
+  QString local_250 [24];
+  QString local_238 [24];
+  QString local_220 [24];
+  QString local_208 [24];
+  QString local_1f0 [24];
+  QString local_1d8 [24];
+  QString local_1c0 [24];
+  QString local_1a8 [24];
+  QString local_190 [24];
+  QString local_178 [24];
+  QString local_160 [24];
+  QString local_148 [24];
+  QString local_130 [24];
+  QString local_118 [24];
+  QString local_100 [24];
+  QString local_e8 [24];
+  QString local_d0 [24];
+  QString local_b8 [24];
+  QString local_a0 [24];
+  QString local_88 [24];
+  QString local_70 [24];
+  QString local_58 [24];
+  QString local_40 [24];
+  ulonglong local_28 [2];
+  
+  local_28[0] = DAT_142ea1180 ^ (ulonglong)auStackY_3f8;
+  piVar15 = (int *)(*(longlong *)((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8) +
+                   0x28);
+  if ((*piVar15 < DAT_142ea91c0) && (FUN_14014c0cc(&DAT_142ea91c0), DAT_142ea91c0 == -1)) {
+    QString::QString(local_268,"Microsoft.549981C3F5F10");
+    QString::QString(local_250,"Microsoft.Windows.Copilot");
+    QString::QString(local_238,"Microsoft.Copilot");
+    QString::QString(local_220,"Microsoft.MicrosoftOfficeHub");
+    QString::QString(local_208,"Microsoft.BingNews");
+    QString::QString(local_1f0,"Microsoft.BingWeather");
+    QString::QString(local_1d8,"Microsoft.GetHelp");
+    QString::QString(local_1c0,"Microsoft.Getstarted");
+    QString::QString(local_1a8,"Microsoft.WindowsFeedbackHub");
+    QString::QString(local_190,"Microsoft.OneDrive");
+    QString::QString(local_178,"MicrosoftTeams");
+    QString::QString(local_160,"Microsoft.OutlookForWindows");
+    QString::QString(local_148,"Clipchamp.Clipchamp");
+    QString::QString(local_130,"Microsoft.MicrosoftSolitaireCollection");
+    QString::QString(local_118,"Microsoft.WindowsMaps");
+    QString::QString(local_100,"Microsoft.People");
+    QString::QString(local_e8,"Microsoft.ZuneMusic");
+    QString::QString(local_d0,"Microsoft.ZuneVideo");
+    QString::QString(local_b8,"Microsoft.YourPhone");
+    QString::QString(local_a0,"MicrosoftCorporationII.MicrosoftFamily");
+    QString::QString(local_88,"Microsoft.Todos");
+    QString::QString(local_70,"Microsoft.PowerAutomateDesktop");
+    QString::QString(local_58,"Microsoft.Windows.Ai.Copilot.Provider");
+    QString::QString(local_40,"MicrosoftWindows.Client.WebExperience");
+    DAT_142ea91b0 = QArrayData::allocate((QArrayData **)&local_3a8,0x18,8,0x18,1);
+    _DAT_142ea91a8 = local_3a8;
+    DAT_142ea91b8 = 0;
+    FUN_1400044f0(&DAT_142ea91a8,local_268,local_28);
+    _eh_vector_destructor_iterator_(local_268,0x18,0x18,~QString_exref);
+    atexit(FUN_140168e00);
+    _Init_thread_footer(&DAT_142ea91c0);
+  }
+  local_328 = (int *)0x0;
+  uStack_320 = 0;
+  local_318 = 0;
+  pvVar1 = (void *)((longlong)DAT_142ea91b0 + DAT_142ea91b8 * 0x18);
+  for (pvVar14 = DAT_142ea91b0; pvVar14 != pvVar1; pvVar14 = (void *)((longlong)pvVar14 + 0x18)) {
+    pQVar6 = (QString *)QString::QString((QString *)&local_380,"\'%1\'");
+    QChar::QChar(local_3b8,L' ');
+    uVar7 = QString::arg(pQVar6,local_368,pvVar14,0);
+    FUN_1400657a0(&local_328,local_318,uVar7);
+    if ((local_328 == (int *)0x0) || (1 < *local_328)) {
+      FUN_140008880(&local_328,0,0);
+    }
+    QString::~QString(local_368);
+    QString::~QString((QString *)&local_380);
+  }
+  QString::QString((QString *)&local_380,",");
+  QString::size((QString *)&local_380);
+  pQVar8 = QString::constData((QString *)&local_380);
+  QtPrivate::QStringList_join(local_280,(QChar *)&local_328,(__int64)pQVar8);
+  QString::~QString((QString *)&local_380);
+  if ((*piVar15 < DAT_142ea91e0) && (FUN_14014c0cc(&DAT_142ea91e0), DAT_142ea91e0 == -1)) {
+    QString::QString(local_268,"Cortana");
+    QString::QString(local_250,"Copilot");
+    QString::QString(local_238,"Microsoft News");
+    QString::QString(local_220,"MSN Weather");
+    QString::QString(local_208,"Get Help");
+    QString::QString(local_1f0,"Feedback Hub");
+    QString::QString(local_1d8,"Microsoft Teams");
+    QString::QString(local_1c0,"Clipchamp");
+    QString::QString(local_1a8,"Microsoft Solitaire");
+    QString::QString(local_190,"Windows Maps");
+    QString::QString(local_178,"Groove Music");
+    QString::QString(local_160,"Movies & TV");
+    QString::QString(local_148,"Phone Link");
+    QString::QString(local_130,"Microsoft To Do");
+    QString::QString(local_118,"Power Automate");
+    QString::QString(local_100,"Microsoft Family");
+    DAT_142ea91d0 = QArrayData::allocate((QArrayData **)&local_3a8,0x18,8,0x10,1);
+    _DAT_142ea91c8 = local_3a8;
+    DAT_142ea91d8 = 0;
+    FUN_1400044f0(&DAT_142ea91c8,local_268,local_e8);
+    _eh_vector_destructor_iterator_(local_268,0x18,0x10,~QString_exref);
+    atexit(FUN_140168e20);
+    _Init_thread_footer(&DAT_142ea91e0);
+  }
+  local_340 = (int *)0x0;
+  uStack_338 = 0;
+  local_330 = 0;
+  pvVar1 = (void *)((longlong)DAT_142ea91d0 + DAT_142ea91d8 * 0x18);
+  for (pvVar14 = DAT_142ea91d0; pvVar14 != pvVar1; pvVar14 = (void *)((longlong)pvVar14 + 0x18)) {
+    pQVar6 = (QString *)QString::QString((QString *)&local_380,"\'%1\'");
+    QChar::QChar(local_3b8,L' ');
+    uVar7 = QString::arg(pQVar6,local_368,pvVar14,0);
+    FUN_1400657a0(&local_340,local_330,uVar7);
+    if ((local_340 == (int *)0x0) || (1 < *local_340)) {
+      FUN_140008880(&local_340,0,0);
+    }
+    QString::~QString(local_368);
+    QString::~QString((QString *)&local_380);
+  }
+  QString::QString((QString *)&local_380,",");
+  QString::size((QString *)&local_380);
+  pQVar8 = QString::constData((QString *)&local_380);
+  QtPrivate::QStringList_join(local_298,(QChar *)&local_340,(__int64)pQVar8);
+  QString::~QString((QString *)&local_380);
+  pQVar6 = (QString *)QString::QString((QString *)&local_398,&DAT_140186970);
+  QChar::QChar(local_3b8,L' ');
+  pQVar6 = (QString *)QString::arg(pQVar6,local_368,local_280,0);
+  QChar::QChar((QChar *)&local_3a8,L' ');
+  QString::arg(pQVar6,local_2b0,local_298,0);
+  QString::~QString(local_368);
+  QString::~QString((QString *)&local_398);
+  pQVar6 = (QString *)QStandardPaths::writableLocation((StandardLocation)&local_380);
+  pQVar6 = QString::operator+=(pQVar6,"/FrameLabs");
+  QString::QString(local_2e0,pQVar6);
+  QString::~QString((QString *)&local_380);
+  pQVar6 = (QString *)QString::QString(local_368);
+  this = (QDir *)QDir::QDir((QDir *)&local_3a8,pQVar6);
+  QDir::mkpath(this,local_2e0);
+  QDir::~QDir((QDir *)&local_3a8);
+  QString::~QString(local_368);
+  FUN_1400541e0(local_2f8,local_2e0,"/bloatware.ps1");
+  QFile::QFile((QFile *)&local_3a8,local_2f8);
+  bVar4 = QFile::open((QFile *)&local_3a8,10);
+  if (bVar4) {
+    pQVar9 = (QByteArray *)QString::toUtf8(local_2b0);
+    QIODevice::write((QIODevice *)&local_3a8,pQVar9);
+    QByteArray::~QByteArray((QByteArray *)local_368);
+    QFile::~QFile((QFile *)&local_3a8);
+    QProcess::QProcess(local_350,(QObject *)0x0);
+    QString::QString((QString *)&local_380,"powershell.exe");
+    QProcess::setProgram(local_350,(QString *)&local_380);
+    QString::~QString((QString *)&local_380);
+    QString::QString(local_268,"-NoProfile");
+    QString::QString(local_250,"-ExecutionPolicy");
+    QString::QString(local_238,"Bypass");
+    QString::QString(local_220,"-WindowStyle");
+    QString::QString(local_208,"Hidden");
+    QString::QString(local_1f0,"-File");
+    QString::QString(local_1d8,local_2f8);
+    pQStack_390 = QArrayData::allocate((QArrayData **)&local_3a8,0x18,8,7,1);
+    local_398 = local_3a8;
+    local_388 = (undefined *)0x0;
+    FUN_1400044f0(&local_398,local_268,local_1c0);
+    QProcess::setArguments(local_350,(QList<QString> *)&local_398);
+    FUN_140003e80(&local_398);
+    _eh_vector_destructor_iterator_(local_268,0x18,7,~QString_exref);
+    QProcess::start(local_350,3);
+    bVar4 = QProcess::waitForStarted(local_350,5000);
+    if (bVar4) {
+      bVar4 = QProcess::waitForFinished(local_350,420000);
+      if (!bVar4) {
+        QProcess::kill(local_350);
+      }
+      pQVar9 = (QByteArray *)QProcess::readAllStandardOutput(local_350);
+      pcVar10 = QByteArray::begin(pQVar9);
+      local_3a8 = (QSlotObjectBase *)QByteArray::size(pQVar9);
+      local_3a0 = QByteArrayView::castHelper(pcVar10);
+      QString::fromUtf8(local_2c8,&local_3a8);
+      QByteArray::~QByteArray((QByteArray *)local_368);
+      QFile::remove(local_2f8);
+      QString::QString(local_310);
+      puVar11 = (undefined2 *)QChar::QChar((QChar *)&local_3a8,'\n');
+      QString::split(local_2c8,&local_398,*puVar11,0);
+      if ((local_398 == (QSlotObjectBase *)0x0) || (1 < *(int *)local_398)) {
+        FUN_140008880(&local_398,0,0,0);
+      }
+      pQVar6 = pQStack_390;
+      if ((local_398 == (QSlotObjectBase *)0x0) || (1 < *(int *)local_398)) {
+        FUN_140008880(&local_398,0,0,0);
+      }
+      pQVar2 = pQStack_390 + (longlong)local_388 * 0x18;
+      for (; pQVar6 != pQVar2; pQVar6 = pQVar6 + 0x18) {
+        QString::QString((QString *)&local_380,"FLBLOAT|");
+        bVar5 = QString::startsWith(pQVar6,(QString *)&local_380,1);
+        QString::~QString((QString *)&local_380);
+        if (bVar5) {
+          pQVar6 = (QString *)QString::trimmed(pQVar6);
+          QString::operator=(local_310,pQVar6);
+          QString::~QString(local_368);
+          break;
+        }
+      }
+      FUN_140003e80(&local_398);
+      if ((!bVar4) && (bVar4 = QString::isEmpty(local_310), bVar4)) {
+        local_398 = (QSlotObjectBase *)0x0;
+        pQStack_390 = (QString *)&DAT_140188120;
+        local_388 = (undefined *)0x33;
+        pQVar6 = (QString *)QString::QString(local_368,(QArrayDataPointer<char16_t> *)&local_398);
+        QString::operator=(local_310,pQVar6);
+        QString::~QString(local_368);
+        if (local_398 != (QSlotObjectBase *)0x0) {
+          LOCK();
+          iVar3 = *(int *)local_398;
+          *(int *)local_398 = *(int *)local_398 + -1;
+          UNLOCK();
+          if (iVar3 == 1) {
+            free(local_398);
+          }
+        }
+      }
+      bVar4 = QString::isEmpty(local_310);
+      if (!bVar4) {
+        QString::QString(local_368,local_310);
+        pQVar12 = QCoreApplication::instance();
+        local_398 = (QSlotObjectBase *)0x0;
+        pQStack_390 = (QString *)0x0;
+        local_388 = &DAT_142ea0ce0;
+        local_380._0_4_ = 0;
+        local_380._4_4_ = 0;
+        uStack_378 = 0;
+        uStack_374 = 0;
+        local_370 = (QMetaTypeInterface *)&DAT_142ea0ce0;
+        pQVar13 = (QSlotObjectBase *)FUN_14014bc60(0x28);
+        local_3a8 = pQVar13;
+        if (pQVar13 == (QSlotObjectBase *)0x0) {
+          pQVar13 = (QSlotObjectBase *)0x0;
+        }
+        else {
+          *(int *)pQVar13 = 1;
+          *(code **)(pQVar13 + 8) = FUN_14006f480;
+          QString::QString((QString *)(pQVar13 + 0x10),local_368);
+        }
+        QMetaObject::invokeMethodImpl
+                  ((QObject *)pQVar12,pQVar13,2,1,(void **)&local_380,(char **)&uStack_378,
+                   &local_370);
+        QString::~QString(local_368);
+      }
+      QString::~QString(local_310);
+      QString::~QString(local_2c8);
+    }
+    else {
+      QFile::remove(local_2f8);
+    }
+    QProcess::~QProcess(local_350);
+  }
+  else {
+    QFile::~QFile((QFile *)&local_3a8);
+  }
+  QString::~QString(local_2f8);
+  QString::~QString(local_2e0);
+  QString::~QString(local_2b0);
+  QString::~QString((QString *)local_298);
+  FUN_140003e80(&local_340);
+  QString::~QString((QString *)local_280);
+  FUN_140003e80(&local_328);
+  return;
+}
+
+
+
+=== FUN_14007b760 @14007b760
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+
+void FUN_14007b760(longlong param_1)
+
+{
+  bool bVar1;
+  int iVar2;
+  undefined8 uVar3;
+  QString *pQVar4;
+  QDir *this;
+  QUuid *this_00;
+  QString *pQVar5;
+  undefined2 *puVar6;
+  __int64 _Var7;
+  QChar *pQVar8;
+  __int64 _Var9;
+  QByteArray *pQVar10;
+  void *pvVar11;
+  QString *pQVar12;
+  double dVar13;
+  undefined1 auStackY_218 [32];
+  __int64 local_1e8;
+  QChar *local_1e0;
+  QArrayData *local_1d8;
+  char *local_1d0;
+  QProcess local_1c8 [16];
+  QString local_1b8 [24];
+  QString local_1a0 [8];
+  __int64 local_198;
+  QChar *local_190;
+  QString local_188 [24];
+  QString local_170 [24];
+  undefined1 local_158 [8];
+  __int64 local_150;
+  QChar *local_148;
+  QString local_140 [24];
+  QString local_128 [24];
+  QArrayData *local_110;
+  void *local_108;
+  longlong local_100;
+  QString local_f8 [24];
+  QString local_e0 [24];
+  QString local_c8 [24];
+  QString local_b0 [24];
+  QString local_98 [24];
+  QString local_80 [24];
+  QString local_68 [24];
+  QString local_50 [8];
+  undefined1 *local_48;
+  QString *local_40;
+  undefined8 local_38;
+  ulonglong local_30;
+  
+  local_30 = DAT_142ea1180 ^ (ulonglong)auStackY_218;
+  uVar3 = FUN_1400c5f80();
+  dVar13 = (double)FUN_1400c68f0(uVar3);
+  if (DAT_140175ee0 <= dVar13 + DAT_140183fa0) {
+    pQVar12 = (QString *)(param_1 + 0x70);
+    bVar1 = QString::isEmpty(pQVar12);
+    if (bVar1) {
+      return;
+    }
+    uVar3 = QString::QString((QString *)&local_48,
+                             "\n$ErrorActionPreference = \'SilentlyContinue\'\n$adapters = Get-NetAdapter | Where-Object { $_.Status -eq \'Up\' }\nforeach ($a in $adapters) {\n    Set-DnsClientServerAddress -InterfaceIndex $a.ifIndex -ServerAddresses (\'%1\',\'%2\')\n}\n"
+                            );
+    FUN_14001f580(uVar3,local_128,pQVar12,param_1 + 0x88);
+    QString::~QString((QString *)&local_48);
+    pQVar4 = (QString *)QStandardPaths::writableLocation((StandardLocation)local_1a0);
+    pQVar4 = QString::operator+=(pQVar4,"/FrameLabs");
+    QString::QString(local_170,pQVar4);
+    QString::~QString(local_1a0);
+    pQVar4 = (QString *)QString::QString((QString *)&local_48);
+    this = (QDir *)QDir::QDir((QDir *)&local_1d8,pQVar4);
+    QDir::mkpath(this,local_170);
+    QDir::~QDir((QDir *)&local_1d8);
+    QString::~QString((QString *)&local_48);
+    pQVar4 = (QString *)QString::QString(local_1b8,"%1/dns_apply_%2.ps1");
+    this_00 = (QUuid *)QUuid::createUuid();
+    pQVar5 = (QString *)QUuid::toString(this_00,(StringFormat)local_140);
+    puVar6 = (undefined2 *)QChar::QChar((QChar *)&local_1d8,'-');
+    pQVar5 = QString::remove(pQVar5,*puVar6,1);
+    _Var7 = QString::size(pQVar4);
+    pQVar8 = QString::begin(pQVar4);
+    _Var9 = QString::size(pQVar5);
+    local_190 = QString::begin(pQVar5);
+    local_1a0[0] = (QString)0x2;
+    local_198 = _Var9;
+    _Var9 = QString::size(local_170);
+    local_148 = QString::begin(local_170);
+    local_158[0] = 2;
+    local_48 = local_158;
+    local_40 = local_1a0;
+    local_38 = 0;
+    local_1e8 = _Var7;
+    local_1e0 = pQVar8;
+    local_150 = _Var9;
+    QtPrivate::argToQString(local_188,&local_1e8,2,&local_48);
+    QString::~QString(local_140);
+    QString::~QString(local_1b8);
+    QFile::QFile((QFile *)&local_1e8,local_188);
+    bVar1 = QFile::open((QFile *)&local_1e8,10);
+    if (bVar1) {
+      pQVar10 = (QByteArray *)QString::toUtf8(local_128);
+      QIODevice::write((QIODevice *)&local_1e8,pQVar10);
+      QByteArray::~QByteArray((QByteArray *)&local_48);
+      QFile::~QFile((QFile *)&local_1e8);
+      QProcess::QProcess(local_1c8,(QObject *)0x0);
+      QString::QString((QString *)&local_48,"powershell.exe");
+      QProcess::setProgram(local_1c8,(QString *)&local_48);
+      QString::~QString((QString *)&local_48);
+      QString::QString(local_f8,"-NoProfile");
+      QString::QString(local_e0,"-ExecutionPolicy");
+      QString::QString(local_c8,"Bypass");
+      QString::QString(local_b0,"-WindowStyle");
+      QString::QString(local_98,"Hidden");
+      QString::QString(local_80,"-File");
+      QString::QString(local_68,local_188);
+      pvVar11 = QArrayData::allocate(&local_1d8,0x18,8,7,1);
+      local_110 = local_1d8;
+      local_100 = 0;
+      pQVar4 = local_f8;
+      local_108 = pvVar11;
+      do {
+        QString::QString((QString *)((longlong)pvVar11 + local_100 * 0x18),pQVar4);
+        pQVar4 = pQVar4 + 0x18;
+        local_100 = local_100 + 1;
+      } while (pQVar4 < local_50);
+      QProcess::setArguments(local_1c8,(QList<QString> *)&local_110);
+      FUN_140003e80(&local_110);
+      _eh_vector_destructor_iterator_(local_f8,0x18,7,~QString_exref);
+      QProcess::start(local_1c8,3);
+      QProcess::waitForFinished(local_1c8,30000);
+      QFile::remove(local_188);
+      iVar2 = QProcess::exitCode(local_1c8);
+      if (iVar2 == 0) {
+        local_1e8 = QByteArrayView::lengthHelperCharArray("DNS setat: %1 / %2",0x13);
+        local_1e0 = (QChar *)QByteArrayView::castHelper("DNS setat: %1 / %2");
+        uVar3 = QString::fromUtf8(local_140,&local_1e8);
+        uVar3 = FUN_14001f580(uVar3,local_1b8,pQVar12,param_1 + 0x88);
+        FUN_1400353b0(uVar3,1);
+        QString::~QString(local_1b8);
+        pQVar12 = local_140;
+      }
+      else {
+        local_1e8 = QByteArrayView::lengthHelperCharArray("Eroare la setarea DNS.",0x17);
+        local_1e0 = (QChar *)QByteArrayView::castHelper("Eroare la setarea DNS.");
+        uVar3 = QString::fromUtf8(local_1b8,&local_1e8);
+        FUN_1400353b0(uVar3,2);
+        pQVar12 = local_1b8;
+      }
+      QString::~QString(pQVar12);
+      QProcess::~QProcess(local_1c8);
+    }
+    else {
+      local_1d8 = (QArrayData *)
+                  QByteArrayView::lengthHelperCharArray("Nu am putut scrie scriptul DNS.",0x20);
+      local_1d0 = QByteArrayView::castHelper("Nu am putut scrie scriptul DNS.");
+      uVar3 = QString::fromUtf8(local_1b8,&local_1d8);
+      FUN_1400353b0(uVar3,2);
+      QString::~QString(local_1b8);
+      QFile::~QFile((QFile *)&local_1e8);
+    }
+    QString::~QString(local_188);
+    QString::~QString(local_170);
+    pQVar12 = local_128;
+  }
+  else {
+    local_1e8 = QByteArrayView::lengthHelperCharArray(&DAT_140189320,0x2d);
+    local_1e0 = (QChar *)QByteArrayView::castHelper(&DAT_140189320);
+    uVar3 = QString::fromUtf8(&local_48,&local_1e8);
+    FUN_1400353b0(uVar3,0);
+    pQVar12 = (QString *)&local_48;
+  }
+  QString::~QString(pQVar12);
+  return;
+}
+
+
+
+=== FUN_1400a4c90 @1400a4c90
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+
+bool FUN_1400a4c90(QString *param_1,QString *param_2,int param_3)
+
+{
+  char *pcVar1;
+  bool bVar2;
+  int iVar3;
+  QString *pQVar4;
+  QDir *this;
+  void *pvVar5;
+  QByteArray *pQVar6;
+  undefined1 auStackY_198 [32];
+  undefined8 local_168;
+  QProcess local_158 [16];
+  undefined *local_148;
+  void *local_140;
+  undefined8 local_138;
+  QString local_128 [24];
+  QString local_110 [24];
+  QString local_f8 [32];
+  QString local_d8 [24];
+  QString local_c0 [24];
+  QString local_a8 [24];
+  QString local_90 [24];
+  QString local_78 [24];
+  QString local_60 [24];
+  QString local_48 [24];
+  undefined1 local_30 [8];
+  ulonglong local_28;
+  
+  local_28 = DAT_142ea1180 ^ (ulonglong)auStackY_198;
+  local_168._0_4_ = 0;
+  pQVar4 = (QString *)QStandardPaths::writableLocation((StandardLocation)local_128);
+  pQVar4 = QString::operator+=(pQVar4,"/FrameLabs");
+  QString::QString(local_f8,pQVar4);
+  QString::~QString(local_128);
+  pQVar4 = (QString *)QString::QString(local_128);
+  this = (QDir *)QDir::QDir((QDir *)&local_168,pQVar4);
+  QDir::mkpath(this,local_f8);
+  QDir::~QDir((QDir *)&local_168);
+  QString::~QString(local_128);
+  QString::QString(local_128,local_f8);
+  local_168._0_4_ = 3;
+  pvVar5 = (void *)0x0;
+  do {
+    local_140 = (void *)((longlong)pvVar5 + 1);
+    pcVar1 = (char *)((longlong)pvVar5 + 0x14018df3d);
+    pvVar5 = local_140;
+  } while (*pcVar1 != '\0');
+  local_148 = &DAT_14018df3c;
+  QString::append(local_128,&local_148);
+  pQVar4 = QString::append(local_128,param_1);
+  QString::QString(local_110,pQVar4);
+  QString::~QString(local_128);
+  QFile::QFile((QFile *)&local_168,local_110);
+  bVar2 = QFile::open((QFile *)&local_168,10);
+  if (!bVar2) {
+    QFile::~QFile((QFile *)&local_168);
+    bVar2 = false;
+    goto LAB_1400a4fc6;
+  }
+  pQVar6 = (QByteArray *)QString::toUtf8(param_2);
+  QIODevice::write((QIODevice *)&local_168,pQVar6);
+  QByteArray::~QByteArray((QByteArray *)&local_148);
+  QFile::~QFile((QFile *)&local_168);
+  QProcess::QProcess(local_158,(QObject *)0x0);
+  QString::QString(local_128,"powershell.exe");
+  QProcess::setProgram(local_158,local_128);
+  QString::~QString(local_128);
+  QString::QString(local_d8,"-NoProfile");
+  QString::QString(local_c0,"-ExecutionPolicy");
+  QString::QString(local_a8,"Bypass");
+  QString::QString(local_90,"-WindowStyle");
+  QString::QString(local_78,"Hidden");
+  QString::QString(local_60,"-File");
+  QString::QString(local_48,local_110);
+  local_140 = QArrayData::allocate((QArrayData **)&local_168,0x18,8,7,1);
+  local_148 = (undefined *)CONCAT44(local_168._4_4_,(undefined4)local_168);
+  local_138 = 0;
+  FUN_1400044f0(&local_148,local_d8,local_30);
+  QProcess::setArguments(local_158,(QList<QString> *)&local_148);
+  FUN_140003e80(&local_148);
+  _eh_vector_destructor_iterator_(local_d8,0x18,7,~QString_exref);
+  QProcess::start(local_158,3);
+  bVar2 = QProcess::waitForStarted(local_158,5000);
+  if (bVar2) {
+    bVar2 = QProcess::waitForFinished(local_158,param_3);
+    if (!bVar2) {
+      QProcess::kill(local_158);
+      goto LAB_1400a4f92;
+    }
+    QFile::remove(local_110);
+    iVar3 = QProcess::exitCode(local_158);
+    bVar2 = iVar3 == 0;
+  }
+  else {
+LAB_1400a4f92:
+    QFile::remove(local_110);
+    bVar2 = false;
+  }
+  QProcess::~QProcess(local_158);
+LAB_1400a4fc6:
+  QString::~QString(local_110);
+  QString::~QString(local_f8);
+  return bVar2;
+}
+
+
+
+=== FUN_140010460 @140010460
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+
+int FUN_140010460(longlong param_1)
+
+{
+  bool bVar1;
+  int iVar2;
+  QString *pQVar3;
+  QDir *this;
+  QString *this_00;
+  QUuid *this_01;
+  QString *pQVar4;
+  undefined2 *puVar5;
+  __int64 _Var6;
+  QChar *pQVar7;
+  __int64 _Var8;
+  void *pvVar9;
+  QByteArray *pQVar10;
+  QString *this_02;
+  int iVar11;
+  undefined1 auStackY_228 [32];
+  QProcess local_1f8 [16];
+  QDir local_1e8 [8];
+  QArrayData *local_1e0;
+  void *local_1d8;
+  QChar *local_1d0;
+  QFile local_1c8 [16];
+  QArrayData *local_1b8;
+  QString local_1b0 [24];
+  QString local_198 [32];
+  __int64 local_178;
+  QChar *local_170;
+  undefined1 local_168 [8];
+  __int64 local_160;
+  QChar *local_158;
+  QString local_150 [24];
+  QString local_138 [24];
+  QString local_120 [40];
+  QString local_f8 [24];
+  QString local_e0 [24];
+  QString local_c8 [24];
+  QString local_b0 [24];
+  QString local_98 [24];
+  QString local_80 [24];
+  QString local_68 [24];
+  undefined1 local_50 [8];
+  QArrayData **local_48;
+  undefined1 *local_40;
+  undefined8 local_38;
+  ulonglong local_30;
+  
+  local_30 = DAT_142ea1180 ^ (ulonglong)auStackY_228;
+  pQVar3 = (QString *)QStandardPaths::writableLocation((StandardLocation)local_150);
+  pQVar3 = QString::operator+=(pQVar3,"/FrameLabs");
+  QString::QString(local_198,pQVar3);
+  QString::~QString(local_150);
+  pQVar3 = (QString *)QString::QString((QString *)&local_48);
+  this = (QDir *)QDir::QDir(local_1e8,pQVar3);
+  QDir::mkpath(this,local_198);
+  QDir::~QDir(local_1e8);
+  QString::~QString((QString *)&local_48);
+  iVar11 = 0;
+  this_02 = *(QString **)(param_1 + 8);
+  pQVar3 = this_02 + *(longlong *)(param_1 + 0x10) * 0x18;
+  for (; this_02 != pQVar3; this_02 = this_02 + 0x18) {
+    this_00 = (QString *)QString::QString(local_120,"%1/repair_%2.ps1");
+    this_01 = (QUuid *)QUuid::createUuid();
+    pQVar4 = (QString *)QUuid::toString(this_01,(StringFormat)local_138);
+    puVar5 = (undefined2 *)QChar::QChar((QChar *)local_1e8,'-');
+    pQVar4 = QString::remove(pQVar4,*puVar5,1);
+    _Var6 = QString::size(this_00);
+    pQVar7 = QString::begin(this_00);
+    _Var8 = QString::size(pQVar4);
+    local_158 = QString::begin(pQVar4);
+    local_168[0] = 2;
+    local_160 = _Var8;
+    pvVar9 = (void *)QString::size(local_198);
+    local_1d0 = QString::begin(local_198);
+    local_1e0 = (QArrayData *)CONCAT71(local_1e0._1_7_,2);
+    local_48 = &local_1e0;
+    local_40 = local_168;
+    local_38 = 0;
+    local_1d8 = pvVar9;
+    local_178 = _Var6;
+    local_170 = pQVar7;
+    QtPrivate::argToQString(local_1b0,&local_178,2,&local_48);
+    QString::~QString(local_138);
+    QString::~QString(local_120);
+    QFile::QFile(local_1c8,local_1b0);
+    bVar1 = QFile::open(local_1c8,10);
+    if (bVar1) {
+      pQVar10 = (QByteArray *)QString::toUtf8(this_02);
+      QIODevice::write((QIODevice *)local_1c8,pQVar10);
+      QByteArray::~QByteArray((QByteArray *)&local_48);
+      QFile::~QFile(local_1c8);
+      QProcess::QProcess(local_1f8,(QObject *)0x0);
+      QString::QString((QString *)&local_48,"powershell.exe");
+      QProcess::setProgram(local_1f8,(QString *)&local_48);
+      QString::~QString((QString *)&local_48);
+      QString::QString(local_f8,"-NoProfile");
+      QString::QString(local_e0,"-ExecutionPolicy");
+      QString::QString(local_c8,"Bypass");
+      QString::QString(local_b0,"-WindowStyle");
+      QString::QString(local_98,"Hidden");
+      QString::QString(local_80,"-File");
+      QString::QString(local_68,local_1b0);
+      local_1d8 = QArrayData::allocate(&local_1b8,0x18,8,7,1);
+      local_1e0 = local_1b8;
+      local_1d0 = (QChar *)0x0;
+      FUN_1400044f0(&local_1e0,local_f8,local_50);
+      QProcess::setArguments(local_1f8,(QList<QString> *)&local_1e0);
+      FUN_140003e80(&local_1e0);
+      _eh_vector_destructor_iterator_(local_f8,0x18,7,~QString_exref);
+      QProcess::start(local_1f8,3);
+      bVar1 = QProcess::waitForStarted(local_1f8,5000);
+      if (bVar1) {
+        bVar1 = QProcess::waitForFinished(local_1f8,60000);
+        if (bVar1) {
+          iVar2 = QProcess::exitCode(local_1f8);
+          if (iVar2 == 0) {
+            iVar11 = iVar11 + 1;
+          }
+        }
+        else {
+          QProcess::kill(local_1f8);
+        }
+      }
+      QFile::remove(local_1b0);
+      QProcess::~QProcess(local_1f8);
+    }
+    else {
+      QFile::~QFile(local_1c8);
+    }
+    QString::~QString(local_1b0);
+  }
+  QString::~QString(local_198);
+  return iVar11;
+}
+
+
+
+=== FUN_1400c7830 @1400c7830
+
+QObject * FUN_1400c7830(QObject *param_1,QObject *param_2)
+
+{
+  QNetworkAccessManager *this;
+  
+  QObject::QObject(param_1,param_2);
+  *(undefined ***)param_1 = fl::services::BackendApiService::vftable;
+  this = (QNetworkAccessManager *)FUN_14014bc60(0x10);
+  if (this == (QNetworkAccessManager *)0x0) {
+    this = (QNetworkAccessManager *)0x0;
+  }
+  else {
+    QNetworkAccessManager::QNetworkAccessManager(this,param_1);
+    *(undefined ***)this = QNetworkAccessManager::vftable;
+  }
+  *(QNetworkAccessManager **)(param_1 + 0x10) = this;
+  QString::QString((QString *)(param_1 + 0x18),"https://apis.framelabs.ro");
+  return param_1;
+}
+
+
+
+=== FUN_1400cbac0 @1400cbac0
+
+undefined8 * FUN_1400cbac0(void)
+
+{
+  QObject *this;
+  QNetworkAccessManager *this_00;
+  
+  if (*(int *)(*(longlong *)((longlong)ThreadLocalStoragePointer + (ulonglong)_tls_index * 8) + 0x28
+              ) < DAT_142ea92d0) {
+    FUN_14014c0cc(&DAT_142ea92d0);
+    if (DAT_142ea92d0 == -1) {
+      this = (QObject *)FUN_14014bc60(0x30);
+      if (this == (QObject *)0x0) {
+        this = (QObject *)0x0;
+      }
+      else {
+        QObject::QObject(this,(QObject *)0x0);
+        *(undefined ***)this = fl::services::BackendApiService::vftable;
+        this_00 = (QNetworkAccessManager *)FUN_14014bc60(0x10);
+        if (this_00 == (QNetworkAccessManager *)0x0) {
+          this_00 = (QNetworkAccessManager *)0x0;
+        }
+        else {
+          QNetworkAccessManager::QNetworkAccessManager(this_00,this);
+          *(undefined ***)this_00 = QNetworkAccessManager::vftable;
+        }
+        *(QNetworkAccessManager **)(this + 0x10) = this_00;
+        QString::QString((QString *)(this + 0x18),"https://apis.framelabs.ro");
+      }
+      DAT_142ea92c8 = (undefined8 *)this;
+      _Init_thread_footer(&DAT_142ea92d0);
+      return DAT_142ea92c8;
+    }
+  }
+  return DAT_142ea92c8;
+}
+
+
+
+=== FUN_1400cb2c0 @1400cb2c0
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+
+void FUN_1400cb2c0(undefined8 param_1,QString *param_2,QString *param_3)
+
+{
+  QRandomGenerator64 *this;
+  QByteArray *pQVar1;
+  char *pcVar2;
+  undefined1 auStack_1f8 [32];
+  undefined ***local_1d8;
+  undefined4 local_1d0;
+  QJsonObject local_1c8 [16];
+  QString *local_1b8;
+  char *local_1b0;
+  QByteArray local_1a8 [24];
+  undefined ***local_190;
+  QString local_188 [24];
+  undefined **local_170;
+  undefined8 local_168;
+  undefined ***local_138;
+  undefined **local_130;
+  undefined8 local_128;
+  undefined ***local_f8;
+  QByteArray local_f0 [24];
+  QString local_d8 [24];
+  QJsonValue local_c0 [24];
+  QString local_a8 [24];
+  QJsonValue local_90 [24];
+  QString local_78 [24];
+  QJsonValue local_60 [24];
+  char local_48 [16];
+  ulonglong local_38;
+  
+  local_38 = DAT_142ea1180 ^ (ulonglong)auStack_1f8;
+  this = QRandomGenerator64::system();
+  QRandomGenerator::_fillRange((QRandomGenerator *)this,local_48,4);
+  pQVar1 = (QByteArray *)QByteArray::QByteArray(local_f0,local_48,0x10);
+  pQVar1 = (QByteArray *)QByteArray::toHex(pQVar1,(char)local_1a8);
+  pcVar2 = QByteArray::begin(pQVar1);
+  local_1b8 = (QString *)QByteArray::size(pQVar1);
+  local_1b0 = QByteArrayView::castHelper(pcVar2);
+  QString::fromLatin1(local_188,&local_1b8);
+  QByteArray::~QByteArray(local_1a8);
+  QByteArray::~QByteArray(local_f0);
+  QString::QString(local_d8,"token");
+  QJsonValue::QJsonValue(local_c0,param_2);
+  QString::QString(local_a8,"hwid_sha256");
+  QJsonValue::QJsonValue(local_90,param_3);
+  QString::QString(local_78,"nonce");
+  QJsonValue::QJsonValue(local_60,local_188);
+  local_1b8 = local_d8;
+  local_1b0 = local_48;
+  QJsonObject::QJsonObject(local_1c8,&local_1b8);
+  _eh_vector_destructor_iterator_(local_d8,0x30,3,FUN_14009d490);
+  local_190 = &local_170;
+  local_170 = std::
+              _Func_impl_no_alloc<`public:_void___cdecl_fl::services::BackendApiService::fetchTweakDefinitions(QString_const&___ptr64,QString_const&___ptr64)___ptr64'::`2'::<lambda_2>,void,QString_const&___ptr64>
+              ::vftable;
+  local_138 = &local_170;
+  local_1b8 = (QString *)&local_130;
+  local_130 = std::
+              _Func_impl_no_alloc<`public:_void___cdecl_fl::services::BackendApiService::fetchTweakDefinitions(QString_const&___ptr64,QString_const&___ptr64)___ptr64'::`2'::<lambda_1>,void,QJsonObject_const&___ptr64>
+              ::vftable;
+  local_f8 = &local_130;
+  local_168 = param_1;
+  local_128 = param_1;
+  QString::QString((QString *)local_1a8,"/api/tweaks/definitions");
+  local_1d0 = 0;
+  local_1d8 = &local_170;
+  FUN_1400cc620(param_1,local_1a8,local_1c8,&local_130);
+  QString::~QString((QString *)local_1a8);
+  QJsonObject::~QJsonObject(local_1c8);
+  QString::~QString(local_188);
+  return;
+}
+
+
+
+=== FUN_1400cabd0 @1400cabd0
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+
+void FUN_1400cabd0(void **param_1,QString *param_2,QString *param_3,QString *param_4)
+
+{
+  QNetworkAccessManager *this;
+  longlong lVar1;
+  code *pcVar2;
+  QRandomGenerator64 *this_00;
+  QByteArray *pQVar3;
+  char *pcVar4;
+  ulonglong uVar5;
+  QUrl *pQVar6;
+  QString *pQVar7;
+  QJsonDocument *this_01;
+  QNetworkReply *pQVar8;
+  undefined4 *puVar9;
+  undefined1 auStackY_248 [32];
+  uint in_stack_fffffffffffffdec;
+  QNetworkRequest local_1f8 [8];
+  undefined4 local_1f0 [2];
+  undefined8 local_1e8;
+  char *pcStack_1e0;
+  QJsonObject local_1c8 [16];
+  undefined4 local_1b8;
+  undefined4 uStack_1b4;
+  undefined4 uStack_1b0;
+  undefined4 uStack_1ac;
+  QUrl local_198 [8];
+  QObject local_190 [8];
+  QByteArray local_188 [24];
+  QString local_170 [24];
+  QVariant local_158 [32];
+  QVariant local_138 [32];
+  QString local_118 [24];
+  QJsonValue local_100 [24];
+  QString local_e8 [24];
+  QJsonValue local_d0 [24];
+  QString local_b8 [24];
+  QJsonValue local_a0 [24];
+  QString local_88 [24];
+  QJsonValue local_70 [24];
+  char local_58 [8];
+  ulonglong local_50;
+  
+  local_50 = DAT_142ea1180 ^ (ulonglong)auStackY_248;
+  local_1f0[0] = 0;
+  this_00 = QRandomGenerator64::system();
+  QRandomGenerator::_fillRange((QRandomGenerator *)this_00,local_58,2);
+  pQVar3 = (QByteArray *)QByteArray::QByteArray((QByteArray *)&local_1b8,local_58,8);
+  pQVar3 = (QByteArray *)QByteArray::toHex(pQVar3,(char)local_188);
+  pcVar4 = QByteArray::begin(pQVar3);
+  local_1e8 = (char *)QByteArray::size(pQVar3);
+  pcStack_1e0 = QByteArrayView::castHelper(pcVar4);
+  QString::fromLatin1(local_170,&local_1e8);
+  QByteArray::~QByteArray(local_188);
+  QByteArray::~QByteArray((QByteArray *)&local_1b8);
+  QString::QString(local_118,"token");
+  QJsonValue::QJsonValue(local_100,param_2);
+  QString::QString(local_e8,"package");
+  QJsonValue::QJsonValue(local_d0,param_3);
+  QString::QString(local_b8,"nonce");
+  QJsonValue::QJsonValue(local_a0,local_170);
+  QString::QString(local_88,"hwid_sha256");
+  QJsonValue::QJsonValue(local_70,param_4);
+  local_1e8 = (char *)local_118;
+  pcStack_1e0 = local_58;
+  QJsonObject::QJsonObject(local_1c8,&local_1e8);
+  _eh_vector_destructor_iterator_(local_118,0x30,4,FUN_14009d490);
+  QString::QString((QString *)local_188,(QString *)(param_1 + 3));
+  local_1f0[0] = 3;
+  uVar5 = 0;
+  do {
+    pcStack_1e0 = (char *)(uVar5 + 1);
+    lVar1 = uVar5 + 1;
+    uVar5 = (ulonglong)pcStack_1e0;
+  } while ("/api/optimization/script"[lVar1] != '\0');
+  local_1e8 = "/api/optimization/script";
+  QString::append((QString *)local_188,&local_1e8);
+  pQVar6 = (QUrl *)QUrl::QUrl(local_198,(QString *)local_188,0);
+  QNetworkRequest::QNetworkRequest(local_1f8,pQVar6);
+  QUrl::~QUrl(local_198);
+  QString::~QString((QString *)local_188);
+  QNetworkRequest::setTransferTimeout(local_1f8,60000);
+  QVariant::QVariant(local_158,"application/json");
+  QNetworkRequest::setHeader(local_1f8,0,local_158);
+  QVariant::~QVariant(local_158);
+  pQVar7 = (QString *)QString::QString((QString *)local_158,"FrameLabs/4.0 (Cpp; Qt%1)");
+  QChar::QChar((QChar *)local_1f0,L' ');
+  QString::QString((QString *)&local_1b8,"6.8.3");
+  pQVar7 = (QString *)QString::arg(pQVar7,&local_1e8,&local_1b8,0);
+  QVariant::QVariant(local_138,pQVar7);
+  QNetworkRequest::setHeader(local_1f8,7,local_138);
+  QVariant::~QVariant(local_138);
+  QString::~QString((QString *)&local_1e8);
+  QString::~QString((QString *)&local_1b8);
+  QString::~QString((QString *)local_158);
+  this = param_1[2];
+  this_01 = (QJsonDocument *)QJsonDocument::QJsonDocument((QJsonDocument *)local_1f0,local_1c8);
+  pQVar3 = (QByteArray *)QJsonDocument::toJson(this_01,(JsonFormat)local_158);
+  pQVar8 = QNetworkAccessManager::post(this,local_1f8,pQVar3);
+  QByteArray::~QByteArray((QByteArray *)local_158);
+  QJsonDocument::~QJsonDocument((QJsonDocument *)local_1f0);
+  local_1e8 = (char *)finished_exref;
+  pcVar2 = (code *)local_1e8;
+  uStack_1ac = (undefined4)((ulonglong)pcStack_1e0 >> 0x20);
+  pcStack_1e0 = (char *)((ulonglong)pcStack_1e0 & 0xffffffff00000000);
+  local_1e8._0_4_ = SUB84(finished_exref,0);
+  local_1e8._4_4_ = (undefined4)((ulonglong)finished_exref >> 0x20);
+  local_1b8 = (undefined4)local_1e8;
+  uStack_1b4 = local_1e8._4_4_;
+  uStack_1b0 = 0;
+  local_1e8 = (char *)pcVar2;
+  local_1e8 = (char *)FUN_14014bc60(0x20);
+  if (local_1e8 == (char *)0x0) {
+    puVar9 = (undefined4 *)0x0;
+  }
+  else {
+    *(undefined4 *)local_1e8 = 1;
+    *(code **)((longlong)local_1e8 + 8) = FUN_1400cb990;
+    *(void ***)((longlong)local_1e8 + 0x10) = param_1;
+    *(QNetworkReply **)((longlong)local_1e8 + 0x18) = pQVar8;
+    puVar9 = (undefined4 *)local_1e8;
+  }
+  QObject::connectImpl
+            (local_190,(void **)pQVar8,(QObject *)&local_1b8,param_1,(QSlotObjectBase *)0x0,
+             (ConnectionType)puVar9,(int *)((ulonglong)in_stack_fffffffffffffdec << 0x20),
+             (QMetaObject *)0x0);
+  QMetaObject::Connection::~Connection((Connection *)local_190);
+  QNetworkRequest::~QNetworkRequest(local_1f8);
+  QJsonObject::~QJsonObject(local_1c8);
+  QString::~QString(local_170);
+  return;
+}
+
+
+
+=== FUN_1400cb500 @1400cb500
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+
+void FUN_1400cb500(void **param_1)
+
+{
+  longlong lVar1;
+  code *pcVar2;
+  ulonglong uVar3;
+  QUrl *pQVar4;
+  QString *pQVar5;
+  QNetworkReply *pQVar6;
+  undefined4 *puVar7;
+  undefined1 auStackY_128 [32];
+  uint in_stack_ffffffffffffff0c;
+  undefined4 local_d8 [2];
+  QNetworkRequest local_d0 [8];
+  undefined8 local_c8;
+  ulonglong uStack_c0;
+  QUrl local_a8 [16];
+  undefined4 local_98;
+  undefined4 uStack_94;
+  undefined4 uStack_90;
+  undefined4 uStack_8c;
+  QString local_78 [24];
+  QString local_60 [24];
+  QVariant local_48 [32];
+  ulonglong local_28;
+  
+  local_28 = DAT_142ea1180 ^ (ulonglong)auStackY_128;
+  local_d8[0] = 0;
+  QString::QString(local_78,(QString *)(param_1 + 3));
+  local_d8[0] = 1;
+  uVar3 = 0;
+  do {
+    uStack_c0 = uVar3 + 1;
+    lVar1 = uVar3 + 1;
+    uVar3 = uStack_c0;
+  } while ("/api/update/manifest"[lVar1] != '\0');
+  local_c8 = "/api/update/manifest";
+  QString::append(local_78,&local_c8);
+  pQVar4 = (QUrl *)QUrl::QUrl(local_a8,local_78,0);
+  QNetworkRequest::QNetworkRequest(local_d0,pQVar4);
+  QUrl::~QUrl(local_a8);
+  QString::~QString(local_78);
+  pQVar5 = (QString *)QString::QString(local_60,"FrameLabs/4.0 (Cpp; Qt%1)");
+  QChar::QChar((QChar *)local_d8,L' ');
+  QString::QString((QString *)&local_98,"6.8.3");
+  pQVar5 = (QString *)QString::arg(pQVar5,&local_c8,&local_98,0);
+  QVariant::QVariant(local_48,pQVar5);
+  QNetworkRequest::setHeader(local_d0,7,local_48);
+  QVariant::~QVariant(local_48);
+  QString::~QString((QString *)&local_c8);
+  QString::~QString((QString *)&local_98);
+  QString::~QString(local_60);
+  pQVar6 = QNetworkAccessManager::get(param_1[2],local_d0);
+  local_c8 = (char *)finished_exref;
+  pcVar2 = (code *)local_c8;
+  uStack_8c = (undefined4)(uStack_c0 >> 0x20);
+  uStack_c0 = uStack_c0 & 0xffffffff00000000;
+  local_c8._0_4_ = SUB84(finished_exref,0);
+  local_c8._4_4_ = (undefined4)((ulonglong)finished_exref >> 0x20);
+  local_98 = (undefined4)local_c8;
+  uStack_94 = local_c8._4_4_;
+  uStack_90 = 0;
+  local_c8 = (char *)pcVar2;
+  local_c8 = (char *)FUN_14014bc60(0x20);
+  if (local_c8 == (char *)0x0) {
+    puVar7 = (undefined4 *)0x0;
+  }
+  else {
+    *(undefined4 *)local_c8 = 1;
+    *(code **)((longlong)local_c8 + 8) = FUN_1400cb9c0;
+    *(void ***)((longlong)local_c8 + 0x10) = param_1;
+    *(QNetworkReply **)((longlong)local_c8 + 0x18) = pQVar6;
+    puVar7 = (undefined4 *)local_c8;
+  }
+  QObject::connectImpl
+            ((QObject *)local_d8,(void **)pQVar6,(QObject *)&local_98,param_1,(QSlotObjectBase *)0x0
+             ,(ConnectionType)puVar7,(int *)((ulonglong)in_stack_ffffffffffffff0c << 0x20),
+             (QMetaObject *)0x0);
+  QMetaObject::Connection::~Connection((Connection *)local_d8);
+  QNetworkRequest::~QNetworkRequest(local_d0);
+  return;
+}
+
+
+
+=== FUN_1400cddb0 @1400cddb0
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+
+void FUN_1400cddb0(undefined8 param_1,QString *param_2,QString *param_3,QString *param_4)
+
+{
+  int iVar1;
+  bool bVar2;
+  QRandomGenerator64 *this;
+  QByteArray *pQVar3;
+  char *pcVar4;
+  QString *pQVar5;
+  QString *this_00;
+  undefined4 uVar6;
+  undefined1 auStack_328 [32];
+  undefined ***local_308;
+  undefined4 local_300;
+  QString *local_2f8;
+  wchar_t *local_2f0;
+  undefined8 local_2e8;
+  undefined ***local_2d8 [2];
+  undefined8 local_2c8;
+  char *local_2c0;
+  QByteArray local_2b8 [24];
+  undefined8 local_2a0;
+  QString local_298 [24];
+  QJsonObject local_280 [8];
+  undefined8 local_278;
+  QString local_270 [24];
+  QString local_258 [24];
+  QString local_240 [24];
+  QString local_228 [24];
+  undefined **local_210;
+  undefined8 local_208;
+  QString local_200 [40];
+  undefined ***local_1d8;
+  undefined **local_1d0;
+  undefined8 local_1c8;
+  QString local_1c0 [40];
+  undefined ***local_198;
+  QString local_188 [24];
+  QJsonValue local_170 [24];
+  QString local_158 [24];
+  QJsonValue local_140 [24];
+  QString local_128 [24];
+  QJsonValue local_110 [24];
+  QString local_f8 [24];
+  QJsonValue local_e0 [24];
+  QString local_c8 [24];
+  QJsonValue local_b0 [24];
+  QString local_98 [24];
+  QJsonValue local_80 [24];
+  char local_68 [16];
+  ulonglong local_58;
+  
+  this_00 = local_228;
+  local_58 = DAT_142ea1180 ^ (ulonglong)auStack_328;
+  local_2c8 = (undefined ***)((ulonglong)local_2c8 & 0xffffffff00000000);
+  bVar2 = QString::isEmpty(param_2);
+  if (bVar2) {
+    QString::QString((QString *)&local_2f8,"No session token");
+    FUN_1400048c0(param_1,param_4,&local_2f8);
+    this_00 = (QString *)&local_2f8;
+  }
+  else {
+    this = QRandomGenerator64::system();
+    QRandomGenerator::_fillRange((QRandomGenerator *)this,local_68,4);
+    pQVar3 = (QByteArray *)QByteArray::QByteArray((QByteArray *)&local_2a0,local_68,0x10);
+    pQVar3 = (QByteArray *)QByteArray::toHex(pQVar3,(char)local_2b8);
+    pcVar4 = QByteArray::begin(pQVar3);
+    local_2f8 = (QString *)QByteArray::size(pQVar3);
+    local_2f0 = (wchar_t *)QByteArrayView::castHelper(pcVar4);
+    QString::fromLatin1(this_00,&local_2f8);
+    uVar6 = 8;
+    local_2c8 = (undefined ***)CONCAT44(local_2c8._4_4_,8);
+    QByteArray::~QByteArray(local_2b8);
+    QByteArray::~QByteArray((QByteArray *)&local_2a0);
+    QString::QString(local_258);
+    pQVar5 = (QString *)QCoreApplication::applicationFilePath();
+    QFile::QFile((QFile *)&local_2f8,pQVar5);
+    QString::~QString((QString *)&local_2a0);
+    bVar2 = QFile::open((QFile *)&local_2f8,1);
+    if (bVar2) {
+      QCryptographicHash::QCryptographicHash((QCryptographicHash *)local_2d8,4);
+      bVar2 = QCryptographicHash::addData((QCryptographicHash *)local_2d8,(QIODevice *)&local_2f8);
+      uVar6 = 8;
+      if (bVar2) {
+        pQVar3 = (QByteArray *)QCryptographicHash::result((QCryptographicHash *)local_2d8);
+        pQVar3 = (QByteArray *)QByteArray::toHex(pQVar3,(char)&local_2a0);
+        pcVar4 = QByteArray::begin(pQVar3);
+        local_2c8 = (undefined ***)QByteArray::size(pQVar3);
+        local_2c0 = QByteArrayView::castHelper(pcVar4);
+        QString::fromLatin1(local_2b8,&local_2c8);
+        uVar6 = 0x18;
+        local_2c8 = (undefined ***)CONCAT44(local_2c8._4_4_,0x18);
+        QString::operator=(local_258,(QString *)local_2b8);
+        QString::~QString((QString *)local_2b8);
+        QByteArray::~QByteArray((QByteArray *)&local_2a0);
+        QByteArray::~QByteArray((QByteArray *)&local_278);
+      }
+      QCryptographicHash::~QCryptographicHash((QCryptographicHash *)local_2d8);
+    }
+    QFile::~QFile((QFile *)&local_2f8);
+    pQVar5 = (QString *)QCoreApplication::applicationVersion();
+    bVar2 = QString::isEmpty(pQVar5);
+    if (!bVar2) {
+      pQVar5 = (QString *)QCoreApplication::applicationVersion();
+    }
+    else {
+      local_2f8 = (QString *)0x0;
+      local_2f0 = L"3.1.4";
+      local_2e8 = 5;
+      local_2c8 = (undefined ***)(CONCAT44(local_2c8._4_4_,uVar6) | 1);
+      pQVar5 = (QString *)
+               QString::QString((QString *)&local_2a0,(QArrayDataPointer<char16_t> *)&local_2f8);
+    }
+    QString::QString(local_240,pQVar5);
+    if (!bVar2) {
+      QString::~QString((QString *)&local_278);
+    }
+    else {
+      QString::~QString((QString *)&local_2a0);
+      if (local_2f8 != (QString *)0x0) {
+        LOCK();
+        iVar1 = *(int *)local_2f8;
+        *(int *)local_2f8 = *(int *)local_2f8 + -1;
+        UNLOCK();
+        if (iVar1 == 1) {
+          free(local_2f8);
+        }
+      }
+    }
+    QString::~QString((QString *)local_2b8);
+    QString::QString(local_188,"token");
+    QJsonValue::QJsonValue(local_170,param_2);
+    QString::QString(local_158,"exe_sha256");
+    QJsonValue::QJsonValue(local_140,local_258);
+    QString::QString(local_128,"version");
+    QJsonValue::QJsonValue(local_110,local_240);
+    QString::QString(local_f8,"hwid_sha256");
+    QJsonValue::QJsonValue(local_e0,param_3);
+    QString::QString(local_c8,"checkpoint");
+    QJsonValue::QJsonValue(local_b0,param_4);
+    QString::QString(local_98,"nonce");
+    QJsonValue::QJsonValue(local_80,this_00);
+    local_2f8 = local_188;
+    local_2f0 = (wchar_t *)local_68;
+    QJsonObject::QJsonObject(local_280,&local_2f8);
+    _eh_vector_destructor_iterator_(local_188,0x30,6,FUN_14009d490);
+    local_2d8[0] = &local_210;
+    local_2a0 = param_1;
+    QString::QString(local_298,param_4);
+    local_1d8 = (undefined ***)0x0;
+    local_210 = std::
+                _Func_impl_no_alloc<`public:_void___cdecl_fl::services::BackendApiService::verifyIntegrity(QString_const&___ptr64,QString_const&___ptr64,QString_const&___ptr64)___ptr64'::`2'::<lambda_2>,void,QString_const&___ptr64>
+                ::vftable;
+    local_208 = local_2a0;
+    QString::QString(local_200,local_298);
+    local_1d8 = &local_210;
+    local_2c8 = &local_1d0;
+    local_278 = param_1;
+    QString::QString(local_270,param_4);
+    local_198 = (undefined ***)0x0;
+    local_1d0 = std::
+                _Func_impl_no_alloc<`public:_void___cdecl_fl::services::BackendApiService::verifyIntegrity(QString_const&___ptr64,QString_const&___ptr64,QString_const&___ptr64)___ptr64'::`2'::<lambda_1>,void,QJsonObject_const&___ptr64>
+                ::vftable;
+    local_1c8 = local_278;
+    QString::QString(local_1c0,local_270);
+    local_198 = &local_1d0;
+    QString::QString((QString *)local_2b8,"/api/integrity/check");
+    local_300 = 0;
+    local_308 = &local_210;
+    FUN_1400cc620(param_1,local_2b8,local_280,&local_1d0);
+    QString::~QString((QString *)local_2b8);
+    QString::~QString(local_270);
+    QString::~QString(local_298);
+    QJsonObject::~QJsonObject(local_280);
+    QString::~QString(local_240);
+    QString::~QString(local_258);
+  }
+  QString::~QString(this_00);
+  return;
+}
+
+
+
+=== FUN_1400d54b0 @1400d54b0
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+
+void FUN_1400d54b0(QObject *param_1)
+
+{
+  bool bVar1;
+  char cVar2;
+  int iVar3;
+  TimerType TVar4;
+  QString *pQVar5;
+  QDir *pQVar6;
+  void *pvVar7;
+  undefined8 uVar8;
+  QSlotObjectBase *pQVar9;
+  undefined1 auStackY_328 [32];
+  QSlotObjectBase *local_2f8;
+  void *pvStack_2f0;
+  longlong local_2e8;
+  QSlotObjectBase *local_2e0 [2];
+  QString local_2d0 [24];
+  QSlotObjectBase *local_2b8 [3];
+  QProcess local_2a0 [16];
+  QString local_290 [24];
+  QString local_278 [24];
+  QString local_260 [24];
+  QString local_248 [24];
+  QString local_230 [24];
+  QString local_218 [24];
+  QString local_200 [24];
+  QString local_1e8 [24];
+  QString local_1d0 [8];
+  QString local_1c8 [24];
+  QString local_1b0 [24];
+  QString local_198 [24];
+  QString local_180 [8];
+  QString local_178 [24];
+  QString local_160 [24];
+  QString local_148 [24];
+  QString local_130 [24];
+  QString local_118 [24];
+  QString local_100 [24];
+  QString local_e8 [24];
+  QString local_d0 [24];
+  QString local_b8 [24];
+  QString local_a0 [24];
+  undefined1 local_88 [24];
+  QString local_70 [24];
+  QString local_58 [24];
+  QString local_40 [24];
+  ulonglong local_28 [2];
+  
+  local_28[0] = DAT_142ea1180 ^ (ulonglong)auStackY_328;
+  pQVar5 = (QString *)QCoreApplication::applicationDirPath();
+  pQVar6 = (QDir *)QDir::QDir((QDir *)local_2e0,pQVar5);
+  QString::QString((QString *)&local_2f8,"FrameLabsISLC.exe");
+  QDir::filePath(pQVar6,local_260);
+  QString::~QString((QString *)&local_2f8);
+  QDir::~QDir((QDir *)local_2e0);
+  QString::~QString(local_2d0);
+  bVar1 = QFileInfo::exists(local_260);
+  if (bVar1) {
+    QStandardPaths::writableLocation((StandardLocation)local_2b8);
+    QDir::QDir((QDir *)local_2e0,(QString *)local_2b8);
+    QDir::cdUp((QDir *)local_2e0);
+    QString::QString((QString *)&local_2f8,"FrameLabs");
+    QDir::filePath((QDir *)local_2e0,local_278);
+    QString::~QString((QString *)&local_2f8);
+    QDir::~QDir((QDir *)local_2e0);
+    QString::~QString((QString *)local_2b8);
+    pQVar5 = (QString *)QString::QString(local_2d0);
+    pQVar6 = (QDir *)QDir::QDir((QDir *)local_2e0,pQVar5);
+    QDir::mkpath(pQVar6,local_278);
+    QDir::~QDir((QDir *)local_2e0);
+    QString::~QString(local_2d0);
+    FUN_140112e70();
+    FUN_1400d5e70(param_1);
+    cVar2 = FUN_1400d6310(param_1);
+    if (cVar2 != '\0') {
+      QProcess::QProcess((QProcess *)local_2b8,(QObject *)0x0);
+      QString::QString(local_218,"/F");
+      QString::QString(local_200,"/IM");
+      QString::QString(local_1e8,"FrameLabsISLC.exe");
+      pvVar7 = QArrayData::allocate((QArrayData **)local_2e0,0x18,8,3,1);
+      local_2f8 = local_2e0[0];
+      local_2e8 = 0;
+      pQVar5 = local_218;
+      pvStack_2f0 = pvVar7;
+      do {
+        QString::QString((QString *)((longlong)pvVar7 + local_2e8 * 0x18),pQVar5);
+        pQVar5 = pQVar5 + 0x18;
+        local_2e8 = local_2e8 + 1;
+      } while (pQVar5 < local_1d0);
+      QString::QString(local_2d0,"taskkill.exe");
+      QProcess::start((QProcess *)local_2b8,local_2d0,&local_2f8,3);
+      QString::~QString(local_2d0);
+      FUN_140003e80(&local_2f8);
+      _eh_vector_destructor_iterator_(local_218,0x18,3,~QString_exref);
+      QProcess::waitForFinished((QProcess *)local_2b8,2000);
+      QProcess::~QProcess((QProcess *)local_2b8);
+    }
+    bVar1 = QFile::exists(local_290);
+    if (bVar1) {
+      QFile::remove(local_290);
+    }
+    bVar1 = QFile::copy(local_260,local_290);
+    if (bVar1) {
+      QProcess::QProcess(local_2a0,(QObject *)0x0);
+      QString::QString(local_118,"/Create");
+      QString::QString(local_100,"/SC");
+      QString::QString(local_e8,"ONLOGON");
+      QString::QString(local_d0,"/TN");
+      QString::QString(local_b8,"FrameLabsISLC");
+      QString::QString(local_a0,"/TR");
+      pQVar5 = (QString *)QString::QString(local_248,"\"%1\"");
+      QChar::QChar((QChar *)local_2e0,L' ');
+      uVar8 = QDir::toNativeSeparators(local_230);
+      QString::arg(pQVar5,local_88,uVar8,0);
+      QString::QString(local_70,"/RL");
+      QString::QString(local_58,"HIGHEST");
+      QString::QString(local_40,"/F");
+      pvVar7 = QArrayData::allocate((QArrayData **)local_2b8,0x18,8,10,1);
+      local_2f8 = local_2b8[0];
+      local_2e8 = 0;
+      pQVar5 = local_118;
+      pvStack_2f0 = pvVar7;
+      do {
+        QString::QString((QString *)((longlong)pvVar7 + local_2e8 * 0x18),pQVar5);
+        pQVar5 = pQVar5 + 0x18;
+        local_2e8 = local_2e8 + 1;
+      } while (pQVar5 < (QString *)local_28);
+      QString::QString(local_2d0,"schtasks.exe");
+      QProcess::start(local_2a0,local_2d0,&local_2f8,3);
+      QString::~QString(local_2d0);
+      FUN_140003e80(&local_2f8);
+      _eh_vector_destructor_iterator_(local_118,0x18,10,~QString_exref);
+      QString::~QString(local_230);
+      QString::~QString(local_248);
+      QProcess::waitForFinished(local_2a0,4000);
+      iVar3 = QProcess::exitCode(local_2a0);
+      if (iVar3 == 0) {
+        QProcess::QProcess((QProcess *)local_2e0,(QObject *)0x0);
+        QString::QString(local_178,"/Delete");
+        QString::QString(local_160,"/TN");
+        QString::QString(local_148,"FrameLabsWatchdog");
+        QString::QString(local_130,"/F");
+        pvVar7 = QArrayData::allocate((QArrayData **)local_2b8,0x18,8,4,1);
+        local_2f8 = local_2b8[0];
+        local_2e8 = 0;
+        pQVar5 = local_178;
+        pvStack_2f0 = pvVar7;
+        do {
+          QString::QString((QString *)((longlong)pvVar7 + local_2e8 * 0x18),pQVar5);
+          pQVar5 = pQVar5 + 0x18;
+          local_2e8 = local_2e8 + 1;
+        } while (pQVar5 < local_118);
+        QString::QString(local_2d0,"schtasks.exe");
+        QProcess::start((QProcess *)local_2e0,local_2d0,&local_2f8,3);
+        QString::~QString(local_2d0);
+        FUN_140003e80(&local_2f8);
+        _eh_vector_destructor_iterator_(local_178,0x18,4,~QString_exref);
+        QProcess::waitForFinished((QProcess *)local_2e0,4000);
+        QProcess::~QProcess((QProcess *)local_2e0);
+        QProcess::QProcess((QProcess *)local_2e0,(QObject *)0x0);
+        QString::QString(local_1c8,"/Run");
+        QString::QString(local_1b0,"/TN");
+        QString::QString(local_198,"FrameLabsISLC");
+        pvVar7 = QArrayData::allocate((QArrayData **)local_2b8,0x18,8,3,1);
+        local_2f8 = local_2b8[0];
+        local_2e8 = 0;
+        pQVar5 = local_1c8;
+        pvStack_2f0 = pvVar7;
+        do {
+          QString::QString((QString *)((longlong)pvVar7 + local_2e8 * 0x18),pQVar5);
+          pQVar5 = pQVar5 + 0x18;
+          local_2e8 = local_2e8 + 1;
+        } while (pQVar5 < local_180);
+        QString::QString(local_2d0,"schtasks.exe");
+        QProcess::start((QProcess *)local_2e0,local_2d0,&local_2f8,3);
+        QString::~QString(local_2d0);
+        FUN_140003e80(&local_2f8);
+        _eh_vector_destructor_iterator_(local_1c8,0x18,3,~QString_exref);
+        QProcess::waitForFinished((QProcess *)local_2e0,3000);
+        QProcess::~QProcess((QProcess *)local_2e0);
+        local_2f8 = (QSlotObjectBase *)0x0;
+        pvStack_2f0 = (void *)0x0;
+        local_2e8 = 0;
+        pQVar5 = (QString *)QDir::toNativeSeparators(local_248);
+        QProcess::startDetached(pQVar5,(QList<QString> *)&local_2f8,local_278,(__int64 *)0x0);
+        QString::~QString(local_248);
+        FUN_140003e80(&local_2f8);
+        QString::QString(local_2d0,"FrameLabs ISLC pornit.");
+        FUN_140004a40(param_1,local_2d0);
+        QString::~QString(local_2d0);
+        TVar4 = QTimer::defaultTypeFor(400);
+        local_2b8[0] = (QSlotObjectBase *)FUN_14014bc60(0x18);
+        if (local_2b8[0] == (QSlotObjectBase *)0x0) {
+          pQVar9 = (QSlotObjectBase *)0x0;
+        }
+        else {
+          *(undefined4 *)local_2b8[0] = 1;
+          *(code **)(local_2b8[0] + 8) = FUN_14000d4d0;
+          *(code **)(local_2b8[0] + 0x10) = FUN_140009050;
+          pQVar9 = local_2b8[0];
+        }
+        QTimer::singleShotImpl(400,TVar4,param_1,pQVar9);
+        TVar4 = QTimer::defaultTypeFor(0x5dc);
+        local_2b8[0] = (QSlotObjectBase *)FUN_14014bc60(0x18);
+        if (local_2b8[0] == (QSlotObjectBase *)0x0) {
+          pQVar9 = (QSlotObjectBase *)0x0;
+        }
+        else {
+          *(undefined4 *)local_2b8[0] = 1;
+          *(code **)(local_2b8[0] + 8) = FUN_14000d4d0;
+          *(code **)(local_2b8[0] + 0x10) = FUN_140009050;
+          pQVar9 = local_2b8[0];
+        }
+        QTimer::singleShotImpl(0x5dc,TVar4,param_1,pQVar9);
+      }
+      else {
+        QString::QString(local_2d0,&DAT_1401976c0);
+        FUN_140004a40(param_1,local_2d0);
+        QString::~QString(local_2d0);
+        FUN_140009050(param_1);
+      }
+      QProcess::~QProcess(local_2a0);
+    }
+    else {
+      QString::QString(local_2d0,"Nu am putut copia FrameLabsISLC.exe.");
+      FUN_140004a40(param_1,local_2d0);
+      QString::~QString(local_2d0);
+      FUN_140009050(param_1);
+    }
+    QString::~QString(local_290);
+    QString::~QString(local_278);
+  }
+  else {
+    QString::QString((QString *)&local_2f8,&DAT_140197610);
+    FUN_140004a40(param_1,&local_2f8);
+    QString::~QString((QString *)&local_2f8);
+    FUN_140009050(param_1);
+  }
+  QString::~QString(local_260);
+  return;
+}
+
+
+
+=== FUN_1400d6120 @1400d6120
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+
+bool FUN_1400d6120(undefined8 param_1)
+
+{
+  char cVar1;
+  bool bVar2;
+  int iVar3;
+  QString *pQVar4;
+  void *pvVar5;
+  undefined1 auStackY_c8 [32];
+  QProcess local_98 [16];
+  QArrayData *local_88;
+  void *local_80;
+  longlong local_78;
+  QArrayData *local_70;
+  QString local_68 [24];
+  QString local_50 [24];
+  QString local_38 [24];
+  QString local_20 [8];
+  ulonglong local_18;
+  
+  local_18 = DAT_142ea1180 ^ (ulonglong)auStackY_c8;
+  cVar1 = FUN_1400d6310();
+  if (cVar1 == '\0') {
+    pQVar4 = (QString *)FUN_1400d5e70(param_1);
+    bVar2 = QFileInfo::exists(pQVar4);
+    QString::~QString((QString *)&local_88);
+    if (!bVar2) {
+      QProcess::QProcess(local_98,(QObject *)0x0);
+      QString::QString((QString *)&local_88,"schtasks.exe");
+      QProcess::setProgram(local_98,(QString *)&local_88);
+      QString::~QString((QString *)&local_88);
+      QString::QString(local_68,"/Query");
+      QString::QString(local_50,"/TN");
+      QString::QString(local_38,"FrameLabsISLC");
+      pvVar5 = QArrayData::allocate(&local_70,0x18,8,3,1);
+      local_88 = local_70;
+      local_78 = 0;
+      pQVar4 = local_68;
+      local_80 = pvVar5;
+      do {
+        QString::QString((QString *)((longlong)pvVar5 + local_78 * 0x18),pQVar4);
+        pQVar4 = pQVar4 + 0x18;
+        local_78 = local_78 + 1;
+      } while (pQVar4 < local_20);
+      QProcess::setArguments(local_98,(QList<QString> *)&local_88);
+      FUN_140003e80(&local_88);
+      _eh_vector_destructor_iterator_(local_68,0x18,3,~QString_exref);
+      QProcess::setProcessChannelMode(local_98,1);
+      QProcess::start(local_98,3);
+      bVar2 = QProcess::waitForFinished(local_98,0x5dc);
+      if (bVar2) {
+        iVar3 = QProcess::exitCode(local_98);
+        bVar2 = iVar3 == 0;
+      }
+      else {
+        QProcess::kill(local_98);
+        bVar2 = false;
+      }
+      QProcess::~QProcess(local_98);
+      return bVar2;
+    }
+  }
+  return true;
+}
+
+
+
+=== FUN_1400d63e0 @1400d63e0
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+
+void FUN_1400d63e0(void)
+
+{
+  void *pvVar1;
+  QString *pQVar2;
+  undefined1 auStackY_f8 [32];
+  QArrayData *local_c8;
+  void *local_c0;
+  longlong local_b8;
+  QArrayData *local_b0;
+  QProcess local_a8 [16];
+  QString local_98 [32];
+  QString local_78 [24];
+  QString local_60 [24];
+  QString local_48 [24];
+  QString local_30 [24];
+  ulonglong local_18 [2];
+  
+  local_18[0] = DAT_142ea1180 ^ (ulonglong)auStackY_f8;
+  QProcess::QProcess(local_a8,(QObject *)0x0);
+  QString::QString(local_78,"/Delete");
+  QString::QString(local_60,"/TN");
+  QString::QString(local_48,"FrameLabsWatchdog");
+  QString::QString(local_30,"/F");
+  pvVar1 = QArrayData::allocate(&local_b0,0x18,8,4,1);
+  local_c8 = local_b0;
+  local_b8 = 0;
+  pQVar2 = local_78;
+  local_c0 = pvVar1;
+  do {
+    QString::QString((QString *)((longlong)pvVar1 + local_b8 * 0x18),pQVar2);
+    pQVar2 = pQVar2 + 0x18;
+    local_b8 = local_b8 + 1;
+  } while (pQVar2 < (QString *)local_18);
+  QString::QString(local_98,"schtasks.exe");
+  QProcess::start(local_a8,local_98,&local_c8,3);
+  QString::~QString(local_98);
+  FUN_140003e80(&local_c8);
+  _eh_vector_destructor_iterator_(local_78,0x18,4,~QString_exref);
+  QProcess::waitForFinished(local_a8,4000);
+  QProcess::~QProcess(local_a8);
+  return;
+}
+
+
+
+=== FUN_1400d65c0 @1400d65c0
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+
+void FUN_1400d65c0(QObject *param_1)
+
+{
+  char cVar1;
+  bool bVar2;
+  TimerType TVar3;
+  void *pvVar4;
+  QSlotObjectBase *pQVar5;
+  int iVar6;
+  QString *pQVar7;
+  undefined1 auStackY_1e8 [32];
+  QArrayData *local_1b8;
+  QArrayData *local_1b0;
+  void *local_1a8;
+  longlong local_1a0;
+  QString local_198 [24];
+  QProcess local_180 [16];
+  QProcess local_170 [16];
+  QProcess local_160 [16];
+  QString local_150 [24];
+  QString local_138 [24];
+  QString local_120 [24];
+  QString local_108 [24];
+  QString local_f0 [8];
+  QString local_e8 [24];
+  QString local_d0 [24];
+  QString local_b8 [24];
+  QString local_a0 [24];
+  QString local_88 [24];
+  QString local_70 [24];
+  QString local_58 [24];
+  QString local_40 [24];
+  ulonglong local_28 [2];
+  
+  local_28[0] = DAT_142ea1180 ^ (ulonglong)auStackY_1e8;
+  cVar1 = FUN_1400d6310();
+  if (cVar1 != '\0') {
+    QProcess::QProcess(local_180,(QObject *)0x0);
+    QString::QString(local_138,"/F");
+    QString::QString(local_120,"/IM");
+    QString::QString(local_108,"FrameLabsISLC.exe");
+    pvVar4 = QArrayData::allocate(&local_1b8,0x18,8,3,1);
+    local_1b0 = local_1b8;
+    local_1a0 = 0;
+    pQVar7 = local_138;
+    local_1a8 = pvVar4;
+    do {
+      QString::QString((QString *)((longlong)pvVar4 + local_1a0 * 0x18),pQVar7);
+      pQVar7 = pQVar7 + 0x18;
+      local_1a0 = local_1a0 + 1;
+    } while (pQVar7 < local_f0);
+    QString::QString(local_198,"taskkill.exe");
+    QProcess::start(local_180,local_198,&local_1b0,3);
+    QString::~QString(local_198);
+    FUN_140003e80(&local_1b0);
+    _eh_vector_destructor_iterator_(local_138,0x18,3,~QString_exref);
+    QProcess::waitForFinished(local_180,2000);
+    QProcess::~QProcess(local_180);
+  }
+  QProcess::QProcess(local_160,(QObject *)0x0);
+  QString::QString(local_e8,"/Delete");
+  QString::QString(local_d0,"/TN");
+  QString::QString(local_b8,"FrameLabsISLC");
+  QString::QString(local_a0,"/F");
+  pvVar4 = QArrayData::allocate(&local_1b8,0x18,8,4,1);
+  local_1b0 = local_1b8;
+  local_1a0 = 0;
+  pQVar7 = local_e8;
+  local_1a8 = pvVar4;
+  do {
+    QString::QString((QString *)((longlong)pvVar4 + local_1a0 * 0x18),pQVar7);
+    pQVar7 = pQVar7 + 0x18;
+    local_1a0 = local_1a0 + 1;
+  } while (pQVar7 < local_88);
+  QString::QString(local_198,"schtasks.exe");
+  QProcess::start(local_160,local_198,&local_1b0,3);
+  QString::~QString(local_198);
+  FUN_140003e80(&local_1b0);
+  _eh_vector_destructor_iterator_(local_e8,0x18,4,~QString_exref);
+  QProcess::waitForFinished(local_160,2000);
+  QProcess::QProcess(local_170,(QObject *)0x0);
+  QString::QString(local_88,"/Delete");
+  QString::QString(local_70,"/TN");
+  QString::QString(local_58,"FrameLabsWatchdog");
+  QString::QString(local_40,"/F");
+  pvVar4 = QArrayData::allocate(&local_1b8,0x18,8,4,1);
+  local_1b0 = local_1b8;
+  local_1a0 = 0;
+  pQVar7 = local_88;
+  local_1a8 = pvVar4;
+  do {
+    QString::QString((QString *)((longlong)pvVar4 + local_1a0 * 0x18),pQVar7);
+    pQVar7 = pQVar7 + 0x18;
+    local_1a0 = local_1a0 + 1;
+  } while (pQVar7 < (QString *)local_28);
+  QString::QString(local_198,"schtasks.exe");
+  QProcess::start(local_170,local_198,&local_1b0,3);
+  QString::~QString(local_198);
+  FUN_140003e80(&local_1b0);
+  _eh_vector_destructor_iterator_(local_88,0x18,4,~QString_exref);
+  QProcess::waitForFinished(local_170,2000);
+  FUN_1400d5e70(param_1,local_150);
+  iVar6 = 0;
+  do {
+    bVar2 = QFile::exists(local_150);
+    if (!bVar2) break;
+    bVar2 = QFile::remove(local_150);
+    if (bVar2) break;
+    QThread::msleep(200);
+    iVar6 = iVar6 + 1;
+  } while (iVar6 < 5);
+  QString::QString(local_198,"FrameLabs ISLC dezinstalat.");
+  FUN_140004a40(param_1,local_198);
+  QString::~QString(local_198);
+  TVar3 = QTimer::defaultTypeFor(300);
+  local_1b8 = (QArrayData *)FUN_14014bc60(0x18);
+  if (local_1b8 == (QArrayData *)0x0) {
+    pQVar5 = (QSlotObjectBase *)0x0;
+  }
+  else {
+    *(undefined4 *)local_1b8 = 1;
+    *(code **)(local_1b8 + 8) = FUN_14000d4d0;
+    *(code **)(local_1b8 + 0x10) = FUN_140009050;
+    pQVar5 = (QSlotObjectBase *)local_1b8;
+  }
+  QTimer::singleShotImpl(300,TVar3,param_1,pQVar5);
+  QString::~QString(local_150);
+  QProcess::~QProcess(local_170);
+  QProcess::~QProcess(local_160);
+  return;
+}
+
+
+
+=== FUN_1400dfd00 @1400dfd00
+
+/* WARNING: Function: __chkstk replaced with injection: alloca_probe */
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+
+undefined8 FUN_1400dfd00(char param_1)
+
+{
+  QString *pQVar1;
+  DWORD dwIndex;
+  LSTATUS LVar2;
+  int iVar3;
+  HKEY hKey;
+  undefined8 uVar4;
+  __int64 _Var5;
+  LPCWSTR lpValueName;
+  QString *this;
+  undefined **ppuVar6;
+  undefined1 auStackY_80a8 [32];
+  DWORD local_8068 [2];
+  HKEY local_8060;
+  int *local_8058;
+  QString *pQStack_8050;
+  longlong local_8048;
+  QString local_8040 [24];
+  WCHAR local_8028 [16384];
+  ulonglong local_28;
+  undefined8 local_20;
+  
+  local_20 = 0x1400dfd26;
+  local_28 = DAT_142ea1180 ^ (ulonglong)auStackY_80a8;
+  if (param_1 != '\0') {
+    local_8060 = (HKEY)0x0;
+    hKey = (HKEY)FUN_1400dffb0();
+    LVar2 = RegOpenKeyExW(hKey,L"Software\\Microsoft\\Windows\\CurrentVersion\\Run",0,0x103,
+                          &local_8060);
+    if (LVar2 != 0) {
+      return 0;
+    }
+    local_8058 = (int *)0x0;
+    pQStack_8050 = (QString *)0x0;
+    local_8048 = 0;
+    local_8068[0] = 0x4000;
+    iVar3 = RegEnumValueW(local_8060,0,local_8028,local_8068,(LPDWORD)0x0,(LPDWORD)0x0,(LPBYTE)0x0,
+                          (LPDWORD)0x0);
+    dwIndex = 1;
+    while ((iVar3 != 0x103 && (iVar3 == 0))) {
+      uVar4 = QString::fromWCharArray((wchar_t *)local_8040,(__int64)local_8028);
+      FUN_1400657a0(&local_8058,local_8048,uVar4);
+      if ((local_8058 == (int *)0x0) || (1 < *local_8058)) {
+        FUN_140008880(&local_8058,0,0,0);
+      }
+      QString::~QString(local_8040);
+      local_8068[0] = 0x4000;
+      iVar3 = RegEnumValueW(local_8060,dwIndex,local_8028,local_8068,(LPDWORD)0x0,(LPDWORD)0x0,
+                            (LPBYTE)0x0,(LPDWORD)0x0);
+      dwIndex = dwIndex + 1;
+    }
+    if ((local_8058 == (int *)0x0) || (1 < *local_8058)) {
+      FUN_140008880(&local_8058,0,0);
+    }
+    this = pQStack_8050;
+    if ((local_8058 == (int *)0x0) || (1 < *local_8058)) {
+      FUN_140008880(&local_8058,0,0);
+    }
+    pQVar1 = pQStack_8050 + local_8048 * 0x18;
+    for (; this != pQVar1; this = this + 0x18) {
+      ppuVar6 = &PTR_u_OneDrive_142ea1010;
+      do {
+        QString::fromWCharArray((wchar_t *)local_8040,(__int64)*ppuVar6);
+        _Var5 = QString::indexOf(this,local_8040,0,0);
+        if (_Var5 != -1) {
+          lpValueName = (LPCWSTR)QString::utf16(this);
+          RegDeleteValueW(local_8060,lpValueName);
+          QString::~QString(local_8040);
+          break;
+        }
+        QString::~QString(local_8040);
+        ppuVar6 = ppuVar6 + 1;
+      } while (ppuVar6 != (undefined **)&DAT_142ea1088);
+    }
+    RegCloseKey(local_8060);
+    FUN_140003e80(&local_8058);
+  }
+  return 1;
+}
+
+
+
+=== FUN_1401455d0 @1401455d0
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+
+int FUN_1401455d0(void)
+
+{
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  QString *pQVar4;
+  QString *pQVar5;
+  QDir *pQVar6;
+  undefined1 auStackY_228 [32];
+  QArrayData *local_1f8;
+  QDir local_1f0 [8];
+  int *local_1e8;
+  wchar_t *local_1e0;
+  undefined8 local_1d8;
+  int *local_1d0;
+  wchar_t *local_1c8;
+  undefined8 local_1c0;
+  int *local_1b8;
+  wchar_t *local_1b0;
+  undefined8 local_1a8;
+  QArrayData *local_1a0;
+  void *local_198;
+  undefined8 local_190;
+  int *local_188;
+  wchar_t *local_180;
+  undefined8 local_178;
+  int *local_170;
+  wchar_t *local_168;
+  undefined8 local_160;
+  undefined1 local_158 [16];
+  int local_148;
+  QString local_140 [24];
+  QString local_128 [24];
+  QString local_110 [24];
+  QString local_f8 [24];
+  QString local_e0 [24];
+  QString local_c8 [24];
+  QString local_b0 [24];
+  QString local_98 [32];
+  QString local_78 [24];
+  QString local_60 [24];
+  QString local_48 [24];
+  QString local_30 [8];
+  ulonglong local_28;
+  
+  local_28 = DAT_142ea1180 ^ (ulonglong)auStackY_228;
+  iVar1 = FUN_14013c700(&DAT_ffffffff80000002,L"Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+                        0x200);
+  iVar2 = FUN_14013c700(&DAT_ffffffff80000002,L"Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+                        0x100);
+  iVar3 = FUN_14013c700(0xffffffff80000001,L"Software\\Microsoft\\Windows\\CurrentVersion\\Run",0);
+  iVar3 = iVar1 + iVar2 + iVar3;
+  local_1b8 = (int *)0x0;
+  local_1b0 = L"/Startup";
+  local_1a8 = 8;
+  pQVar4 = (QString *)QString::QString(local_98,(QArrayDataPointer<char16_t> *)&local_1b8);
+  pQVar5 = (QString *)QStandardPaths::writableLocation((StandardLocation)local_b0);
+  pQVar4 = QString::append(pQVar5,pQVar4);
+  QString::QString(local_78,pQVar4);
+  local_1d0 = (int *)0x0;
+  local_1c8 = L"/Microsoft/Windows/Start Menu/Programs/Startup";
+  local_1c0 = 0x2e;
+  pQVar4 = (QString *)QString::QString(local_c8,(QArrayDataPointer<char16_t> *)&local_1d0);
+  pQVar5 = (QString *)qEnvironmentVariable((char *)local_e0);
+  pQVar4 = QString::append(pQVar5,pQVar4);
+  QString::QString(local_60,pQVar4);
+  local_1e8 = (int *)0x0;
+  local_1e0 = L"/Microsoft/Windows/Start Menu/Programs/Startup";
+  local_1d8 = 0x2e;
+  pQVar4 = (QString *)QString::QString(local_f8,(QArrayDataPointer<char16_t> *)&local_1e8);
+  pQVar5 = (QString *)qEnvironmentVariable((char *)local_110);
+  pQVar4 = QString::append(pQVar5,pQVar4);
+  QString::QString(local_48,pQVar4);
+  QString::~QString(local_110);
+  QString::~QString(local_f8);
+  if (local_1e8 != (int *)0x0) {
+    LOCK();
+    iVar1 = *local_1e8;
+    *local_1e8 = *local_1e8 + -1;
+    UNLOCK();
+    if (iVar1 == 1) {
+      free(local_1e8);
+    }
+  }
+  QString::~QString(local_e0);
+  QString::~QString(local_c8);
+  if (local_1d0 != (int *)0x0) {
+    LOCK();
+    iVar1 = *local_1d0;
+    *local_1d0 = *local_1d0 + -1;
+    UNLOCK();
+    if (iVar1 == 1) {
+      free(local_1d0);
+    }
+  }
+  QString::~QString(local_b0);
+  QString::~QString(local_98);
+  if (local_1b8 != (int *)0x0) {
+    LOCK();
+    iVar1 = *local_1b8;
+    *local_1b8 = *local_1b8 + -1;
+    UNLOCK();
+    if (iVar1 == 1) {
+      free(local_1b8);
+    }
+  }
+  pQVar4 = local_78;
+  do {
+    pQVar6 = (QDir *)QDir::QDir(local_1f0,pQVar4);
+    local_170 = (int *)0x0;
+    local_168 = L"*.lnk";
+    local_160 = 5;
+    QString::QString(local_140,(QArrayDataPointer<char16_t> *)&local_170);
+    local_188 = (int *)0x0;
+    local_180 = L"*.exe";
+    local_178 = 5;
+    QString::QString(local_128,(QArrayDataPointer<char16_t> *)&local_188);
+    local_198 = QArrayData::allocate(&local_1f8,0x18,8,2,1);
+    local_1a0 = local_1f8;
+    local_190 = 0;
+    FUN_1400044f0(&local_1a0,local_140,local_110);
+    QDir::entryList(pQVar6,local_158,&local_1a0,2);
+    FUN_140003e80(&local_1a0);
+    _eh_vector_destructor_iterator_(local_140,0x18,2,~QString_exref);
+    if (local_188 != (int *)0x0) {
+      LOCK();
+      iVar1 = *local_188;
+      *local_188 = *local_188 + -1;
+      UNLOCK();
+      if (iVar1 == 1) {
+        free(local_188);
+      }
+    }
+    if (local_170 != (int *)0x0) {
+      LOCK();
+      iVar1 = *local_170;
+      *local_170 = *local_170 + -1;
+      UNLOCK();
+      if (iVar1 == 1) {
+        free(local_170);
+      }
+    }
+    QDir::~QDir(local_1f0);
+    iVar3 = iVar3 + local_148;
+    FUN_140003e80(local_158);
+    pQVar4 = pQVar4 + 0x18;
+  } while (pQVar4 != local_30);
+  _eh_vector_destructor_iterator_(local_78,0x18,3,~QString_exref);
+  return iVar3;
+}
+
+
+
+=== FUN_1400daf60 @1400daf60
+
+/* WARNING: Function: __chkstk replaced with injection: alloca_probe */
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* WARNING: Type propagation algorithm not settling */
+
+bool FUN_1400daf60(undefined8 param_1)
+
+{
+  longlong lVar1;
+  longlong lVar2;
+  char cVar3;
+  undefined1 uVar4;
+  LSTATUS LVar5;
+  int iVar6;
+  undefined8 uVar7;
+  HKEY pHVar8;
+  size_t sVar9;
+  wchar_t *pwVar10;
+  LPCWSTR ******pppppppWVar11;
+  bool bVar12;
+  undefined **ppuVar13;
+  DWORD DVar14;
+  wchar_t *pwVar15;
+  undefined1 auStackY_80d8 [32];
+  HKEY local_8098;
+  DWORD local_8090 [2];
+  HKEY local_8088;
+  DWORD local_8080;
+  DWORD local_807c;
+  undefined1 local_8078;
+  int local_8074;
+  DWORD local_8070;
+  DWORD local_806c;
+  DWORD local_8068 [2];
+  LPCWSTR ******local_8060;
+  undefined8 uStack_8058;
+  longlong local_8050;
+  ulonglong local_8048;
+  WCHAR local_8038 [16384];
+  ulonglong local_38;
+  undefined8 local_30;
+  
+  local_30 = 0x1400daf8a;
+  local_38 = DAT_142ea1180 ^ (ulonglong)auStackY_80d8;
+  cVar3 = FUN_1400c6d30();
+  if (cVar3 == '\0') {
+    local_8098 = (HKEY)0x140182b50;
+    cVar3 = FUN_14003e700(param_1,&local_8098);
+    if (cVar3 != '\0') {
+      pHVar8 = (HKEY)FUN_1400dffb0();
+      DVar14 = 0;
+      local_8088 = (HKEY)0x0;
+      LVar5 = RegOpenKeyExW(pHVar8,L"Software\\Microsoft\\GameBar",0,0x101,&local_8088);
+      if (LVar5 == 0) {
+        local_8080 = 0;
+        local_807c = 4;
+        local_8090[0] = 0;
+        LVar5 = RegQueryValueExW(local_8088,L"AutoGameModeEnabled",(LPDWORD)0x0,local_8090,
+                                 (LPBYTE)&local_8080,&local_807c);
+        RegCloseKey(local_8088);
+        if ((LVar5 == 0) && (local_8090[0] == 4)) {
+          DVar14 = local_8080;
+        }
+      }
+      return DVar14 == 1;
+    }
+    local_8098 = (HKEY)0x140182b60;
+    cVar3 = FUN_14003e700(param_1,&local_8098);
+    if (cVar3 != '\0') {
+      uVar7 = FUN_1400dffb0();
+      iVar6 = FUN_1400dac20(uVar7,L"Software\\Microsoft\\GameBar",L"GameBarEnabled",1);
+      return iVar6 == 0;
+    }
+    local_8098 = (HKEY)0x140182b78;
+    cVar3 = FUN_14003e700(param_1,&local_8098);
+    if (cVar3 == '\0') {
+      local_8098 = (HKEY)0x140182b88;
+      cVar3 = FUN_14003e700(param_1,&local_8098);
+      if (cVar3 != '\0') {
+        local_8088 = (HKEY)0x0;
+        pHVar8 = (HKEY)FUN_1400dffb0();
+        LVar5 = RegOpenKeyExW(pHVar8,L"Software\\Microsoft\\Windows\\CurrentVersion\\Run",0,0x101,
+                              &local_8088);
+        if (LVar5 != 0) {
+          return true;
+        }
+        local_8090[0] = 0x4000;
+        DVar14 = 1;
+        bVar12 = true;
+        LVar5 = RegEnumValueW(local_8088,0,local_8038,local_8090,(LPDWORD)0x0,(LPDWORD)0x0,
+                              (LPBYTE)0x0,(LPDWORD)0x0);
+        if (LVar5 != 0) {
+LAB_1400db58e:
+          RegCloseKey(local_8088);
+          return bVar12;
+        }
+        do {
+          ppuVar13 = &PTR_u_OneDrive_142ea10d0;
+          do {
+            pwVar10 = wcsstr(local_8038,(wchar_t *)*ppuVar13);
+            if (pwVar10 != (wchar_t *)0x0) {
+              bVar12 = false;
+              goto LAB_1400db58e;
+            }
+            ppuVar13 = ppuVar13 + 1;
+          } while (ppuVar13 != &PTR_s_setting_defaultres_142ea1130);
+          local_8090[0] = 0x4000;
+          LVar5 = RegEnumValueW(local_8088,DVar14,local_8038,local_8090,(LPDWORD)0x0,(LPDWORD)0x0,
+                                (LPBYTE)0x0,(LPDWORD)0x0);
+          DVar14 = DVar14 + 1;
+          if (LVar5 != 0) {
+            RegCloseKey(local_8088);
+            return true;
+          }
+        } while( true );
+      }
+      local_8098 = (HKEY)0x140182b98;
+      cVar3 = FUN_14003e700(param_1,&local_8098);
+      if (cVar3 != '\0') {
+        uVar7 = 3;
+        pwVar15 = L"AllowTelemetry";
+        pwVar10 = L"SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection";
+LAB_1400db5d2:
+        iVar6 = FUN_1400dac20(&DAT_ffffffff80000002,pwVar10,pwVar15,uVar7);
+        return iVar6 == 0;
+      }
+      local_8098 = (HKEY)0x140182bb0;
+      cVar3 = FUN_14003e700(param_1,&local_8098);
+      if (cVar3 != '\0') {
+        uVar7 = FUN_1400dffb0();
+        iVar6 = FUN_1400dac20(uVar7,
+                              L"Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\VisualEffects"
+                              ,L"VisualFXSetting",1);
+        return iVar6 == 2;
+      }
+      local_8098 = (HKEY)0x140182bc0;
+      cVar3 = FUN_14003e700(param_1,&local_8098);
+      if (cVar3 == '\0') {
+        local_8098 = (HKEY)0x140182bd8;
+        cVar3 = FUN_14003e700(param_1,&local_8098);
+        if (cVar3 != '\0') {
+          uVar7 = 1;
+          pwVar15 = L"AllowCortana";
+          pwVar10 = L"SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search";
+          goto LAB_1400db5d2;
+        }
+      }
+      else {
+        iVar6 = FUN_1400dac20(&DAT_ffffffff80000002,L"SYSTEM\\CurrentControlSet\\Services\\SysMain",
+                              L"Start",99);
+        if (iVar6 == 99) {
+          return true;
+        }
+        if (iVar6 == 4) {
+          return true;
+        }
+      }
+    }
+    else {
+      local_8088 = (HKEY)0x0;
+      LVar5 = RegOpenKeyExW((HKEY)&DAT_ffffffff80000002,
+                            L"SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\\Interfaces",0,
+                            0x108,&local_8088);
+      if (LVar5 == 0) {
+        bVar12 = false;
+        local_8090[0] = 0x100;
+        iVar6 = RegEnumKeyExW(local_8088,0,local_8038,local_8090,(LPDWORD)0x0,(LPWSTR)0x0,
+                              (LPDWORD)0x0,(PFILETIME)0x0);
+        DVar14 = 1;
+        do {
+          if (iVar6 != 0) {
+LAB_1400db3f2:
+            RegCloseKey(local_8088);
+            return bVar12;
+          }
+          local_8060 = (LPCWSTR ******)0x0;
+          uStack_8058 = 0;
+          local_8050 = 0;
+          local_8048 = 0;
+          FUN_1400d7480(&local_8060,
+                        L"SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters\\Interfaces\\",0x3e
+                       );
+          sVar9 = wcslen(local_8038);
+          lVar2 = local_8050;
+          if (local_8048 - local_8050 < sVar9) {
+            FUN_1400c1bb0(&local_8060,sVar9,local_8078,local_8038);
+          }
+          else {
+            pppppppWVar11 = (LPCWSTR ******)&local_8060;
+            if (7 < local_8048) {
+              pppppppWVar11 = local_8060;
+            }
+            lVar1 = local_8050 * 2;
+            local_8050 = local_8050 + sVar9;
+            memmove((LPCWSTR)((longlong)pppppppWVar11 + lVar1),local_8038,sVar9 * 2);
+            *(WCHAR *)((longlong)pppppppWVar11 + (lVar2 + sVar9) * 2) = L'\0';
+          }
+          pppppppWVar11 = (LPCWSTR ******)&local_8060;
+          if (7 < local_8048) {
+            pppppppWVar11 = local_8060;
+          }
+          local_8098 = (HKEY)0x0;
+          LVar5 = RegOpenKeyExW((HKEY)&DAT_ffffffff80000002,(LPCWSTR)pppppppWVar11,0,0x101,
+                                &local_8098);
+          if (LVar5 == 0) {
+            local_8074 = 0;
+            local_806c = 4;
+            local_8080 = 0;
+            LVar5 = RegQueryValueExW(local_8098,L"TCPNoDelay",(LPDWORD)0x0,&local_8080,
+                                     (LPBYTE)&local_8074,&local_806c);
+            RegCloseKey(local_8098);
+            if (((LVar5 == 0) && (local_8080 == 4)) && (local_8074 == 1)) {
+              pppppppWVar11 = (LPCWSTR ******)&local_8060;
+              if (7 < local_8048) {
+                pppppppWVar11 = local_8060;
+              }
+              local_8098 = (HKEY)0x0;
+              LVar5 = RegOpenKeyExW((HKEY)&DAT_ffffffff80000002,(LPCWSTR)pppppppWVar11,0,0x101,
+                                    &local_8098);
+              if (LVar5 == 0) {
+                local_807c = 0;
+                local_8068[0] = 4;
+                local_8070 = 0;
+                LVar5 = RegQueryValueExW(local_8098,L"TcpAckFrequency",(LPDWORD)0x0,&local_8070,
+                                         (LPBYTE)&local_807c,local_8068);
+                RegCloseKey(local_8098);
+                if (((LVar5 == 0) && (local_8070 == 4)) && (local_807c == 1)) {
+                  bVar12 = true;
+                  if (7 < local_8048) {
+                    pppppppWVar11 = local_8060;
+                    if ((local_8048 * 2 + 2 < 0x1000) ||
+                       (pppppppWVar11 = (LPCWSTR ******)local_8060[-1],
+                       (ulonglong)((longlong)local_8060 + (-8 - (longlong)pppppppWVar11)) < 0x20)) {
+                      free(pppppppWVar11);
+                      RegCloseKey(local_8088);
+                      return true;
+                    }
+                    goto LAB_1400db45a;
+                  }
+                  goto LAB_1400db3f2;
+                }
+              }
+            }
+          }
+          if (7 < local_8048) {
+            pppppppWVar11 = local_8060;
+            if ((0xfff < local_8048 * 2 + 2) &&
+               (pppppppWVar11 = (LPCWSTR ******)local_8060[-1],
+               0x1f < (ulonglong)((longlong)local_8060 + (-8 - (longlong)pppppppWVar11)))) {
+LAB_1400db45a:
+                    /* WARNING: Subroutine does not return */
+              _invoke_watson((wchar_t *)0x0,(wchar_t *)0x0,(wchar_t *)0x0,0,0);
+            }
+            free(pppppppWVar11);
+          }
+          local_8090[0] = 0x100;
+          iVar6 = RegEnumKeyExW(local_8088,DVar14,local_8038,local_8090,(LPDWORD)0x0,(LPWSTR)0x0,
+                                (LPDWORD)0x0,(PFILETIME)0x0);
+          DVar14 = DVar14 + 1;
+        } while( true );
+      }
+    }
+  }
+  else {
+    uVar7 = FUN_1400c6c60();
+    cVar3 = FUN_1400c6c20(uVar7,param_1);
+    if (cVar3 != '\0') {
+      uVar7 = FUN_1400c6b70(uVar7,&local_8098,param_1);
+      uVar4 = FUN_1400d9970(param_1,uVar7);
+      QJsonObject::~QJsonObject((QJsonObject *)&local_8098);
+      return (bool)uVar4;
+    }
+  }
+  return false;
+}
+
+
+
+=== FUN_1400e0980 @1400e0980
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+
+undefined2 * FUN_1400e0980(undefined2 *param_1,QString *param_2,int param_3)
+
+{
+  bool bVar1;
+  int iVar2;
+  undefined2 *puVar3;
+  QString *pQVar4;
+  void *pvVar5;
+  QByteArray *pQVar6;
+  __int64 _Var7;
+  char *pcVar8;
+  undefined1 auStackY_268 [32];
+  QProcess local_238 [16];
+  QArrayData *local_228;
+  wchar_t *local_220;
+  longlong local_218;
+  int *local_210;
+  wchar_t *local_208;
+  undefined8 local_200;
+  QChar local_1f8 [4];
+  undefined4 local_1f4;
+  int *local_1f0;
+  wchar_t *local_1e8;
+  undefined8 local_1e0;
+  QArrayData *local_1d8;
+  char *local_1d0;
+  int *local_1c8;
+  wchar_t *local_1c0;
+  undefined8 local_1b8;
+  int *local_1b0;
+  wchar_t *local_1a8;
+  undefined8 local_1a0;
+  int *local_198;
+  wchar_t *local_190;
+  undefined8 local_188;
+  int *local_180;
+  wchar_t *local_178;
+  undefined8 local_170;
+  int *local_168;
+  wchar_t *local_160;
+  undefined8 local_158;
+  int *local_150;
+  wchar_t *local_148;
+  undefined8 local_140;
+  QString local_138 [24];
+  QElapsedTimer local_120 [16];
+  undefined2 *local_110;
+  QString local_108 [24];
+  QString local_f0 [24];
+  QString local_d8 [24];
+  QString local_c0 [24];
+  QString local_a8 [24];
+  QString local_90 [24];
+  QString local_78 [24];
+  QString local_60 [24];
+  ulonglong local_48 [2];
+  
+  local_48[0] = DAT_142ea1180 ^ (ulonglong)auStackY_268;
+  local_1f4 = 1;
+  *param_1 = 0;
+  *(undefined4 *)(param_1 + 2) = 0xffffffff;
+  *(undefined8 *)(param_1 + 4) = 0;
+  local_110 = param_1;
+  QString::QString((QString *)(param_1 + 8));
+  local_1f4 = 1;
+  QString::QString(local_138,param_2);
+  puVar3 = (undefined2 *)QChar::QChar(local_1f8,0xfeff);
+  QString::remove(local_138,*puVar3,1);
+  QProcess::QProcess(local_238,(QObject *)0x0);
+  local_228 = (QArrayData *)0x0;
+  local_220 = L"powershell.exe";
+  local_218 = 0xe;
+  pQVar4 = (QString *)
+           QString::QString((QString *)&local_210,(QArrayDataPointer<char16_t> *)&local_228);
+  QProcess::setProgram(local_238,pQVar4);
+  QString::~QString((QString *)&local_210);
+  if (local_228 != (QArrayData *)0x0) {
+    LOCK();
+    iVar2 = *(int *)local_228;
+    *(int *)local_228 = *(int *)local_228 + -1;
+    UNLOCK();
+    if (iVar2 == 1) {
+      free(local_228);
+    }
+  }
+  local_210 = (int *)0x0;
+  local_208 = L"-NoProfile";
+  local_200 = 10;
+  QString::QString(local_108,(QArrayDataPointer<char16_t> *)&local_210);
+  local_1f0 = (int *)0x0;
+  local_1e8 = L"-NonInteractive";
+  local_1e0 = 0xf;
+  QString::QString(local_f0,(QArrayDataPointer<char16_t> *)&local_1f0);
+  local_150 = (int *)0x0;
+  local_148 = L"-ExecutionPolicy";
+  local_140 = 0x10;
+  QString::QString(local_d8,(QArrayDataPointer<char16_t> *)&local_150);
+  local_168 = (int *)0x0;
+  local_160 = L"Bypass";
+  local_158 = 6;
+  QString::QString(local_c0,(QArrayDataPointer<char16_t> *)&local_168);
+  local_180 = (int *)0x0;
+  local_178 = L"-WindowStyle";
+  local_170 = 0xc;
+  QString::QString(local_a8,(QArrayDataPointer<char16_t> *)&local_180);
+  local_198 = (int *)0x0;
+  local_190 = L"Hidden";
+  local_188 = 6;
+  QString::QString(local_90,(QArrayDataPointer<char16_t> *)&local_198);
+  local_1b0 = (int *)0x0;
+  local_1a8 = L"-Command";
+  local_1a0 = 8;
+  QString::QString(local_78,(QArrayDataPointer<char16_t> *)&local_1b0);
+  local_1c8 = (int *)0x0;
+  local_1c0 = 
+  L"[Console]::InputEncoding=[Text.Encoding]::UTF8;& ([scriptblock]::Create([Console]::In.ReadToEnd()))"
+  ;
+  local_1b8 = 99;
+  QString::QString(local_60,(QArrayDataPointer<char16_t> *)&local_1c8);
+  pvVar5 = QArrayData::allocate(&local_1d8,0x18,8,8,1);
+  local_228 = local_1d8;
+  local_218 = 0;
+  pQVar4 = local_108;
+  local_220 = pvVar5;
+  do {
+    QString::QString((QString *)((longlong)pvVar5 + local_218 * 0x18),pQVar4);
+    pQVar4 = pQVar4 + 0x18;
+    local_218 = local_218 + 1;
+  } while (pQVar4 < (QString *)local_48);
+  QProcess::setArguments(local_238,(QList<QString> *)&local_228);
+  FUN_140003e80(&local_228);
+  _eh_vector_destructor_iterator_(local_108,0x18,8,~QString_exref);
+  if (local_1c8 != (int *)0x0) {
+    LOCK();
+    iVar2 = *local_1c8;
+    *local_1c8 = *local_1c8 + -1;
+    UNLOCK();
+    if (iVar2 == 1) {
+      free(local_1c8);
+    }
+  }
+  if (local_1b0 != (int *)0x0) {
+    LOCK();
+    iVar2 = *local_1b0;
+    *local_1b0 = *local_1b0 + -1;
+    UNLOCK();
+    if (iVar2 == 1) {
+      free(local_1b0);
+    }
+  }
+  if (local_198 != (int *)0x0) {
+    LOCK();
+    iVar2 = *local_198;
+    *local_198 = *local_198 + -1;
+    UNLOCK();
+    if (iVar2 == 1) {
+      free(local_198);
+    }
+  }
+  if (local_180 != (int *)0x0) {
+    LOCK();
+    iVar2 = *local_180;
+    *local_180 = *local_180 + -1;
+    UNLOCK();
+    if (iVar2 == 1) {
+      free(local_180);
+    }
+  }
+  if (local_168 != (int *)0x0) {
+    LOCK();
+    iVar2 = *local_168;
+    *local_168 = *local_168 + -1;
+    UNLOCK();
+    if (iVar2 == 1) {
+      free(local_168);
+    }
+  }
+  if (local_150 != (int *)0x0) {
+    LOCK();
+    iVar2 = *local_150;
+    *local_150 = *local_150 + -1;
+    UNLOCK();
+    if (iVar2 == 1) {
+      free(local_150);
+    }
+  }
+  if (local_1f0 != (int *)0x0) {
+    LOCK();
+    iVar2 = *local_1f0;
+    *local_1f0 = *local_1f0 + -1;
+    UNLOCK();
+    if (iVar2 == 1) {
+      free(local_1f0);
+    }
+  }
+  if (local_210 != (int *)0x0) {
+    LOCK();
+    iVar2 = *local_210;
+    *local_210 = *local_210 + -1;
+    UNLOCK();
+    if (iVar2 == 1) {
+      free(local_210);
+    }
+  }
+  QElapsedTimer::QElapsedTimer(local_120);
+  QElapsedTimer::start(local_120);
+  QProcess::start(local_238,3);
+  bVar1 = QProcess::waitForStarted(local_238,5000);
+  if (bVar1) {
+    *(undefined1 *)param_1 = 1;
+    pQVar6 = (QByteArray *)QString::toUtf8(local_138);
+    QIODevice::write((QIODevice *)local_238,pQVar6);
+    QByteArray::~QByteArray((QByteArray *)&local_210);
+    QProcess::closeWriteChannel(local_238);
+    bVar1 = QProcess::waitForFinished(local_238,param_3);
+    *(bool *)((longlong)param_1 + 1) = !bVar1;
+    if (!bVar1) {
+      QProcess::kill(local_238);
+      QProcess::waitForFinished(local_238,3000);
+    }
+    _Var7 = QElapsedTimer::elapsed(local_120);
+    *(__int64 *)(param_1 + 4) = _Var7;
+    iVar2 = QProcess::exitCode(local_238);
+    *(int *)(param_1 + 2) = iVar2;
+    pQVar6 = (QByteArray *)QProcess::readAllStandardOutput(local_238);
+    pcVar8 = QByteArray::begin(pQVar6);
+    local_1d8 = (QArrayData *)QByteArray::size(pQVar6);
+    local_1d0 = QByteArrayView::castHelper(pcVar8);
+    QString::fromUtf8(&local_210,&local_1d8);
+    QString::operator=((QString *)(param_1 + 8),(QString *)&local_210);
+    QString::~QString((QString *)&local_210);
+    QByteArray::~QByteArray((QByteArray *)&local_1f0);
+  }
+  QProcess::~QProcess(local_238);
+  QString::~QString(local_138);
+  return param_1;
+}
+
+
+
+=== FUN_1400e0170 @1400e0170
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+
+undefined2 * FUN_1400e0170(undefined2 *param_1,QString *param_2,int param_3,QString *param_4)
+
+{
+  bool bVar1;
+  ProcessState PVar2;
+  int iVar3;
+  QString *pQVar4;
+  QString *pQVar5;
+  QDir *this;
+  QUuid *this_00;
+  undefined2 *puVar6;
+  int *piVar7;
+  QChar *pQVar8;
+  wchar_t *pwVar9;
+  QByteArray *pQVar10;
+  longlong lVar11;
+  __int64 _Var12;
+  char *pcVar13;
+  undefined1 auStackY_288 [32];
+  int *local_250;
+  wchar_t *local_248;
+  QChar *local_240;
+  QProcess local_238 [16];
+  int *local_228;
+  wchar_t *local_220;
+  undefined8 local_218;
+  int *local_208;
+  QChar *local_200;
+  undefined8 local_1f8;
+  int *local_1e8;
+  wchar_t *local_1e0;
+  QChar *local_1d8;
+  QChar local_1d0 [2];
+  QChar local_1ce [2];
+  int local_1cc;
+  QString *local_1c8 [2];
+  QString local_1b8 [24];
+  int *local_1a0;
+  wchar_t *local_198;
+  undefined8 local_190;
+  QString *local_188;
+  char *local_180;
+  QString local_178 [24];
+  QString local_160 [24];
+  QElapsedTimer local_148 [16];
+  undefined2 *local_138;
+  QString *local_130;
+  wchar_t *local_128;
+  longlong local_120;
+  QString local_118 [24];
+  QString local_100 [24];
+  QString local_e8 [24];
+  QString local_d0 [24];
+  QString local_b8 [24];
+  QString local_a0 [24];
+  QString local_88 [24];
+  QString local_70 [8];
+  int **local_68;
+  int **local_60;
+  undefined8 local_58;
+  ulonglong local_50;
+  
+  local_50 = DAT_142ea1180 ^ (ulonglong)auStackY_288;
+  *param_1 = 0;
+  *(undefined4 *)(param_1 + 2) = 0xffffffff;
+  *(undefined8 *)(param_1 + 4) = 0;
+  local_1cc = param_3;
+  local_1c8[0] = param_2;
+  local_188 = param_4;
+  local_138 = param_1;
+  QString::QString((QString *)(param_1 + 8));
+  local_130 = (QString *)0x0;
+  local_128 = L"/FrameLabs";
+  local_120 = 10;
+  pQVar4 = (QString *)
+           QString::QString((QString *)&local_1e8,(QArrayDataPointer<char16_t> *)&local_130);
+  pQVar5 = (QString *)QStandardPaths::writableLocation((StandardLocation)&local_250);
+  pQVar4 = QString::append(pQVar5,pQVar4);
+  QString::QString(local_178,pQVar4);
+  QString::~QString((QString *)&local_250);
+  QString::~QString((QString *)&local_1e8);
+  if (local_130 != (QString *)0x0) {
+    LOCK();
+    iVar3 = *(int *)local_130;
+    *(int *)local_130 = *(int *)local_130 + -1;
+    UNLOCK();
+    if (iVar3 == 1) {
+      free(local_130);
+    }
+  }
+  pQVar4 = (QString *)QString::QString((QString *)&local_250);
+  this = (QDir *)QDir::QDir((QDir *)&local_208,pQVar4);
+  QDir::mkpath(this,local_178);
+  QDir::~QDir((QDir *)&local_208);
+  QString::~QString((QString *)&local_250);
+  local_228 = (int *)0x0;
+  local_220 = L"%1/tweak_%2.ps1";
+  local_218 = 0xf;
+  pQVar4 = (QString *)QString::QString(local_160,(QArrayDataPointer<char16_t> *)&local_228);
+  this_00 = (QUuid *)QUuid::createUuid();
+  pQVar5 = (QString *)QUuid::toString(this_00,(StringFormat)&local_1a0);
+  puVar6 = (undefined2 *)QChar::QChar(local_1d0,'-');
+  pQVar5 = QString::remove(pQVar5,*puVar6,1);
+  piVar7 = (int *)QString::size(pQVar4);
+  pQVar8 = QString::begin(pQVar4);
+  pwVar9 = (wchar_t *)QString::size(pQVar5);
+  local_1d8 = QString::begin(pQVar5);
+  local_1e8 = (int *)CONCAT71(local_1e8._1_7_,2);
+  local_1e0 = pwVar9;
+  pwVar9 = (wchar_t *)QString::size(local_178);
+  local_240 = QString::begin(local_178);
+  local_250 = (int *)CONCAT71(local_250._1_7_,2);
+  local_68 = &local_250;
+  local_60 = &local_1e8;
+  local_58 = 0;
+  local_248 = pwVar9;
+  local_208 = piVar7;
+  local_200 = pQVar8;
+  QtPrivate::argToQString(local_1b8,&local_208,2,&local_68);
+  QString::~QString((QString *)&local_1a0);
+  QString::~QString(local_160);
+  if (local_228 != (int *)0x0) {
+    LOCK();
+    iVar3 = *local_228;
+    *local_228 = *local_228 + -1;
+    UNLOCK();
+    if (iVar3 == 1) {
+      free(local_228);
+    }
+  }
+  QFile::QFile((QFile *)&local_208,local_1b8);
+  bVar1 = QFile::open((QFile *)&local_208,10);
+  if (bVar1) {
+    QString::QString((QString *)&local_250,local_1c8[0]);
+    puVar6 = (undefined2 *)QChar::QChar(local_1ce,0xfeff);
+    QString::remove((QString *)&local_250,*puVar6,1);
+    QIODevice::write((QIODevice *)&local_208,&DAT_14019b2c0);
+    pQVar10 = (QByteArray *)QString::toUtf8((QString *)&local_250);
+    QIODevice::write((QIODevice *)&local_208,pQVar10);
+    QByteArray::~QByteArray((QByteArray *)&local_1e8);
+    QString::~QString((QString *)&local_250);
+    QFile::~QFile((QFile *)&local_208);
+    QProcess::QProcess(local_238,(QObject *)0x0);
+    local_228 = (int *)0x0;
+    local_220 = L"powershell.exe";
+    local_218 = 0xe;
+    pQVar4 = (QString *)QString::QString(local_160,(QArrayDataPointer<char16_t> *)&local_228);
+    QProcess::setProgram(local_238,pQVar4);
+    QString::~QString(local_160);
+    if (local_228 != (int *)0x0) {
+      LOCK();
+      iVar3 = *local_228;
+      *local_228 = *local_228 + -1;
+      UNLOCK();
+      if (iVar3 == 1) {
+        free(local_228);
+      }
+    }
+    local_250 = (int *)0x0;
+    local_248 = L"-NoProfile";
+    local_240 = (QChar *)0xa;
+    QString::QString(local_118,(QArrayDataPointer<char16_t> *)&local_250);
+    local_1e8 = (int *)0x0;
+    local_1e0 = L"-ExecutionPolicy";
+    local_1d8 = (QChar *)0x10;
+    QString::QString(local_100,(QArrayDataPointer<char16_t> *)&local_1e8);
+    local_68 = (int **)0x0;
+    local_60 = (int **)0x14019b168;
+    local_58 = 6;
+    QString::QString(local_e8,(QArrayDataPointer<char16_t> *)&local_68);
+    local_1a0 = (int *)0x0;
+    local_198 = L"-WindowStyle";
+    local_190 = 0xc;
+    QString::QString(local_d0,(QArrayDataPointer<char16_t> *)&local_1a0);
+    local_208 = (int *)0x0;
+    local_200 = (QChar *)0x14019b198;
+    local_1f8 = 6;
+    QString::QString(local_b8,(QArrayDataPointer<char16_t> *)&local_208);
+    local_228 = (int *)0x0;
+    local_220 = L"-File";
+    local_218 = 5;
+    QString::QString(local_a0,(QArrayDataPointer<char16_t> *)&local_228);
+    QString::QString(local_88,local_1b8);
+    pwVar9 = QArrayData::allocate((QArrayData **)local_1c8,0x18,8,7,1);
+    local_130 = local_1c8[0];
+    local_120 = 0;
+    pQVar4 = local_118;
+    local_128 = pwVar9;
+    do {
+      QString::QString((QString *)(pwVar9 + local_120 * 0xc),pQVar4);
+      pQVar4 = pQVar4 + 0x18;
+      local_120 = local_120 + 1;
+    } while (pQVar4 < local_70);
+    QProcess::setArguments(local_238,(QList<QString> *)&local_130);
+    FUN_140003e80(&local_130);
+    _eh_vector_destructor_iterator_(local_118,0x18,7,~QString_exref);
+    if (local_228 != (int *)0x0) {
+      LOCK();
+      iVar3 = *local_228;
+      *local_228 = *local_228 + -1;
+      UNLOCK();
+      if (iVar3 == 1) {
+        free(local_228);
+      }
+    }
+    if (local_208 != (int *)0x0) {
+      LOCK();
+      iVar3 = *local_208;
+      *local_208 = *local_208 + -1;
+      UNLOCK();
+      if (iVar3 == 1) {
+        free(local_208);
+      }
+    }
+    if (local_1a0 != (int *)0x0) {
+      LOCK();
+      iVar3 = *local_1a0;
+      *local_1a0 = *local_1a0 + -1;
+      UNLOCK();
+      if (iVar3 == 1) {
+        free(local_1a0);
+      }
+    }
+    if (local_68 != (int **)0x0) {
+      LOCK();
+      iVar3 = *(int *)local_68;
+      *(int *)local_68 = *(int *)local_68 + -1;
+      UNLOCK();
+      if (iVar3 == 1) {
+        free(local_68);
+      }
+    }
+    if (local_1e8 != (int *)0x0) {
+      LOCK();
+      iVar3 = *local_1e8;
+      *local_1e8 = *local_1e8 + -1;
+      UNLOCK();
+      if (iVar3 == 1) {
+        free(local_1e8);
+      }
+    }
+    if (local_250 != (int *)0x0) {
+      LOCK();
+      iVar3 = *local_250;
+      *local_250 = *local_250 + -1;
+      UNLOCK();
+      if (iVar3 == 1) {
+        free(local_250);
+      }
+    }
+    QElapsedTimer::QElapsedTimer(local_148);
+    QElapsedTimer::start(local_148);
+    QProcess::start(local_238,3);
+    bVar1 = QProcess::waitForStarted(local_238,5000);
+    if (bVar1) {
+      *(undefined1 *)param_1 = 1;
+      QElapsedTimer::QElapsedTimer((QElapsedTimer *)local_1c8);
+      QElapsedTimer::start((QElapsedTimer *)local_1c8);
+      QThread::msleep(500);
+      lVar11 = QElapsedTimer::elapsed((QElapsedTimer *)local_1c8);
+      pQVar4 = local_188;
+      while ((lVar11 < 5000 &&
+             (((bVar1 = QString::isEmpty(pQVar4), bVar1 || (bVar1 = QFile::exists(pQVar4), !bVar1))
+              && (PVar2 = QProcess::state(local_238), PVar2 == 2))))) {
+        QThread::msleep(100);
+        lVar11 = QElapsedTimer::elapsed((QElapsedTimer *)local_1c8);
+      }
+      QFile::remove(local_1b8);
+      bVar1 = QProcess::waitForFinished(local_238,local_1cc);
+      *(bool *)((longlong)param_1 + 1) = !bVar1;
+      if (!bVar1) {
+        QProcess::kill(local_238);
+        QProcess::waitForFinished(local_238,3000);
+      }
+      _Var12 = QElapsedTimer::elapsed(local_148);
+      *(__int64 *)(param_1 + 4) = _Var12;
+      iVar3 = QProcess::exitCode(local_238);
+      *(int *)(param_1 + 2) = iVar3;
+      pQVar10 = (QByteArray *)QProcess::readAllStandardOutput(local_238);
+      pcVar13 = QByteArray::begin(pQVar10);
+      local_188 = (QString *)QByteArray::size(pQVar10);
+      local_180 = QByteArrayView::castHelper(pcVar13);
+      QString::fromUtf8(&local_250,&local_188);
+      QString::operator=((QString *)(param_1 + 8),(QString *)&local_250);
+      QString::~QString((QString *)&local_250);
+      QByteArray::~QByteArray((QByteArray *)local_160);
+    }
+    QFile::remove(local_1b8);
+    QProcess::~QProcess(local_238);
+  }
+  else {
+    QFile::~QFile((QFile *)&local_208);
+  }
+  QString::~QString(local_1b8);
+  QString::~QString(local_178);
+  return param_1;
+}
+
+
+
+=== FUN_140111720 @140111720
+
+QList<QString> * FUN_140111720(QList<QString> *param_1)
+
+{
+  char cVar1;
+  char *pcVar2;
+  longlong lVar3;
+  void *_Src;
+  bool bVar4;
+  QString *pQVar5;
+  undefined8 *puVar6;
+  longlong lVar7;
+  longlong lVar8;
+  void *_Dst;
+  QString *pQVar9;
+  undefined **ppuVar10;
+  longlong local_78;
+  char *local_70;
+  QSettings local_68 [16];
+  QString local_58 [24];
+  undefined1 local_40 [24];
+  
+  *(undefined8 *)param_1 = 0;
+  *(undefined8 *)(param_1 + 8) = 0;
+  *(undefined8 *)(param_1 + 0x10) = 0;
+  ppuVar10 = &PTR_s_HKEY_CURRENT_USER_Software_Micro_1401a3d28;
+  do {
+    pcVar2 = *ppuVar10;
+    local_78 = 0;
+    if (pcVar2 != (char *)0x0) {
+      cVar1 = *pcVar2;
+      while (cVar1 != '\0') {
+        local_78 = local_78 + 1;
+        cVar1 = pcVar2[local_78];
+      }
+    }
+    local_70 = QByteArrayView::castHelper(pcVar2);
+    pQVar5 = (QString *)QString::fromLatin1(local_58,&local_78);
+    QSettings::QSettings(local_68,pQVar5,0,(QObject *)0x0);
+    QString::~QString(local_58);
+    puVar6 = (undefined8 *)QSettings::childKeys(local_68);
+    if (puVar6[2] != 0) {
+      if (((int *)*puVar6 == (int *)0x0) || (1 < *(int *)*puVar6)) {
+        FUN_1400131b0(param_1);
+      }
+      else {
+        lVar3 = puVar6[2];
+        if ((*(longlong *)param_1 == 0) || (1 < **(int **)param_1)) {
+LAB_140111908:
+          FUN_140008880(param_1,0);
+        }
+        else if (lVar3 != 0) {
+          lVar8 = *(longlong *)param_1;
+          if (lVar8 == 0) {
+            lVar7 = 0;
+          }
+          else {
+            lVar7 = (*(longlong *)(lVar8 + 8) -
+                    (longlong)(*(longlong *)(param_1 + 8) - (lVar8 + 0x17U & 0xfffffffffffffff8)) /
+                    0x18) - *(longlong *)(param_1 + 0x10);
+          }
+          if (lVar7 < lVar3) {
+            if (lVar8 == 0) {
+              lVar7 = 0;
+              lVar8 = 0;
+            }
+            else {
+              lVar7 = *(longlong *)(lVar8 + 8);
+              lVar8 = (longlong)(*(longlong *)(param_1 + 8) - (lVar8 + 0x17U & 0xfffffffffffffff8))
+                      / 0x18;
+            }
+            if ((lVar8 < lVar3) || (lVar3 = *(longlong *)(param_1 + 0x10), lVar7 * 2 <= lVar3 * 3))
+            {
+              bVar4 = false;
+            }
+            else {
+              _Src = *(void **)(param_1 + 8);
+              _Dst = (void *)((longlong)_Src + lVar8 * -0x18);
+              if ((((lVar3 != 0) && (_Src != _Dst)) && (_Src != (void *)0x0)) &&
+                 (_Dst != (void *)0x0)) {
+                memmove(_Dst,_Src,lVar3 * 0x18);
+              }
+              *(void **)(param_1 + 8) = _Dst;
+              bVar4 = true;
+            }
+            if (!bVar4) goto LAB_140111908;
+          }
+        }
+        pQVar9 = (QString *)puVar6[1];
+        pQVar5 = pQVar9 + puVar6[2] * 0x18;
+        if (pQVar9 != pQVar5) {
+          lVar3 = *(longlong *)(param_1 + 8);
+          for (; pQVar9 < pQVar5; pQVar9 = pQVar9 + 0x18) {
+            QString::QString((QString *)(lVar3 + *(longlong *)(param_1 + 0x10) * 0x18),pQVar9);
+            *(longlong *)(param_1 + 0x10) = *(longlong *)(param_1 + 0x10) + 1;
+          }
+        }
+      }
+    }
+    FUN_140003e80(local_40);
+    QSettings::~QSettings(local_68);
+    ppuVar10 = ppuVar10 + 1;
+    if (ppuVar10 == (undefined **)&DAT_1401a3d38) {
+      QtPrivate::QStringList_removeDuplicates(param_1);
+      return param_1;
+    }
+  } while( true );
+}
+
+
+
+=== FUN_140114d60 @140114d60
+
+void FUN_140114d60(longlong param_1,QString *param_2)
+
+{
+  bool bVar1;
+  QString *pQVar2;
+  __int64 _Var3;
+  QFileInfo *this;
+  QByteArray *pQVar4;
+  void *pvVar5;
+  QCoreApplication *pQVar6;
+  QSlotObjectBase *pQVar7;
+  QSlotObjectBase *local_res18 [2];
+  undefined8 local_138;
+  undefined4 uStack_130;
+  undefined4 uStack_12c;
+  QMetaTypeInterface *local_128;
+  QSlotObjectBase *local_120;
+  void *pvStack_118;
+  undefined *local_110;
+  QFile local_108 [16];
+  QString local_f8 [24];
+  QString local_e0 [24];
+  QString local_c8 [24];
+  QString local_b0 [24];
+  QString local_98 [24];
+  QString local_80 [24];
+  QString local_68 [24];
+  QString local_50 [24];
+  QString local_38 [24];
+  QString local_20 [8];
+  
+  qEnvironmentVariable((char *)local_e0);
+  bVar1 = QString::isEmpty(local_e0);
+  if (!bVar1) {
+    bVar1 = QFileInfo::exists(local_e0);
+    if (bVar1) goto LAB_140114dd4;
+  }
+  pQVar2 = (QString *)QCoreApplication::applicationFilePath();
+  QString::operator=(local_e0,pQVar2);
+  QString::~QString((QString *)&local_138);
+LAB_140114dd4:
+  bVar1 = QString::isEmpty(local_e0);
+  if (bVar1) {
+    *(undefined1 *)(param_1 + 0x80) = 0;
+    QString::QString((QString *)&local_138,&DAT_1401a4620);
+    FUN_1400046b0(param_1,&local_138);
+    pQVar2 = (QString *)&local_138;
+  }
+  else {
+    _Var3 = QCoreApplication::applicationPid();
+    QString::number((__int64)local_68,(int)_Var3);
+    qEnvironmentVariable((char *)local_80);
+    this = (QFileInfo *)QFileInfo::QFileInfo((QFileInfo *)local_res18,param_2);
+    QFileInfo::absolutePath(this);
+    QFileInfo::~QFileInfo((QFileInfo *)local_res18);
+    FUN_1400541e0(local_b0,local_98,"/framelabs-update.cmd");
+    QString::QString(local_c8);
+    bVar1 = QString::isEmpty(local_80);
+    if (!bVar1) {
+      pQVar2 = (QString *)
+               QString::QString((QString *)&local_120,
+                                ":waitouter\r\ntasklist /FI \"PID eq @LPID@\" 2>NUL | find \"@LPID@\" >NUL\r\nif not errorlevel 1 (\r\n  timeout /t 1 /nobreak >NUL\r\n  goto waitouter\r\n)\r\n"
+                               );
+      QString::QString((QString *)&local_138,"@LPID@");
+      pQVar2 = QString::replace(pQVar2,(QString *)&local_138,local_80,1);
+      QString::operator=(local_c8,pQVar2);
+      QString::~QString((QString *)&local_138);
+      QString::~QString((QString *)&local_120);
+    }
+    QString::QString(local_f8,
+                     "@echo off\r\n:waitinner\r\ntasklist /FI \"PID eq @IPID@\" 2>NUL | find \"@IPID@\" >NUL\r\nif not errorlevel 1 (\r\n  timeout /t 1 /nobreak >NUL\r\n  goto waitinner\r\n)\r\n@WAITOUTER@set /a tries=0\r\n:copyloop\r\ncopy /Y \"@SRC@\" \"@DST@\" >NUL\r\nif not errorlevel 1 goto copied\r\nset /a tries+=1\r\nif %tries% GEQ 20 goto copied\r\ntimeout /t 1 /nobreak >NUL\r\ngoto copyloop\r\n:copied\r\ndel \"@SRC@\" >NUL 2>&1\r\nstart \"\" \"@DST@\"\r\ndel \"%~f0\" >NUL 2>&1\r\n"
+                    );
+    QString::QString((QString *)&local_138,"@IPID@");
+    QString::replace(local_f8,(QString *)&local_138,local_68,1);
+    QString::~QString((QString *)&local_138);
+    QString::QString((QString *)&local_138,"@WAITOUTER@");
+    QString::replace(local_f8,(QString *)&local_138,local_c8,1);
+    QString::~QString((QString *)&local_138);
+    pQVar2 = (QString *)QDir::toNativeSeparators((QString *)&local_120);
+    QString::QString((QString *)&local_138,"@SRC@");
+    QString::replace(local_f8,(QString *)&local_138,pQVar2,1);
+    QString::~QString((QString *)&local_138);
+    QString::~QString((QString *)&local_120);
+    pQVar2 = (QString *)QDir::toNativeSeparators((QString *)&local_120);
+    QString::QString((QString *)&local_138,"@DST@");
+    QString::replace(local_f8,(QString *)&local_138,pQVar2,1);
+    QString::~QString((QString *)&local_138);
+    QString::~QString((QString *)&local_120);
+    QFile::QFile(local_108,local_b0);
+    bVar1 = QFile::open(local_108,10);
+    if (bVar1) {
+      pQVar4 = (QByteArray *)QString::toLocal8Bit(local_f8);
+      QIODevice::write((QIODevice *)local_108,pQVar4);
+      QByteArray::~QByteArray((QByteArray *)&local_138);
+      QFileDevice::close((QFileDevice *)local_108);
+      QString::QString(local_50,"/C");
+      QDir::toNativeSeparators(local_38);
+      pvVar5 = QArrayData::allocate((QArrayData **)local_res18,0x18,8,2,1);
+      local_120 = local_res18[0];
+      local_110 = (undefined *)0x0;
+      pQVar2 = local_50;
+      pvStack_118 = pvVar5;
+      do {
+        QString::QString((QString *)((longlong)pvVar5 + (longlong)local_110 * 0x18),pQVar2);
+        pQVar2 = pQVar2 + 0x18;
+        local_110 = (undefined *)((longlong)local_110 + 1);
+      } while (pQVar2 < local_20);
+      QString::QString((QString *)&local_138,"cmd.exe");
+      QProcess::startDetached
+                ((QString *)&local_138,(QList<QString> *)&local_120,local_98,(__int64 *)0x0);
+      QString::~QString((QString *)&local_138);
+      FUN_140003e80(&local_120);
+      _eh_vector_destructor_iterator_(local_50,0x18,2,~QString_exref);
+      pQVar6 = QCoreApplication::instance();
+      local_120 = (QSlotObjectBase *)0x0;
+      pvStack_118 = (void *)0x0;
+      local_110 = &DAT_142ea0ce0;
+      local_138._0_4_ = 0;
+      local_138._4_4_ = 0;
+      uStack_130 = 0;
+      uStack_12c = 0;
+      local_128 = (QMetaTypeInterface *)&DAT_142ea0ce0;
+      local_res18[0] = (QSlotObjectBase *)FUN_14014bc60(0x18);
+      if (local_res18[0] == (QSlotObjectBase *)0x0) {
+        pQVar7 = (QSlotObjectBase *)0x0;
+      }
+      else {
+        *(undefined4 *)local_res18[0] = 1;
+        *(code **)(local_res18[0] + 8) = FUN_140114a90;
+        *(code **)(local_res18[0] + 0x10) = quit_exref;
+        pQVar7 = local_res18[0];
+      }
+      QMetaObject::invokeMethodImpl
+                ((QObject *)pQVar6,pQVar7,2,1,(void **)&local_138,(char **)&uStack_130,&local_128);
+    }
+    else {
+      *(undefined1 *)(param_1 + 0x80) = 0;
+      QString::QString((QString *)&local_138,"Nu pot scrie scriptul de update.");
+      FUN_1400046b0(param_1,&local_138);
+      QString::~QString((QString *)&local_138);
+    }
+    QFile::~QFile(local_108);
+    QString::~QString(local_f8);
+    QString::~QString(local_c8);
+    QString::~QString(local_b0);
+    QString::~QString(local_98);
+    QString::~QString(local_80);
+    pQVar2 = local_68;
+  }
+  QString::~QString(pQVar2);
+  QString::~QString(local_e0);
+  return;
+}
+
+

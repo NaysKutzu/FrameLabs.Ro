@@ -1,0 +1,12 @@
+
+$ErrorActionPreference = 'SilentlyContinue'
+
+function Del-Reg($path, $name) {
+    if (Test-Path $path) { Remove-ItemProperty -Path $path -Name $name -Force -ErrorAction SilentlyContinue }
+}
+function Set-Dword($path, $name, $value) {
+    if (-not (Test-Path $path)) { New-Item -Path $path -Force | Out-Null }
+    New-ItemProperty -Path $path -Name $name -PropertyType DWord -Value $value -Force | Out-Null
+}
+
+# 

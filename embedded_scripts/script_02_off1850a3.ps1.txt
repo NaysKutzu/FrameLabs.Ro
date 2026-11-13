@@ -1,0 +1,17 @@
+
+$bloatware = @(%1)
+foreach ($app in $bloatware) {
+    # Provisioned = ce primeste un user NOU. Fara asta, aplicatia revine.
+    # Se face PRIMUL, si asta e reparatia din 24.09: in ordinea inversa, pe
+    # unele build-uri Windows refuza stergerea pentru toti utilizatorii a unei
+    # aplicatii inca provizionate si pica tot lotul deodata. De aia la vreo 9%
+    # din rulari ramaneau fix aceleasi 12 aplicatii, iar a doua rulare mergea
+    # perfect: prima o scosese deja din imagine.
+    Get-AppxProvisionedPackage -Online |
+        Where-Object { $_.PackageName -like "*$app*" } | ForEach-Object {
+            try { Remove-AppxProvisionedPackage -Online -PackageName $_.PackageName -EA Stop } catch {}
+        }
+    foreach ($p in (Get-AppxPackage -Name "*$app*" -AllUsers)) {
+        # Un pachet care ruleaza refuza tacit stergerea. Oprim procesul
+        # asociat inainte. Folderul din WindowsApps incepe cu Numele pachetului
+        # (PackageFullName), deci potrivim dupa $p.Name 

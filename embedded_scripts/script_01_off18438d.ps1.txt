@@ -1,0 +1,30 @@
+...:(C%3A)".
+    $c = Get-ItemProperty -LiteralPath 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SPP\Clients' -ErrorAction SilentlyContinue
+    if (-not $c) { return $false }
+    $v = $c.'{09F7EDC5-294E-4180-AF6A-FB0E6A0E9513}'
+    if (-not $v) { return $false }
+    return (($v -join ' ') -match [regex]::Escape(($env:SystemDrive -replace ':', '%3A')))
+}
+if (-not (Fl-ProtectiePornita)) {
+    if (-not $flPorneste) { exit 3 }
+    Enable-ComputerRestore -Drive ($env:SystemDrive + '\') -ErrorAction SilentlyContinue
+    & (Join-Path $env:SystemRoot 'System32\vssadmin.exe') resize shadowstorage "/For=$env:SystemDrive" "/On=$env:SystemDrive" /MaxSize=5% | Out-Null
+}
+$k = 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore'
+$flAvea = $false; $flVechi = $null
+try { $flVechi = (Get-ItemProperty -LiteralPath $k -Name SystemRestorePointCreationFrequency -ErrorAction Stop).SystemRestorePointCreationFrequency; $flAvea = $true } catch { }
+New-ItemProperty -LiteralPath $k -Name SystemRestorePointCreationFrequency -PropertyType DWord -Value 0 -Force | Out-Null
+$flAcum = Get-Date
+try { Checkpoint-Computer -Description $flDesc -RestorePointType 'MODIFY_SETTINGS' -ErrorAction Stop } catch { }
+if ($flAvea) { New-ItemProperty -LiteralPath $k -Name SystemRestorePointCreationFrequency -PropertyType DWord -Value $flVechi -Force | Out-Null }
+else { Remove-ItemProperty -LiteralPath $k -Name SystemRestorePointCreationFrequency -Force -ErrorAction SilentlyContinue }
+foreach ($rp in @(Get-ComputerRestorePoint -ErrorAction SilentlyContinue)) {
+    if ($rp.Description -eq $flDesc) {
+        try {
+            $t = [Management.ManagementDateTimeConverter]::ToDateTime($rp.CreationTime)
+            if ($t -gt $flAcum.AddMinutes(-2)) { exit 0 }
+        } catch { }
+    }
+}
+if (-not (Fl-ProtectiePornita)) { exit 3 }
+exit 2

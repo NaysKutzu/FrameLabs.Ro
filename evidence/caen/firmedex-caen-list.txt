@@ -1,0 +1,166 @@
+# Lista CAEN BTE RIDES S.R.L. (CUI 50706577)
+# Sursa: https://firmedex.ro/firma/j2024031539003
+# FirmeDEX declară: date ONRC actualizate la 26.07.2026.
+# ATENȚIE: FirmeDEX pune ca principal 1052 (înghețată), ceea ce e inconsistent
+# cu ANAF (5829 la 13.11.2026), identitate.ro (4933→5829 pe 07.11.2026),
+# Termene.ro și RisCo.ro (4933). Lista e folosită ca obiect de activitate
+# (coduri autorizate), nu ca dovadă a principalului.
+
+1052	Fabricarea înghețatei
+1071	Fabricarea pâinii; fabricarea prăjiturilor și a produselor proaspete de patiserie
+1072	Fabricarea biscuiților și pișcoturilor; fabricarea prăjiturilor și a produselor conservate de patiserie
+1085	Fabricarea de mâncăruri preparate
+1086	Fabricarea preparatelor alimentare omogenizate și alimentelor dietetice
+1089	Fabricarea altor produse alimentare n.c.a.
+2512	Fabricarea de uși și ferestre din metal
+3101	Fabricarea de mobilă pentru birouri și magazine
+3102	Fabricarea de mobilă pentru bucătării
+3109	Fabricarea de mobilă n.c.a.
+3317	Repararea și întreținerea altor echipamente de transport n.c.a.
+3319	Repararea altor echipamente
+3530	Furnizarea de abur și aer condiționat
+4110	Dezvoltare (promovare) imobiliară
+4120	Lucrări de construcții a clădirilor rezidențiale și nerezidențiale
+4299	Lucrări de construcții a altor proiecte inginerești n.c.a
+4322	Lucrări de instalații sanitare, de încălzire și de aer condiționat
+4329	Alte lucrări de instalații pentru construcții
+4332	Lucrări de tâmplărie și dulgherie
+4334	Lucrări de vopsitorie, zugrăveli și montări de geamuri
+4339	Alte lucrări de finisare
+4511	Comerț cu autoturisme și autovehicule ușoare (sub 3,5 tone)
+4519	Comerț cu alte autovehicule
+4520	Întreținerea și repararea autovehiculelor
+4531	Comerț cu ridicata de piese și accesorii pentru autovehicule
+4532	Comerț cu amănuntul de piese și accesorii pentru autovehicule
+4540	Comerț cu motociclete, piese și accesorii aferente; întreținerea și repararea motocicletelor
+4611	Intermedieri în comerțul cu materii prime agricole, animale vii, materii prime textile și cu semifabricate
+4613	Intermedieri în comerțul cu material lemnos și materiale de construcții
+4615	Intermedieri în comerțul cu mobilă, articole de menaj și de fierărie
+4616	Intermedieri în comerțul cu textile, confecții din blană, încălțăminte și articole din piele
+4617	Intermedieri în comerțul cu produse alimentare, băuturi și tutun
+4618	Intermedieri în comerțul specializat în vânzarea produselor cu caracter specific, n.c.a.
+4619	Intermedieri în comerțul cu produse diverse
+4621	Comerț cu ridicata al cerealelor, semințelor, furajelor și tutunului neprelucrat
+4622	Comerț cu ridicata al florilor și al plantelor
+4631	Comerț cu ridicata al fructelor și legumelor
+4632	Comerț cu ridicata al cărnii și produselor din carne
+4633	Comerț cu ridicata al produselor lactate, ouălor, uleiurilor și grăsimilor comestibile
+4634	Comerț cu ridicata al băuturilor
+4635	Comerț cu ridicata al produselor din tutun
+4636	Comerț cu ridicata al zahărului, ciocolatei și produselor zaharoase
+4637	Comerț cu ridicata cu cafea, ceai, cacao și condimente
+4638	Comerț cu ridicata specializat al altor alimente, inclusiv pește, crustacee și moluște
+4639	Comerț cu ridicata nespecializat de produse alimentare, băuturi și tutun
+4641	Comerț cu ridicata al produselor textile
+4642	Comerț cu ridicata al îmbrăcămintei și încălțămintei
+4643	Comerț cu ridicata al aparatelor electrice de uz gospodăresc, al aparatelor de radio și televizoarelor
+4644	Comerț cu ridicata al produselor din ceramică, sticlărie, și produse de întreținere
+4645	Comerț cu ridicata al produselor cosmetice și de parfumerie
+4647	Comerț cu ridicata al mobilei, covoarelor și a articolelor de iluminat
+4648	Comerț cu ridicata al ceasurilor și bijuteriilor
+4649	Comerț cu ridicata al altor bunuri de uz gospodăresc
+4651	Comerț cu ridicata al calculatoarelor, echipamentelor periferice și software- ului  [software/web/IT]
+4652	Comerț cu ridicata de componente și echipamente electronice și de telecomunicații
+4665	Comerț cu ridicata al mobilei de birou
+4666	Comerț cu ridicata al altor mașini și echipamente de birou
+4669	Comerț cu ridicata al altor mașini și echipamente
+4673	Comerț cu ridicata al materialului lemnos și al materialelor de construcții și echipamentelor sanitare
+4674	Comerț cu ridicata al echipamentelor și furniturilor de fierărie pentru instalații sanitare și de încălzire
+4711	Comerț cu amănuntul în magazine nespecializate, cu vânzare predominantă de produse alimentare, băuturi și tutun
+4719	Comerț cu amănuntul în magazine nespecializate, cu vânzare predominantă de produse nealimentare
+4721	Comerț cu amănuntul al fructelor și legumelor proaspete, în magazine specializate
+4722	Comerț cu amănuntul al cărnii și al produselor din carne, în magazine specializate
+4723	Comerț cu amănuntul al peștelui, crustaceelor și moluștelor, în magazine specializate
+4724	Comerț cu amănuntul al pâinii, produselor de patiserie și produselor zaharoase, în magazine specializate
+4725	Comerț cu amănuntul al băuturilor, în magazine specializate
+4726	Comerț cu amănuntul al produselor din tutun, în magazine specializate
+4729	Comerț cu amănuntul al altor produse alimentare, în magazine specializate
+4730	Comerț cu amănuntul al carburanților pentru autovehicule în magazine specializate
+4741	Comerț cu amănuntul al calculatoarelor, unităților periferice și software-ului in magazine specializate  [software/web/IT]
+4742	Comerț cu amănuntul al echipamentului pentru telecomunicații în magazine specializate
+4743	Comerț cu amănuntul al echipamentelor audio/video în magazine specializate
+4751	Comerț cu amănuntul al textilelor, în magazine specializate
+4752	Comerț cu amănuntul al articolelor de fierărie, al articolelor din sticlă și a celor pentru vopsit, în magazine specializate
+4753	Comerț cu amănuntul al covoarelor, carpetelor, tapetelor și a altor acoperitoare de podea, în magazine specializate
+4754	Comerț cu amănuntul al articolelor și aparatelor electrocasnice, în magazine specializate
+4759	Comerț cu amănuntul al mobilei, al articolelor de iluminat și al articolelor de uz casnic n.c.a., în magazine specializate
+4761	Comerț cu amănuntul al cărților, în magazine specializate
+4762	Comerț cu amănuntul al ziarelor și articolelor de papetărie, în magazine specializate
+4771	Comerț cu amănuntul al îmbrăcămintei, în magazine specializate
+4772	Comerț cu amănuntul al încălțămintei și articolelor din piele, în magazine specializate
+4775	Comerț cu amănuntul al produselor cosmetice și de parfumerie, în magazine specializate
+4776	Comerț cu amănuntul al florilor, plantelor și semințelor; comerț cu amănuntul al animalelor de companie și a hranei pentru acestea, în magazine specializate
+4777	Comerț cu amănuntul al ceasurilor și bijuteriilor, în magazine specializate
+4778	Comerț cu amănuntul al altor bunuri noi, în magazine specializate
+4779	Comerț cu amănuntul al bunurilor de ocazie vândute prin magazine
+4781	Comerț cu amănuntul al produselor alimentare, băuturilor și produselor din tutun efectuat prin standuri, chioșcuri și piețe
+4782	Comerț cu amănuntul al textilelor, îmbrăcămintei și încălțămintei efectuat prin standuri, chioșcuri și piețe
+4789	Comerț cu amănuntul prin standuri, chioșcuri și piețe al altor produse
+4791	Comerț cu amănuntul prin intermediul caselor de comenzi sau prin Internet  [software/web/IT]
+4799	Comerț cu amănuntul efectuat în afara  magazinelor, standurilor, chioșcurilor și piețelor
+4931	Transporturi urbane, suburbane și metropolitane de călători
+4932	Transporturi cu taxiuri
+4939	Alte transporturi terestre de călători n.c.a
+4941	Transporturi rutiere de mărfuri
+4942	Servicii de mutare
+5210	Depozitări
+5221	Activități de servicii anexe pentru transporturi terestre
+5224	Manipulări
+5229	Alte activități anexe transporturilor
+5320	Alte activități poștale și de curier
+5510	Hoteluri și alte facilități de cazare similare
+5520	Facilități de cazare pentru vacanțe și perioade de scurtă durată
+5530	Parcuri pentru rulote, campinguri și tabere
+5590	Alte servicii de cazare
+5610	Restaurante
+5621	Activități de alimentație (catering) pentru evenimente
+5629	Alte servicii de alimentație n.c.a.
+5630	Baruri și alte activități de servire a băuturilor
+5821	Activități de editare a jocurilor de calculator  [software/web/IT]
+5829	Activități de editare a altor produse software  [software/web/IT]
+6201	Activități de realizare a soft-ului la comandă (software orientat client)  [software/web/IT]
+6202	Activități de consultanță în tehnologia informației  [software/web/IT]
+6203	Activități de management (gestiune și exploatare) a mijloacelor de calcul  [software/web/IT]
+6209	Alte activități de servicii privind tehnologia informației  [software/web/IT]
+6311	Prelucrarea datelor, administrarea paginilor web și activități conexe  [software/web/IT]
+6312	Activități ale portalurilor web  [software/web/IT]
+6810	Cumpărarea și vânzarea de bunuri imobiliare proprii
+6820	Închirierea și subînchirierea bunurilor imobiliare proprii sau închiriate
+6831	Agenții imobiliare
+6832	Administrarea imobilelor pe bază de comision sau contract
+7311	Activități ale agențiilor de publicitate
+7312	Servicii de reprezentare media
+7410	Activități de design specializat
+7420	Activități fotografice
+7490	Alte activități profesionale, științifice și tehnice n.c.a.
+7711	Activități de închiriere și leasing cu autoturisme și autovehicule rutiere ușoare
+7712	Activități de închiriere și leasing cu autovehicule rutiere grele
+7721	Activități de închiriere și leasing cu bunuri recreaționale și echipament sportiv
+7729	Activități de închiriere și leasing cu alte bunuri personale și gospodărești n.c.a.
+7731	Activități de închiriere și leasing cu mașini și echipamente agricole
+7732	Activități de închiriere și leasing cu mașini și echipamente pentru construcții
+7733	Activități de închiriere și leasing cu mașini și echipamente de birou (inclusiv calculatoare)
+7739	Activități de închiriere și leasing cu alte mașini, echipamente și bunuri tangibile n.c.a.
+7990	Alte servicii de rezervare și asistență turistică
+8121	Activități generale de curățenie a clădirilor
+8122	Activități specializate de curățenie
+8129	Alte activități de curățenie
+8211	Activități combinate de secretariat
+8219	Activități de fotocopiere, de pregătire a documentelor și alte activități specializate de secretariat
+8230	Activități de organizare a expozițiilor, târgurilor și congreselor
+8291	Activități ale agențiilor de colectare și a birourilor (oficiilor) de raportare a creditului
+8292	Activități de ambalare
+8299	Alte activități de servicii suport pentru întreprinderi n.c.a.
+9002	Activități suport pentru interpretare artistică (spectacole)
+9313	Activități ale centrelor de fitness
+9319	Alte activități sportive
+9321	Bâlciuri și parcuri de distracții
+9329	Alte activități recreative și distractive n.c.a.
+9511	Repararea calculatoarelor și a echipamentelor periferice  [software/web/IT]
+9512	Repararea echipamentelor de comunicații
+9524	Repararea mobilei și a furniturilor casnice
+9601	Spălarea și curățarea (uscată) articolelor textile și a produselor din blană
+9602	Coafură și alte activități de înfrumusețare
+9604	Activități de întreținere corporală
+9609	Alte activități de servicii n.c.a.
+9700	Activități ale gospodăriilor private în calitate de angajator de personal casnic

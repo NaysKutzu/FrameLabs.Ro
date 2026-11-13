@@ -1,0 +1,37 @@
+
+# folosim doar varianta silentioasa, cu timeout per aplicatie.
+$win32 = @(%2)
+$uninstKeys = @(
+    'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*',
+    'HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*'
+)
+foreach ($rk in $uninstKeys) {
+    Get-ItemProperty $rk -EA SilentlyContinue | Where-Object { $_.DisplayName } | ForEach-Object {
+        $dn = $_.DisplayName
+        $q  = $_.QuietUninstallString
+        if ($q) {
+            foreach ($b in $win32) {
+                if ($dn -like "*$b*") {
+                    try {
+                        $up = Start-Process -FilePath 'cmd.exe' -NoNewWindow -PassThru `
+                              -ArgumentList @('/c', $q)
+                        if ($up.WaitForExit(90000)) { $sters.Add($dn) }
+                        else { try { $up.Kill() } catch {}; $blocat.Add("$dn (timeout)") }
+                    } catch { $blocat.Add($dn) }
+                    break
+                }
+            }
+        }
+    }
+}
+
+# Rezumat pe o singura linie, ca sa-l poata citi clientul. Versiunea de Windows
+# intra si ea: fara ea, un esec nu poate fi legat de un build anume.
+$ver = Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion' -EA SilentlyContinue
+$os = ''
+if ($ver) { $os = ($ver.ProductName + ' ' + $ver.DisplayVersion + ' build ' + $ver.CurrentBuild + '.' + $ver.UBR) }
+Write-Output ("FLBLOAT|sters=" + $sters.Count + "|blocat=" + $blocat.Count +
+              "|ms=" + $cronometru.ElapsedMilliseconds +
+              "|os=" + $os +
+              "|sterse=" + ($sters -join ', ') +
+              "|blocate=" + ($blocat -join ', '))

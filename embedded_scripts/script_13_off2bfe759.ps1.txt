@@ -1,0 +1,74 @@
+ userul nu avea cum sa-l repare singur. Din 3.2.8 nu se mai
+#   scrie, dar aici o si stergem, pentru masinile care au primit-o deja.
+Del-Reg 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\System' 'EnableCdp'
+Get-Service -Name 'CDPUserSvc_*' -ErrorAction SilentlyContinue | ForEach-Object {
+    Start-Service -Name $_.Name -ErrorAction SilentlyContinue
+}
+sc.exe config Spooler start= auto | Out-Null
+Start-Service Spooler -ErrorAction SilentlyContinue
+
+# --- 9. Tweak-uri adaugate in 3.2.7 ---
+#   Fiecare linie anuleaza exact ce pune pachetul. Fara asta butonul Revert
+#   devine tot mai mult o minciuna cu fiecare versiune.
+
+# Power Throttling: pachetul scrie in AMBELE cai (cea veche ramane doar ca sonda
+# din PACK_SETTINGS sa nu raporteze fals drift). Cea veche e stearsa mai sus.
+Del-Reg 'HKLM:\SYSTEM\CurrentControlSet\Control\Power\PowerThrottling' 'PowerThrottlingOff'
+
+# UDP Receive Offload inapoi pe pornit (default Windows 11).
+netsh int udp set global uro=enabled | Out-Null
+
+# Kernelul poate fi paginat din nou.
+Set-Dword 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management' 'DisablePagingExecutive' 0
+
+# Widgets / News and Interests.
+Del-Reg 'HKLM:\SOFTWARE\Policies\Microsoft\Dsh' 'AllowNewsAndInterests'
+
+# Aplicatiile UWP pot rula iar in fundal.
+Del-Reg 'HKCU:\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications' 'GlobalUserDisabled'
+
+# Program Compatibility Assistant.
+Del-Reg 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\AppCompat' 'DisablePCA'
+
+# Ecranul "hai sa terminam de configurat" dupa update-uri.
+Del-Reg 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\UserProfileEngagement' 'ScoobeSystemSettingEnabled'
+
+# Cautarea din Start poate interoga iar cloud-ul.
+Del-Reg 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\SearchSettings' 'IsDynamicSearchBoxEnabled'
+Del-Reg 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\SearchSettings' 'IsMSACloudSearchEnabled'
+Del-Reg 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\SearchSettings' 'IsAADCloudSearchEnabled'
+
+# Animatiile inapoi pe valorile implicite Windows.
+Set-ItemProperty -Path 'HKCU:\Control Panel\Desktop\WindowMetrics' -Name 'MinAnimate' -Value '1' -Force -ErrorAction SilentlyContinue
+Set-Dword 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced' 'TaskbarAnimations' 1
+Set-Dword 'HKCU:\Software\Microsoft\Windows\DWM' 'EnableAeroPeek' 1
+
+# --- 10. Securitate si actualizari ---
+#   Pachetul le opreste ca sa nu apara nimic peste joc. La revert revin pe
+#   valorile Windows, care aici sunt si varianta mai sigura pentru user.
+#   Atingem doar valorile puse de pachet.
+Del-Reg 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\System' 'EnableSmartScreen'
+Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer' -Name 'SmartScreenEnabled' -Value 'Warn' -Force -ErrorAction SilentlyContinue
+foreach ($k in 'HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Notifications',
+               'HKLM:\SOFTWARE\Microsoft\Windows Defender Security Center\Notifications') {
+    Del-Reg $k 'DisableNotifications'
+    Del-Reg $k 'DisableEnhancedNotifications'
+}
+Del-Reg 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU' 'NoAutoUpdate'
+Del-Reg 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate' 'SetUpdateNotificationLevel'
+Del-Reg 'HKLM:\SOFTWARE\Policies\Microsoft\WindowsStore' 'AutoDownload'
+Set-Dword 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching' 'SearchOrderConfig' 1
+foreach ($t in 'Windows.SystemToast.SecurityAndMaintenance', 'Windows.SystemToast.WindowsUpdate') {
+    Del-Reg "HKCU:\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\$t" 'Enabled'
+}
+foreach ($f in 'DomainProfile', 'PublicProfile', 'StandardProfile') {
+    $k = "HKLM:\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\$f"
+    if (Test-Path $k) { New-ItemProperty -Path $k -Name 'DisableNotifications' -PropertyType DWord -Value 0 -Force | Out-Null }
+}
+Del-Reg 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Error Reporting' 'Disabled'
+
+# --- 11. SMB ---
+#   Diamond opreste si serverul SMB2 (partajarea de fisiere si imprimante din
+#   PC-ul asta). Pe orice Windows e pornit implicit. SMB1 ramane oprit: e un
+#   protocol vechi si nesigur, pe care Windows il scoate oricum singur.
+Set-SmbServerConfiguration -EnableSMB2Protocol $true -Force -ErrorAction SilentlyContinue | Out-Null

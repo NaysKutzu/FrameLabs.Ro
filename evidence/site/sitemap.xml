@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- This is the parent sitemap linking to additional sitemaps for products, collections and pages as shown below. The sitemap can not be edited manually, but is kept up to date in real time. -->
+  <sitemap>
+    <loc>https://framelabs.ro/sitemap_agentic_discovery.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://framelabs.ro/sitemap_products_1.xml?from=10337714864470&amp;to=10339688022358</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://framelabs.ro/sitemap_pages_1.xml?from=160106643798&amp;to=197637439830</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://framelabs.ro/sitemap_collections_1.xml?from=694325707094&amp;to=694327771478</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://framelabs.ro/sitemap_blogs_1.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://framelabs.ro/sitemap_articles_1.xml</loc>
+  </sitemap>
+</sitemapindex>

@@ -1,0 +1,930 @@
+Optimizare PC Gaming - Mai mult FPS & fără lag | FrameLabs 
+
+FRAMELABS 
+
+Aplicația 
+
+Gameplay 
+
+Cum funcționează 
+
+Calculator FPS 
+
+Recenzii 
+
+Pachete 
+
+Contul meu 
+
+🛒
+
+DISCORD
+
+⬇ DOWNLOAD 
+
+Peste 5.000 de gameri folosesc FrameLabs PC-UL TĂU POATE MAI MULT. 
+
+Windows vine cu setări făcute pentru birou, nu pentru gaming. De asta PC-ul tău performează la un nivel mai scăzut. Le schimbăm dintr-un click, iar diferența se vede instant.
+
+⚡ 
+DOWNLOAD
+
+⚡ 
+VEZI PACHETELE
+
+Aplicația rulează pe PC . Cumperi acum de pe telefon, o instalezi pe PC în 2 minute.
+
+Pachete 
+Cum funcționează 
+
+AȘA ARATĂ APLICAȚIA.
+
+Exact ce primești după instalare. 13 secțiuni, toate funcționale.
+
+FRAMELABS
+
+—
+✕
+
+TEST
+
+● DEMO
+
+SYSTEM
+
+Dashboard
+
+Statistics
+
+Diagnostic NEW 
+
+Results BETA 
+
+OPTIMIZE
+
+Tweaks
+
+Auto Tweaks G+ 
+
+Network Boost
+
+Game Settings
+
+TOOLS
+
+Driver Scan
+
+App Installer
+
+Server Ready
+
+Uninstaller
+
+Restore Points
+
+AI
+
+AI Assistant
+
+ACCOUNT
+
+Settings
+
+⏏ Logout
+
+FRAMELABS v3.3.0
+
+Bine ai venit, TEST
+
+☾
+☀
+▤
+
+99 /100 
+
+Performance Score
+Optimizare sistem
+
+🎮
+
+Ai nevoie de ajutor?
+Deschide ticket pe Discord
+
+→
+
+▤ Processor − 
+
+UTILIZATION
+
+14%
+
+TEMPERATURE
+
+16°C
+
+🖵 Graphics − 
+
+UTILIZATION
+
+6%
+
+TEMPERATURE
+
+48°C
+
+▤ Leaderboard TOP PERFORMERS 
+
+🥇
+Zariel
+DIAMOND 100 /100 
+
+🥈
+Nea Costica
+DIAMOND 100 /100 
+
+🥉
+dincozaur
+DIAMOND 100 /100 
+
+4
+Lupisca
+DIAMOND 100 /100 
+
+5
+kefron
+DIAMOND 100 /100 
+
+6
+Mario Neacă
+DIAMOND 97 /100 
+
+✦
+
+AI Assistant
+Întreabă orice despre FrameLabs, tweaks sau gaming
+
+DESCHIDE 
+
+Tweaks
+Toggle individual pe fiecare optimizare
+
+↺ Restart 
+
+All Performance Gaming Network Privacy 
+
+⚡
+FREE 
+Game Mode
+Prioritize game processes over background tasks.
+HIGH 
+
+🎮
+FREE 
+Disable Game Bar
+Disable the Xbox Game Bar overlay.
+MEDIUM 
+
+◉
+FREE 
+Disable Nagle
+Reduce TCP latency for smoother online gameplay.
+HIGH 
+
+🧹
+FREE 
+Startup Cleaner
+Disable unnecessary startup programs.
+MEDIUM 
+
+🔒
+FREE 
+Disable Telemetry
+Stop Windows data collection in the background.
+MEDIUM 
+
+◐
+FREE 
+Visual FX Off
+Disable all Windows visual effects for speed.
+LOW 
+
+⚙
+FREE 
+Disable Superfetch
+Stop SysMain from preloading apps to reduce disk I/O.
+HIGH 
+
+🔍
+FREE 
+Disable Cortana
+Disable Cortana, Bing Search and search history.
+MEDIUM 
+
+⬤
+SILVER 
+Disable Updates
+Disable automatic Windows updates.
+HIGH 
+
+Auto Tweaks
+Profile premium de optimizare cu un click
+
+⚡
+Optimizare Gold PACK 2 
+Pachet echilibrat: mai mult FPS, latență redusă, sistem mai curat. Recomandat pentru majoritatea jocurilor.
++FPS LATENȚĂ DEBLOAT 
+
+→
+
+💎
+Optimizare Diamond PACK 3 TOP 
+Pachet complet: toate optimizările Gold + tuning hardware avansat. Pentru utilizatorii care vor performanță maximă.
+GPU TUNING MAX FPS TUNING AVANSAT 
+
+→
+
+Game Settings NEW 
+
+Setările pro-ilor și partenerilor FrameLabs, aplicate cu un click, CS2, Valorant și FiveM.
+
+CS2 Valorant FiveM Rust Fortnite PUBG Tarkov WARDOGS 
+
+● Config CS2 detectat
+
+🅱
+BTN
+PARTENER FRAMELABS
+
+Rezoluție 1280×960 · 4:3 stretched · 360 Hz 
+
+Sensitivity 2.35 · 400 DPI · eDPI 940 
+
+Crosshair aplicat + copiabil 
+
+Viewmodel FOV 68 · 2.5 / 0 / −1.5 
+
+Video Shadow High · MSAA 4x · Reflex Off 
+
+✦ Copiază crosshair
+
+Aplică 
+
+🎯
+heavenache
+SETĂRI COMUNITATE
+
+Rezoluție 1280×960 · 4:3 stretched · 360 Hz 
+
+Sensitivity 2.1 · 400 DPI · eDPI 840 
+
+Crosshair cod partajabil 
+
+Viewmodel FOV 68 · 2.5 / 0 / −1.5 
+
+Video Shadow High · MSAA 4x · Reflex Off 
+
+✦ Copiază crosshair
+
+Aplică 
+
+▤ Profile pro
+
+Alegi jucătorul, apeși Aplică, iar setările lui intră în configul jocului. Revii la ale tale oricând, cu un click.
+
+Valorant
+sensitivity, crosshair, video
+
+1 profil 
+
+Rust
+grafică, distanță, FOV
+
+3 profile 
+
+Fortnite
+sensitivity, grafică
+
+2 profile 
+
+PUBG
+sensitivity, grafică
+
+2 profile 
+
+Tarkov
+grafică, post-procesare
+
+1 profil 
+
+WARDOGS
+grafică, doar valori din meniul jocului
+
+1 profil 
+
+RESHADE
+
+Preseturi de post-procesare pentru FiveM. Descarcă presetul și pune-l lângă ReShade în folderul jocului.
+
+RyuCK
+preset color/claritate
+
+Descarcă 
+
+Loco
+preset color/claritate
+
+Descarcă 
+
+S
+Sebastian
+preset color/claritate
+
+Descarcă 
+
+Network Boost
+Găsește automat cel mai rapid DNS și aplică-l pe PC-ul tău
+
+1
+Testare
+Ping la 6 DNS-uri
+
+2
+Clasament
+Cel mai rapid câștigă
+
+3
+Aplică
+Un click, gata
+
+Apasă Start Test pentru a testa DNS-urile
+
+🖵
+
+📡
+
+Tu DNS 
+
+🚀
+Start Ping Test
+Testăm latența la 6 servere DNS, durează ~15 secunde
+
+App Installer
+Selectează aplicațiile dorite și apasă Instalează
+
+▣ Instalează Selectate
+
+🌐 Browsere
+
+◎
+Google Chrome
+Browser web rapid și popular
+
+✓
+
+🦊
+Mozilla Firefox
+Browser open-source
+
+✓
+
+🦁
+Brave Browser
+Browser cu ad-blocker integrat
+
+✓
+
+O
+Opera GX
+Browser optimizat pt. gaming
+
+✓
+
+🎮 Gaming
+
+🎲
+Steam
+Platformă de gaming
+
+✓
+
+💬
+Discord
+Chat vocal/video pentru gameri
+
+✓
+
+🎯
+Epic Games Launcher
+Magazin Epic Games
+
+✓
+
+EA
+EA App
+Platformă EA
+
+✓
+
+AI Assistant
+Întreabă orice despre FrameLabs, tweaks, optimizări Windows sau gaming.
+
+↺ Conversație nouă 
+
+✦
+Cu ce te pot ajuta?
+
+Care e diferența între Gold și Diamond?
+
+Ce face Game Mode din Windows?
+
+Cum dau revert la optimizări?
+
+Întreabă AI Assistant… Trimite 
+
+Statistici
+Statistici despre tweaks aplicate
+
+TWEAKS ACTIVE
+37
+
+SCOR ESTIMAT
+99
+
+SPAȚIU ELIBERAT
+4.2 GB
+
+▤ Utilizare în timp
+
+▤ Discuri
+
+Samsung SSD 980 PRO 1TB
+Fixed · 512 GB liberi
+
+HEALTHY 
+
+WDC WD10EZEX 1TB
+Fixed · 210 GB liberi
+
+WARNING 
+
+Server Ready
+Serviciile cerute la PC Check pe serverele de FiveM, RedM și RAGE:MP
+
+▤ Fixează procesele
+
+OGLand
+FiveM · prioritate normală
+
+FIXEAZĂ 
+
+B-Zone
+FiveM · prioritate normală
+
+FIXEAZĂ 
+
+▤ Servicii Windows
+
+DiagTrack
+Telemetrie: consumă resurse
+
+ACTIV 
+
+CDPUserSvc
+Connected Devices Platform
+
+ACTIV 
+
+EventLog
+Necesar sistemului
+
+OK 
+
+Diagnostic NEW 
+
+Ce este sau nu în regulă pe PC-ul tău, analiza pe scurt.
+
+🩺 Diagnosticul PC-ului doar citesc, nu schimb nimic 
+
+2 probleme 1 de verificat 9 în regulă 
+
+⬤ Monitorul merge la 60 Hz, dar poate 144 Hz
+
+Windows l-a lăsat pe valoarea implicită. Se schimbă din Setări, în 30 de secunde.
+
+Cum rezolv ▾
+
+⬤ RAM-ul merge pe un singur canal
+
+Cele două module sunt în sloturile greșite. Mutate corect, pierzi mai puțin FPS în jocurile pe procesor.
+
+Cum rezolv ▾
+
+🔒 GOLD 3 probleme găsite 
+
+Ecrane albastre, erori de hardware în jurnale și crash-uri de joc. Se deblochează cu Gold.
+
+🔒 DIAMOND 1 problemă găsită 
+
+XMP, Resizable BAR și microcodul procesorului. Se deblochează cu Diamond.
+
+Results BETA 
+
+Înainte și după, măsurat pe PC-ul tău.
+
+PORNIREA WINDOWS
+
+54%
+
+mai rapidă
+
+înainte 48 s 
+
+acum 22 s 
+
+▤ Ce am măsurat
+
+Scor FrameLabs
+
+38 → 96 
+
+Setări optimizate
+
+3 → 24 
+
+Servicii pornite
+
+118 → 94 
+
+Programe la pornire
+
+17 → 6 
+
+🖼
+Salvează imaginea
+Cardul se face singur din cifrele PC-ului tău, după ce aplici și repornești
+
+Driver Scan
+Scanează driverele instalate și caută update de BIOS
+
+DISPLAY · NVIDIA GeForce RTX 3060 Ti
+566.36 · 12.03.2026
+
+UPDATE 
+
+AUDIO · Realtek High Definition Audio
+6.0.9722.1 · 04.11.2025
+
+OK 
+
+ETHERNET · Realtek PCIe GbE Family
+10.68.1219.2024 · 19.12.2025
+
+OK 
+
+DISKDRIVE · Samsung NVMe Controller
+3.3.0.2003 · 22.01.2026
+
+OK 
+
+⊕
+Caută BIOS update
+MSI B550-A PRO · versiune 7C56v18
+
+CAUTĂ 
+
+Uninstaller
+Dezinstalare cu scanare de fișiere rămase în urmă
+
+↺ Refresh 
+
+McAfee LiveSafe
+McAfee, LLC · 412 MB
+
+Uninstall 
+
+Xbox Game Bar
+Microsoft Corporation · 88 MB
+
+Uninstall 
+
+Candy Crush Saga
+King · 240 MB
+
+Uninstall 
+
+Restore Points
+Gestionează punctele de restaurare Windows
+
+＋ Creează nou 
+
+FrameLabs: înainte de Auto Tweaks
+29.07.2026, 14:02 · #128
+
+Restaurează 
+
+FrameLabs: înainte de Game Settings
+28.07.2026, 19:41 · #127
+
+Restaurează 
+
+Punct creat manual
+26.07.2026, 11:15 · #126
+
+Restaurează 
+
+⚠ Anulează optimizările FrameLabs
+Punem la loc exact valorile de dinainte, cele salvate în momentul aplicării. Recomandat rămâne punctul de restaurare de mai sus; asta e pentru când el nu mai există.
+Anulează optimizările 
+
+▤ Cum funcționează
+Înainte de fiecare set de optimizări creăm automat un punct de restaurare. Dacă ceva nu-ți convine, te întorci la starea de dinainte fără să pierzi nimic.
+
+Settings
+Setări aplicație
+
+Pornire odată cu Windows
+Verifică optimizările la fiecare boot
+
+Reparare automată
+Pune la loc ce anulează Windows-ul sau driverele
+
+Raport de sănătate
+Primul la 14 zile, apoi o dată la 21
+
+E o previzualizare simplificată. În aplicație ai peste 50 de optimizări, datele reale ale PC-ului tău, rapoarte de sănătate și reparare automată după update-urile Windows.
+
+FILMĂRI, NU GRAFICE
+
+AȘA ARATĂ ÎN JOC.
+
+Overlay-ul rămâne pornit tot clipul: FPS, temperaturi, load. Citești cifrele direct de pe ecran, nu din promisiunile noastre.
+
+Rust FrameLabs: ON 
+
+200 
+
+FPS 
+maxim în clip 
+
+183 
+medie în sesiune 
+
+GRAFICĂ Very High, preset FrameLabs
+GPU RTX 5090 · 81% · 58°C
+CPU Ryzen 7 9800X3D · 71% · 54°C
+
+FiveM FrameLabs: ON 
+
+294 
+
+FPS 
+maxim în clip 
+
+281 
+medie în sesiune 
+
+GRAFICĂ High, preset FrameLabs
+GPU RTX 5090 · 51% · 57°C
+CPU Ryzen 7 9800X3D · 71% · 56°C
+
+Fortnite · Reality's Reign FrameLabs: ON 
+
+531 
+
+FPS 
+maxim în clip 
+
+245 
+medie în sesiune 
+
+GRAFICĂ 1440p · Performance Mode
+GPU RTX 5090 · 62% · 57°C
+CPU Ryzen 7 9800X3D · 77% · 53°C
+
+Filmări de pe un PC real, optimizat cu FrameLabs: RTX 5090 și Ryzen 7 9800X3D.
+
+VEZI PACHETELE Instalare în 2 minute, pe Windows 10 și 11. 
+
+CUM FUNCȚIONEAZĂ.
+
+01 
+Analizăm configurația
+
+Aplicația citește specificațiile PC-ului: procesor, placă video, versiunea de Windows, driverele și ce pornește odată cu sistemul. De acolo alegem ce merită schimbat la tine, nu aceeași listă pentru toată lumea.
+
+02 
+Aplicăm optimizările
+
+Peste 50 de modificări în registry, kernel, planul de energie și stack-ul de rețea, dintr-un singur click. Fiecare se poate da înapoi tot dintr-un click, oricând.
+
+03 
+Reparăm ce strică Windows
+
+Fiecare update de Windows sau de driver îți anulează din optimizări. Le punem la loc automat și îți trimitem lunar raportul cu ce s-a schimbat pe PC-ul tău.
+
+CALCULATOR FPS. 
+
+Alege-ți jocul și configurația: afli de la cât pornești, la cât ajungi și ce rezultate au avut alți clienți.
+
+JOCUL TĂU
+
+CONFIGURAȚIA TA
+
+Slabă GTX 1050 Ti · i5-8400 
+
+Medie RTX 3060 · Ryzen 5 5600 
+
+Puternică RTX 4070 · i7-13700K 
+
+ESTIMARE PENTRU CONFIGURAȚIA ALEASĂ
+
+fără FrameLabs 
+cu FrameLabs 
+
+FPS MEDIU 
+
+1% LOWS (STUTTER) 
+
+INPUT LAG 
+
+REZULTAT RAPORTAT
+
+vezi recenzia 
+
+Barele sunt estimări, calculate din rezultatele raportate de utilizatori, și variază de la sistem la sistem. Recenzia afișată e reală, copiată din canalul #recenzii de pe Discord.
+
+CE SPUN CLIENȚII. 
+
+230+ recenzii pe Discord. Astea sunt opt dintre ele, cu tot cu cifre.
+
+DIAMOND
+
+"Mă jucam CS2 cu 230 fps pe un laptop cu configurație foarte bună. Am umblat prin setări, am căutat să fac orice, și tot nu reușeam să scot mai mult. După pachetul Diamond am 480-510 fps și laptopul merge foarte smooth."
+
+TudoraN CS2 · 19.09.2026 
+
+DIAMOND
+
+"Aveam o problemă foarte mare cu FPS-ul: mă jucam cu 15-20 fps pe FiveM . După pachetul Diamond și câteva schimbări în NVIDIA, am ajuns la peste 55-60 în zone aglomerate și peste 75 în rest."
+
+dima FiveM · 16.07.2026 
+
+DIAMOND
+
+"De la 400 fps max pe CS2 am ajuns la 700-800 , și cu 1% lows 470. Recomand!"
+
+Beleaua CS2 · 06.08.2026 
+
+SILVER
+
+"Înainte stăteam cu toate setările pe low și aveam 50 fps . Acum stau cu toate pe very high și am 120-150 . Și am doar Silver. E super!"
+
+Grecu RageMP · 10.05.2026 
+
+DIAMOND
+
+"Prima dată am avut dubii, nu credeam că poate pe bune să îți ofere o performanță ridicată. După câteva ore de jucat am sesizat o diferență de aproximativ 50 fps , iar FPS-urile sunt mult mai constante, nu mai scad cum scădeau înainte."
+
+darian DIAMOND · 14.09.2026 
+
+RTX 4070 Ti SUPER · i7-14700KF
+
+"PC-ul se simte mult mai fluid din orice punct de vedere. În CS2 am primit un boost de circa 40-50 fps , iar pe LoL am scăpat de acel micro-stuttering foarte enervant."
+
+MPM CS2, LoL · 19.05.2026 
+
+GOLD
+
+"Am peste 100 de euro cheltuiți pe optimizări , dar nicăieri nu a fost ca la ei. Pe lângă boost-ul de FPS, care este observabil, jocul este foarte foarte smooth, și nu doar jocul, absolut tot PC-ul."
+
+AlexysS 21.03.2026 
+
+DIAMOND
+
+"A stat 2 ore să îmi rezolve o problemă la BIOS și nu s-a lăsat până n-a rezolvat-o. De FPS nu mai zic: de la 170-180 la 250 , chiar și 305."
+
+EL STEPHAN DIAMOND · 28.04.2026 
+
+VEZI TOATE RECENZIILE → 
+
+PACHETE PERFORMANță.
+
+Lunar
+
+3 luni
+
+Anual
+−67% 
+
+Lifetime
+
+Se reînnoiește automat. Anulezi oricând din contul tău.
+
+Se reînnoiește lunar. Anulezi oricând din contul tău.
+
+Se reînnoiește din 3 în 3 luni. Anulezi oricând din contul tău.
+
+O singură plată. Rămâne al tău, fără reînnoire.
+
+⚡ 
+INCLUS ÎN ABONAMENT ȘI LIFETIME 
+
+Reparare automată 
+Windows și driverele îți anulează optimizările în timp. Le punem la loc, fără să apeși nimic. 
+
+Raport lunar 
+Vezi exact ce s-a schimbat pe PC-ul tău și cât te-a costat în scor. 
+
+Codul de reducere rămâne activ 
+Cu un cod de creator, reducerea se aplică la fiecare reînnoire , nu doar prima dată. 
+
+Cumperi fără reînnoire? Optimizarea rămâne, dar ce dezactivează Windows sau
+driverele nu se mai repară automat și nu mai primești actualizări.
+
+FREE
+
+CARTOF
+
+FREE
+
+8 tweaks de bază on/off
+
+Game Mode + debloat telemetrie
+
+Alege 
+
+LEVEL 1
+
+SILVER
+
+21 lei
+
+Economisești 350 lei față de plata lunară
+
+Tot din FREE + 12 tweaks gaming
+
++5-25% FPS prin tweaks kernel
+
+Răspuns mouse + tastatură instant
+
+Cumpara 
+
+BEST VALUE
+
+LEVEL 2
+
+GOLD
+
+33 lei
+
+Economisești 800 lei față de plata lunară
+
+Tot din SILVER + Auto Tweaks
+
+50+ optimizări într-un click
+
+FrameLabs Power Plan + ISLC
+
+Cumpara 
+
+ULTIMATE EXPERIENCE
+
+LEVEL 3
+
+DIAMOND
+✓ 
+
+46 lei
+
+Economisești 1250 lei față de plata lunară
+
+Tot din GOLD + 11 optimizări exclusive
+
+GPU tuning avansat NVIDIA/AMD
+
+Deblocare BIOS personalizată
+
+Cumpara 
+
+FRAMELABS.ro 
+Transformăm orice sistem într-o mașinărie de gaming optimizată la milisecundă.
+
+NAVIGARE 
+Servicii 
+Teorie 
+Pachete 
+
+SUPORT Abonamentul meu 
+FAQ 
+Recenzii 
+Contact 
+
+LEGAL 
+Termeni 
+Privacy 
+Date de contact 
+Cookie-uri 
+
+© 2026 FrameLabs. Toate drepturile rezervate.
+
+Dezvoltat pentru performanță.

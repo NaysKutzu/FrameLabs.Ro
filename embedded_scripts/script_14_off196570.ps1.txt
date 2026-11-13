@@ -1,0 +1,12 @@
+
+$ErrorActionPreference = 'SilentlyContinue'
+if (-not (Test-Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection')) { New-Item -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection' -Force | Out-Null }
+Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection' -Name 'AllowTelemetry' -Value 0 -Type DWord
+Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection' -Name 'MaxTelemetryAllowed' -Value 0 -Type DWord
+
+Stop-Service -Name 'DiagTrack' -Force -ErrorAction SilentlyContinue
+Set-Service -Name 'DiagTrack' -StartupType Disabled -ErrorAction SilentlyContinue
+Stop-Service -Name 'dmwappushservice' -Force -ErrorAction SilentlyContinue
+Set-Service -Name 'dmwappushservice' -StartupType Disabled -ErrorAction SilentlyContinue
+
+Get-ScheduledTask | Where-Object { $_.TaskPath -like '\Microsoft\Windows\Application Experience\*' -or $_.TaskPath -like '\Microsoft\Windows\Customer Experience Improvement Program\*' } | Disable-ScheduledTask -ErrorAction SilentlyContinue | Out-Null

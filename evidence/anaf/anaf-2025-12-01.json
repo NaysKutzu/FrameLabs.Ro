@@ -1,0 +1,76 @@
+{
+  "found": [
+    {
+      "date_generale": {
+        "data": "2025-12-01",
+        "cui": 50706577,
+        "denumire": "BTE RIDES S.R.L.",
+        "adresa": "JUD. DOLJ, MUN. CRAIOVA, STR. NEGOIU, NR.44",
+        "telefon": "[redactat — date de contact nu sunt reproduse în acest depozit]",
+        "fax": "",
+        "codPostal": "200664",
+        "act": "",
+        "stare_inregistrare": "INREGISTRAT din data 15.10.2024",
+        "data_inreg_Reg_RO_e_Factura": "",
+        "organFiscalCompetent": "Administraţia Judeţeană a Finanţelor Publice Dolj",
+        "forma_de_proprietate": "PROPR.PRIVATA-CAPITAL PRIVAT AUTOHTON",
+        "forma_organizare": "PERSOANA JURIDICA",
+        "forma_juridica": "SOCIETATE COMERCIALĂ CU RĂSPUNDERE LIMITATĂ",
+        "data_inregistrare": "2024-10-15",
+        "statusRO_e_Factura": false,
+        "nrRegCom": "J2024031539003",
+        "cod_CAEN": "5829",
+        "iban": ""
+      },
+      "inregistrare_scop_Tva": {
+        "scpTVA": false,
+        "perioade_TVA": []
+      },
+      "inregistrare_RTVAI": {
+        "dataActualizareTvaInc": "",
+        "dataPublicareTvaInc": "",
+        "dataInceputTvaInc": "",
+        "dataSfarsitTvaInc": "",
+        "tipActTvaInc": "",
+        "statusTvaIncasare": false
+      },
+      "stare_inactiv": {
+        "dataInactivare": "2025-10-13",
+        "dataReactivare": "2026-09-11",
+        "dataPublicare": "2025-10-15",
+        "dataRadiere": "",
+        "statusInactivi": true
+      },
+      "inregistrare_SplitTVA": {
+        "statusSplitTVA": false,
+        "dataInceputSplitTVA": "",
+        "dataAnulareSplitTVA": ""
+      },
+      "adresa_sediu_social": {
+        "sdenumire_Localitate": "Mun. Craiova",
+        "sdenumire_Judet": "DOLJ",
+        "scod_Judet": "16",
+        "scod_JudetAuto": "DJ",
+        "sdetalii_Adresa": "",
+        "scod_Postal": "200664",
+        "sdenumire_Strada": "Str. Negoiu",
+        "snumar_Strada": "44",
+        "scod_Localitate": "129",
+        "stara": ""
+      },
+      "adresa_domiciliu_fiscal": {
+        "ddenumire_Localitate": "Mun. Craiova",
+        "ddenumire_Strada": "Str. Negoiu",
+        "dnumar_Strada": "44",
+        "dcod_Localitate": "129",
+        "ddenumire_Judet": "DOLJ",
+        "dcod_Judet": "16",
+        "dcod_JudetAuto": "DJ",
+        "ddetalii_Adresa": "",
+        "dcod_Postal": "200664",
+        "dtara": ""
+      }
+    }
+  ],
+  "notFound": []
+}

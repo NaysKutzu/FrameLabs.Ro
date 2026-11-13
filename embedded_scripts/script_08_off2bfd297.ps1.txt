@@ -1,0 +1,6 @@
+
+bcdedit /deletevalue useplatformtick    | Out-Null
+bcdedit /deletevalue disabledynamictick | Out-Null
+Del-Reg 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\kernel' 'GlobalTimerResolutionRequests'
+
+# 

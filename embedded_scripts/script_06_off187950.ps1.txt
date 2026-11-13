@@ -1,0 +1,6 @@
+
+$ErrorActionPreference = 'SilentlyContinue'
+$adapters = Get-NetAdapter | Where-Object { $_.Status -eq 'Up' }
+foreach ($a in $adapters) {
+    Set-DnsClientServerAddress -InterfaceIndex $a.ifIndex -ServerAddresses ('%1','%2')
+}

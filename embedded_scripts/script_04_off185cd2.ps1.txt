@@ -1,0 +1,12 @@
+
+$wg = Get-Command winget -EA SilentlyContinue
+if ($wg) {
+    foreach ($id in @('Microsoft.Copilot','9NHT9RB2F4HD')) {
+        $wp = Start-Process -FilePath 'winget' -NoNewWindow -PassThru `
+              -ArgumentList @('uninstall','--id',$id,'--silent',
+                              '--accept-source-agreements','--disable-interactivity')
+        if (-not $wp.WaitForExit(60000)) { try { $wp.Kill() } catch {} }
+    }
+}
+
+# 

@@ -1,0 +1,106 @@
+Politica de confidențialitate – FrameLabs 
+
+FRAMELABS 
+
+Aplicația 
+
+Gameplay 
+
+Cum funcționează 
+
+Calculator FPS 
+
+Recenzii 
+
+Pachete 
+
+Contul meu 
+
+🛒
+
+DISCORD
+
+⬇ DOWNLOAD 
+
+Document Oficial
+
+Politica de confidențialitate
+
+Ultima actualizare: 25 Septembrie 2026
+
+1 Cine prelucrează datele tale
+
+Operatorul datelor este BTE RIDES S.R.L. , societate cu răspundere limitată, cu sediul social în Craiova, str. Negoiu nr. 44, județul Dolj, înregistrată la Registrul Comerțului sub nr. J2024031539003 , cod unic de înregistrare 50706577 , capital social 500 lei, care operează magazinul și aplicația FrameLabs .
+
+Pentru orice chestiune legată de datele tale, scrie-ne la contact@framelabs.ro .
+
+2 Ce date colectăm și de ce
+
+Contul de Discord (ID și nume de utilizator): ca să îți putem livra accesul cumpărat și să știm ce pachet ai. Temei: executarea contractului.
+
+Email, nume și adresa de facturare , așa cum le completezi la comandă: ca să procesăm comanda și să emitem factura. Temei: executarea contractului și obligația legală de facturare.
+
+Identificatorul de hardware (HWID) : un cod calculat din componentele PC-ului, păstrat doar ca amprentă, nu ca listă de componente. Ne arată că licența e folosită pe un singur calculator. Temei: interesul legitim de a preveni folosirea neautorizată.
+
+Adresa IP , la autentificare și la comunicarea aplicației cu serverul. Temei: interesul legitim de securitate și antifraudă.
+
+Date tehnice din aplicație : ce optimizări ai aplicat și rezultatul lor, ca să îți putem arăta raportul, să putem reveni asupra modificărilor și să oferim suport. Temei: executarea contractului.
+
+Datele cardului nu ajung la noi niciodată. Plata e procesată de Shopify. Noi vedem doar că o comandă a fost plătită.
+
+3 Cui transmitem datele
+
+Nu vindem datele nimănui și nu le folosim pentru marketing către terți. Le transmitem doar celor fără de care serviciul nu funcționează:
+
+Shopify , pentru magazin și procesarea plăților;
+
+Discord , pentru livrarea accesului pe contul tău;
+
+SmartBill , pentru emiterea facturii, și mai departe ANAF , prin sistemul e-Factura, așa cum cere legea;
+
+furnizorul serverului pe care rulează aplicația noastră, în Uniunea Europeană;
+
+furnizorul serviciului AI folosit de asistentul din aplicație, dacă îl folosești: îi este trimis mesajul tău ca să primești răspuns.
+
+4 Cât timp le păstrăm
+
+Datele contului le păstrăm cât timp ai cont la noi, iar după ștergerea lui doar atât cât mai e nevoie pentru o eventuală dispută. Facturile și datele din ele le păstrăm 10 ani , pentru că legea contabilității ne obligă.
+
+5 Drepturile tale
+
+Ai dreptul să ceri accesul la datele tale, corectarea lor, ștergerea lor, restricționarea prelucrării, portabilitatea datelor și să te opui prelucrării întemeiate pe interesul nostru legitim. Scrie-ne la contact@framelabs.ro și îți răspundem în cel mult o lună.
+
+Important: ștergerea datelor contului nu poate include facturile deja emise, pe acelea legea ne obligă să le păstrăm.
+
+Dacă ești nemulțumit de felul în care îți prelucrăm datele, te poți plânge la Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal ( dataprotection.ro ).
+
+6 Cookie-uri
+
+Site-ul folosește cookie-urile necesare funcționării magazinului (coșul, sesiunea, securitatea) și statistici de bază despre trafic. Le poți șterge sau bloca oricând din setările browserului, cu mențiunea că fără cele necesare cumpărarea nu funcționează.
+
+Acest document a fost actualizat ultima oară pe 25 Septembrie 2026 .
+
+© 2026 FrameLabs · Termeni și Condiții · Acasă 
+
+FRAMELABS.ro 
+Transformăm orice sistem într-o mașinărie de gaming optimizată la milisecundă.
+
+NAVIGARE 
+Servicii 
+Teorie 
+Pachete 
+
+SUPORT Abonamentul meu 
+FAQ 
+Recenzii 
+Contact 
+
+LEGAL 
+Termeni 
+Privacy 
+Date de contact 
+Cookie-uri 
+
+© 2026 FrameLabs. Toate drepturile rezervate.
+
+Dezvoltat pentru performanță.

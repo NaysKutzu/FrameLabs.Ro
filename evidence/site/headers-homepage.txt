@@ -1,0 +1,36 @@
+HTTP/2 200 
+date: Fri, 13 Nov 2026 18:05:09 GMT
+content-type: text/html; charset=utf-8
+x-request-id: b4a26fbd-b4b1-4f33-85e3-af7b42209ec7-1794593108
+product-filtering-backend: bitset_roaring
+cf-cache-status: DYNAMIC
+set-cookie: localization=[redactat]; path=/; expires=Sat, 13 Nov 2027 18:05:09 GMT; SameSite=Lax
+set-cookie: cart_currency=[redactat]; path=/; expires=Fri, 27 Nov 2026 18:05:09 GMT; SameSite=Lax
+set-cookie: _shopify_cmp=[redactat]; domain=framelabs.ro; path=/; expires=Sun, 14 Nov 2027 00:05:09 GMT; secure; SameSite=Lax
+set-cookie: _shopify_essential=[redactat]; Max-Age=31536000; Path=/; HttpOnly; Secure; Priority=High; SameSite=Lax
+set-cookie: _shopify_analytics=[redactat]; Max-Age=31536000; Path=/; HttpOnly; Secure; Priority=High; SameSite=Lax
+set-cookie: _shopify_marketing=[redactat]; Max-Age=31536000; Path=/; HttpOnly; Secure; Priority=High; SameSite=Lax
+link: <https://cdn.shopify.com>; rel="preconnect", <https://cdn.shopify.com>; rel="preconnect"; crossorigin, <https://fonts.googleapis.com>; rel="preconnect", <https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap>; as="style"; rel="preload", <//framelabs.ro/cdn/shop/t/41/assets/style.css?v=96092420211890923421794020548>; as="style"; rel="preload", <//framelabs.ro/cdn/shop/t/41/assets/fl-aer.css?v=37658929620407567681791283020>; as="style"; rel="preload", <//framelabs.ro/cdn/shop/t/41/assets/fl-mobile.css?v=167533628555847259081791283020>; as="style"; rel="preload", <https://framelabs.ro/cdn/shopifycloud/portable-wallets/latest/accelerated-checkout-backwards-compat.css>; as="style"; rel="preload"; crossorigin, </.well-known/ucp>; rel="ucp"; version="2026-08-25"
+x-permitted-cross-domain-policies: none
+etag: W/"page_cache:102079103318:IndexController:4d6bf06e19951654a0c8d9fc37a67925:5d8bfb75eb9b92eba95b81804a57f49d"
+nel: {"report_to":"cf-nel","success_fraction":0.01,"max_age":604800}
+shopify-complexity-score: 287
+shopify-complexity-score-v2: 287
+x-frame-options: DENY
+content-security-policy: block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;
+strict-transport-security: max-age=7889238
+vary: Accept
+cdn-cache-control: no-cache, no-store
+content-language: ro-RO
+cache-control: private, max-age=0, must-revalidate
+powered-by: Shopify
+server-timing: processing;dur=293;desc="gc:1", db;dur=109, db_async;dur=26.513, parse;dur=10, render;dur=61, asn;desc="13335", edge;desc="IAD", country;desc="AT", theme;desc="203618189654", pageType;desc="index", servedBy;desc="jm9h", requestID;desc="b4a26fbd-b4b1-4f33-85e3-af7b42209ec7-1794593108", _y;desc="55c1948f-cfd6-4aa8-b0c8-abb4a2f70a9f", _s;desc="15d50358-7b06-4181-ac1b-55c4e1f66923", _cmp;desc="3.AMPS_AT9_f_f_YADOwVOeQuu709s7eL7xCg", _ye;desc="1826150709", _se;desc="1794594909", compressionLevel;desc="5", compressionTime;dur=4.91
+x-dc: gcp-us-east1,gcp-us-east1,gcp-us-east1
+x-xss-protection: 1; mode=block
+alt-svc: h3=":443"; ma=86400
+server: cloudflare
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=TghCvKgr70H0DnzwDVyIes00FVCVa5SCFGHW2e6m1tKX9jYTWpD45pTWTp3TA8Oppr1PcCx%2BFDzQuRYnVB7ZbwisJHBPox7Rd4TsOa6F4qed2e%2BLIunazpKVLMrfpg%3D%3D"}]}
+x-content-type-options: nosniff
+x-download-options: noopen
+cf-ray: a59fb3f24a7b44a6-IAD
+
